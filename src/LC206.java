@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class LC206 {
+public class LC206 {
+    public ListNode reverseList(ListNode head) {
+
+    }
 }
