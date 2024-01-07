@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LC25reverseKGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LC25reverseKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LC25reverseKGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +129,7 @@
       <workItem from="1704268037812" duration="7000" />
       <workItem from="1704336666471" duration="627000" />
       <workItem from="1704368249706" duration="6693000" />
-      <workItem from="1704604669741" duration="6067000" />
+      <workItem from="1704604669741" duration="7100000" />
     </task>
     <servers />
   </component>
