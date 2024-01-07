@@ -11,7 +11,7 @@ public class LC25reverseKGroup {
             ListNode end = dummy;
 
             for (int i = 0; i<k && end!=null; i++)  end = end.next;
-            if (end == null) break;
+            if (end == null) return dummy.next;
             ListNode next = end.next;
 
             ListNode[] reverse = newReverse(head, end);
@@ -42,13 +42,15 @@ public class LC25reverseKGroup {
     }
 
     public static void main(String[] args) {
-        LC25reverseKGroup lc25reverseKGroup;
+        LC25reverseKGroup lc25reverseKGroup = new LC25reverseKGroup();
 
         int[] arr = new int[] {1,2,3,4,5};
 
         ListNode head = ListNode.createFromArray(arr);
 
         ListNode.printList(head);
+
+        lc25reverseKGroup.reverseKGroup(head, 2);
 
     }
 

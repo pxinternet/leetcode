@@ -34,5 +34,8 @@ public class ListNode {
         }
     }
 
+    public void print() {
+        System.out.println(this.val);
+    }
 
 }
