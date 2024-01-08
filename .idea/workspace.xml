@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LC121MAXProfit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LC122MAXProfit2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,9 +61,16 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC121MAXProfit">
+  <component name="RunManager" selected="Application.LC122MAXProfit2">
     <configuration name="LC121MAXProfit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LC121MAXProfit" />
+      <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LC122MAXProfit2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LC122MAXProfit2" />
       <module name="leetcode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,20 +97,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC47" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LC47" />
-      <module name="leetcode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC122MAXProfit2" />
         <item itemvalue="Application.LC121MAXProfit" />
         <item itemvalue="Application.LC402removeKdigits" />
         <item itemvalue="Application.LC25reverseKGroup" />
         <item itemvalue="Application.LC215" />
-        <item itemvalue="Application.LC47" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +130,7 @@
       <workItem from="1704336666471" duration="627000" />
       <workItem from="1704368249706" duration="6693000" />
       <workItem from="1704604669741" duration="13570000" />
-      <workItem from="1704691387661" duration="1636000" />
+      <workItem from="1704691387661" duration="3858000" />
     </task>
     <servers />
   </component>
@@ -179,6 +179,15 @@
           <url>file://$PROJECT_DIR$/src/LC121MAXProfit.java</url>
           <line>11</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LC122MAXProfit2.java</url>
+          <line>38</line>
+          <properties class="LC122MAXProfit2" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
