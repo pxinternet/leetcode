@@ -32,13 +32,26 @@ public class LC83DeleteDuplicates {
         return dummy.next;
     }
 
+    public ListNode deleteDuplicatesList(ListNode head) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+
+        while(head != null && head.next != null) {
+            if (head.val == head.next.val) head.next = head.next.next;
+            else head = head.next;
+        }
+
+
+        return dummy.next;
+    }
+
     public static void main(String[] args) {
         LC83DeleteDuplicates lc83DeleteDuplicates = new LC83DeleteDuplicates();
         int[] arr = new int[]{1,1,2,3,3};
 
         ListNode head = ListNode.createFromArray(arr);
 
-        ListNode res = lc83DeleteDuplicates.deleteDuplicates(head);
+        ListNode res = lc83DeleteDuplicates.deleteDuplicatesList(head);
         System.out.println("res");
         ListNode.printList(res);
 

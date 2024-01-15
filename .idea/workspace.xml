@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LC83DeleteDuplicates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LC83DeleteDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LC83DeleteDuplicates.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,7 @@
       <workItem from="1705080113917" duration="599000" />
       <workItem from="1705127787067" duration="6941000" />
       <workItem from="1705282684294" duration="757000" />
-      <workItem from="1705324664441" duration="7996000" />
+      <workItem from="1705324664441" duration="8163000" />
     </task>
     <servers />
   </component>
