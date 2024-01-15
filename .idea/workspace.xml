@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LC210FindOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LC05LongPalindrome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LC630ScheduleCourse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LC188MaxProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LC188MaxProfit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC123MaxProfit">
+  <component name="RunManager" selected="Application.LC05LongPalindrome">
+    <configuration name="LC05LongPalindrome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LC05LongPalindrome" />
+      <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LC121MAXProfit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LC121MAXProfit" />
       <module name="leetcode" />
@@ -83,13 +92,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC25reverseKGroup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LC25reverseKGroup" />
-      <module name="leetcode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LC402removeKdigits" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LC402removeKdigits" />
       <module name="leetcode" />
@@ -99,11 +101,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC05LongPalindrome" />
         <item itemvalue="Application.LC123MaxProfit" />
         <item itemvalue="Application.LC122MAXProfit2" />
         <item itemvalue="Application.LC121MAXProfit" />
         <item itemvalue="Application.LC402removeKdigits" />
-        <item itemvalue="Application.LC25reverseKGroup" />
       </list>
     </recent_temporary>
   </component>
@@ -134,7 +136,9 @@
       <workItem from="1704851123510" duration="4324000" />
       <workItem from="1705027848385" duration="1170000" />
       <workItem from="1705080113917" duration="599000" />
-      <workItem from="1705127787067" duration="4379000" />
+      <workItem from="1705127787067" duration="6941000" />
+      <workItem from="1705282684294" duration="757000" />
+      <workItem from="1705324664441" duration="6870000" />
     </task>
     <servers />
   </component>

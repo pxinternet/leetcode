@@ -6,6 +6,6 @@ public class LC188MaxProfit {
      * @return
      */
     public int maxProfit(int k, int[] prices) {
-
+        return 0;
     }
 }
