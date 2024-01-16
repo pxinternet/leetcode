@@ -56,18 +56,18 @@ public class LC25reverseKGroup {
 
     }
 
-//    public ListNode reverseKGroup(ListNode head, int k) {
+//    public leetCode.ListNode reverseKGroup(leetCode.ListNode head, int k) {
 //
 //        //找到退出条件
 //        //找到循环条件
 //        //执行具体操作
 //
 //        if (head == null) return null;
-//        ListNode dummy = new ListNode(0);
+//        leetCode.ListNode dummy = new leetCode.ListNode(0);
 //
 //        dummy.next = head;
-//        ListNode pre = dummy;
-//        ListNode end = dummy;
+//        leetCode.ListNode pre = dummy;
+//        leetCode.ListNode end = dummy;
 //
 //        while(end.next != null) {
 //
@@ -78,10 +78,10 @@ public class LC25reverseKGroup {
 //            if (end == null) break;
 //
 //            //找到翻转的开始节点
-//            ListNode start = pre.next;
+//            leetCode.ListNode start = pre.next;
 //
 //            //记录下一个节点
-//            ListNode next = end.next;
+//            leetCode.ListNode next = end.next;
 //
 //            //翻转这一块
 //            pre.next = reverse(start);
@@ -96,12 +96,12 @@ public class LC25reverseKGroup {
 //        return dummy.next;
 //    }
 //
-//    public ListNode reverse(ListNode head) {
-//        ListNode pre = null;
+//    public leetCode.ListNode reverse(leetCode.ListNode head) {
+//        leetCode.ListNode pre = null;
 //
 //        while(head!= null) {
 //
-//            ListNode next = head.next;
+//            leetCode.ListNode next = head.next;
 //            head.next = pre;
 //            pre = head;
 //            head = next;

@@ -5,40 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC452findMinArrowShots.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC80removeDuplicates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC8myAtoi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC392isSubsequence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC05LongPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC05LongPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC121MAXProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC121MAXProfit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC122MAXProfit2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC122MAXProfit2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC123MaxProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC123MaxProfit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC188MaxProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC188MaxProfit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC206.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC206.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC207CanFinish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC207CanFinish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC210FindOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC210FindOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC215.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC215.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC236.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC236.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC25reverseKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC25reverseKGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC2719count.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC2719count.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC39.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC39.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC40.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC40.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC402removeKdigits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC402removeKdigits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC46.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC46.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC47.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC47.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC4FindMedianSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC4FindMedianSortedArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC62.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC62.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC63.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC63.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC630ScheduleCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC630ScheduleCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC6convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC6convert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC7reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC7reverse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC83DeleteDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC83DeleteDuplicates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC91numDecoding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC91numDecoding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LC980.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC980.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LCR078.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LCR078.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LCR078MergeKListSHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LCR078MergeKListSHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimpleBlockingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/SimpleBlockingQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC25reverseKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC25reverseKGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +66,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.LC7reverse">
+  <component name="RunManager" selected="Application.LC392isSubsequence">
     <configuration name="LC05LongPalindrome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC05LongPalindrome" />
       <module name="leetcode" />
@@ -101,9 +74,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC123MaxProfit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC123MaxProfit" />
+    <configuration name="LC392isSubsequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC392isSubsequence" />
       <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC392isSubsequence" />
         <item itemvalue="Application.LC7reverse" />
         <item itemvalue="Application.LC4FindMedianSortedArrays" />
         <item itemvalue="Application.LC83DeleteDuplicates" />
         <item itemvalue="Application.LC05LongPalindrome" />
-        <item itemvalue="Application.LC123MaxProfit" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +148,7 @@
       <workItem from="1705127787067" duration="6941000" />
       <workItem from="1705282684294" duration="757000" />
       <workItem from="1705324664441" duration="8404000" />
-      <workItem from="1705375428157" duration="17031000" />
+      <workItem from="1705375428157" duration="18055000" />
     </task>
     <servers />
   </component>
@@ -218,6 +197,11 @@
           <url>file://$PROJECT_DIR$/src/leetCode/LC121MAXProfit.java</url>
           <line>11</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/leetCode/LC392isSubsequence.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/leetCode/LC122MAXProfit2.java</url>
