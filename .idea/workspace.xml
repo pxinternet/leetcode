@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LC4FindMedianSortedArrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LC2719count.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LC6convert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LC7reverse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,16 +63,9 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.LC4FindMedianSortedArrays">
+  <component name="RunManager" selected="Application.LC7reverse">
     <configuration name="LC05LongPalindrome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LC05LongPalindrome" />
-      <module name="leetcode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LC122MAXProfit2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LC122MAXProfit2" />
       <module name="leetcode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,6 +85,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LC7reverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LC7reverse" />
+      <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LC83DeleteDuplicates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LC83DeleteDuplicates" />
       <module name="leetcode" />
@@ -99,11 +101,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC7reverse" />
         <item itemvalue="Application.LC4FindMedianSortedArrays" />
         <item itemvalue="Application.LC83DeleteDuplicates" />
         <item itemvalue="Application.LC05LongPalindrome" />
         <item itemvalue="Application.LC123MaxProfit" />
-        <item itemvalue="Application.LC122MAXProfit2" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +139,7 @@
       <workItem from="1705127787067" duration="6941000" />
       <workItem from="1705282684294" duration="757000" />
       <workItem from="1705324664441" duration="8404000" />
-      <workItem from="1705375428157" duration="7230000" />
+      <workItem from="1705375428157" duration="11281000" />
     </task>
     <servers />
   </component>
