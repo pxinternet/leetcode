@@ -42,6 +42,8 @@ public class LC123MaxProfit {
 
         int res = lc123MaxProfit.maxProfit(arr);
 
+        System.out.println("111");
+
         System.out.println(res);
     }
 }
