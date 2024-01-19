@@ -52,5 +52,4 @@ public class LC300lengthOfLIS {
         }
         return len;
     }
-    }
 }
