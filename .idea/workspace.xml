@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC167twoSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC72minDistance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC1277countSquares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC1277countSquares.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC221maximalSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC221maximalSquare.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +146,8 @@
       <workItem from="1705375428157" duration="26596000" />
       <workItem from="1705493672714" duration="6987000" />
       <workItem from="1705541422871" duration="605000" />
-      <workItem from="1705587895979" duration="3203000" />
+      <workItem from="1705587895979" duration="4483000" />
+      <workItem from="1705625962010" duration="4900000" />
     </task>
     <servers />
   </component>
