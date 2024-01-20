@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC172trailingZeros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC66plusOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC69mySqrt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC67addBinary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC300lengthOfLIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC300lengthOfLIS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC69mySqrt">
+  <component name="RunManager" selected="Application.LC67addBinary">
     <configuration name="LC392isSubsequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC392isSubsequence" />
       <module name="leetcode" />
@@ -81,6 +78,19 @@
     <configuration name="LC4FindMedianSortedArrays" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC4FindMedianSortedArrays" />
       <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LC67addBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC67addBinary" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,20 +115,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC83DeleteDuplicates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC83DeleteDuplicates" />
-      <module name="leetcode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC67addBinary" />
         <item itemvalue="Application.LC69mySqrt" />
         <item itemvalue="Application.LC392isSubsequence" />
         <item itemvalue="Application.LC7reverse" />
         <item itemvalue="Application.LC4FindMedianSortedArrays" />
-        <item itemvalue="Application.LC83DeleteDuplicates" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +159,8 @@
       <workItem from="1705493672714" duration="6987000" />
       <workItem from="1705541422871" duration="605000" />
       <workItem from="1705587895979" duration="4483000" />
-      <workItem from="1705625962010" duration="19546000" />
+      <workItem from="1705625962010" duration="20333000" />
+      <workItem from="1705765300856" duration="787000" />
     </task>
     <servers />
   </component>
