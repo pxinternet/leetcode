@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC274HIndex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC45jump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC55canJump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC670MaximumSwap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC12intToRoman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC134CanCompleteCircuit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC135Candy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC151reverseWords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC238productExceptSelf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC36isValidSudoku.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC68fullJustify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,9 +67,22 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC45jump">
-    <configuration name="LC392isSubsequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC392isSubsequence" />
+  <component name="RunManager" selected="Application.LC135Candy">
+    <configuration name="LC134CanCompleteCircuit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC134CanCompleteCircuit" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LC135Candy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC135Candy" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -117,26 +133,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC69mySqrt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC69mySqrt" />
-      <module name="leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC135Candy" />
+        <item itemvalue="Application.LC134CanCompleteCircuit" />
         <item itemvalue="Application.LC45jump" />
         <item itemvalue="Application.LC55canJump" />
         <item itemvalue="Application.LC67addBinary" />
-        <item itemvalue="Application.LC69mySqrt" />
-        <item itemvalue="Application.LC392isSubsequence" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +180,7 @@
       <workItem from="1705625962010" duration="20333000" />
       <workItem from="1705765300856" duration="787000" />
       <workItem from="1705852882795" duration="1428000" />
-      <workItem from="1705891081495" duration="11218000" />
+      <workItem from="1705891081495" duration="27797000" />
     </task>
     <servers />
   </component>
@@ -249,6 +252,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/leetCode/LC134CanCompleteCircuit.java</url>
+          <line>62</line>
+          <properties class="leetCode.LC134CanCompleteCircuit" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
