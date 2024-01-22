@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC67addBinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC274HIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC45jump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC55canJump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC670MaximumSwap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +64,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC67addBinary">
+  <component name="RunManager" selected="Application.LC45jump">
     <configuration name="LC392isSubsequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC392isSubsequence" />
       <module name="leetcode" />
@@ -75,9 +78,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC4FindMedianSortedArrays" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC4FindMedianSortedArrays" />
+    <configuration name="LC45jump" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC45jump" />
       <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LC55canJump" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC55canJump" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,20 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC7reverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC7reverse" />
-      <module name="leetcode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC45jump" />
+        <item itemvalue="Application.LC55canJump" />
         <item itemvalue="Application.LC67addBinary" />
         <item itemvalue="Application.LC69mySqrt" />
         <item itemvalue="Application.LC392isSubsequence" />
-        <item itemvalue="Application.LC7reverse" />
-        <item itemvalue="Application.LC4FindMedianSortedArrays" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +176,8 @@
       <workItem from="1705587895979" duration="4483000" />
       <workItem from="1705625962010" duration="20333000" />
       <workItem from="1705765300856" duration="787000" />
+      <workItem from="1705852882795" duration="1428000" />
+      <workItem from="1705891081495" duration="11218000" />
     </task>
     <servers />
   </component>
@@ -223,6 +240,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/leetCode/LC45jump.java</url>
+          <line>39</line>
+          <properties class="leetCode.LC45jump" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
