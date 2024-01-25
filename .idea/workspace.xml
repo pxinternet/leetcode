@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC11MaxArea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC207minSubArrayLen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC49groupAnagrams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC54spiralOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC124maxPathSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC30FindSubString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC48rotate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC73setZeros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC76minWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,22 +65,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC54spiralOrder">
-    <configuration name="LC134CanCompleteCircuit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC134CanCompleteCircuit" />
-      <module name="leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LC135Candy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC135Candy" />
+  <component name="RunManager" selected="Application.LC76minWindow">
+    <configuration name="LC124maxPathSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC124maxPathSum" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -104,8 +92,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC45jump" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC45jump" />
+    <configuration name="LC30FindSubString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC30FindSubString" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -130,13 +118,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LC76minWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC76minWindow" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC76minWindow" />
+        <item itemvalue="Application.LC30FindSubString" />
+        <item itemvalue="Application.LC124maxPathSum" />
         <item itemvalue="Application.LC54spiralOrder" />
         <item itemvalue="Application.LC207minSubArrayLen" />
-        <item itemvalue="Application.LC135Candy" />
-        <item itemvalue="Application.LC134CanCompleteCircuit" />
-        <item itemvalue="Application.LC45jump" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +180,9 @@
       <workItem from="1705852882795" duration="1428000" />
       <workItem from="1705891081495" duration="28168000" />
       <workItem from="1705973593803" duration="5704000" />
-      <workItem from="1705980816807" duration="1387000" />
+      <workItem from="1705980816807" duration="5056000" />
+      <workItem from="1706099076608" duration="4490000" />
+      <workItem from="1706148939835" duration="9656000" />
     </task>
     <servers />
   </component>
