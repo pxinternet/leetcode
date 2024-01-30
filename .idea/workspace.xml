@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/leetCode/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/TreeNode.java" afterDir="false" />
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,12 +51,14 @@
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/lvhonghe/pxinternet/code/leetcode",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
@@ -181,6 +184,7 @@
       <workItem from="1706099076608" duration="4490000" />
       <workItem from="1706148939835" duration="21630000" />
       <workItem from="1706579641945" duration="14779000" />
+
     </task>
     <servers />
   </component>
