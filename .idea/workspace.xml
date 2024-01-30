@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC82DeleteDuplicate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC86partition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC61rotateRight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +179,7 @@
       <workItem from="1705980816807" duration="5056000" />
       <workItem from="1706099076608" duration="4490000" />
       <workItem from="1706148939835" duration="21630000" />
-      <workItem from="1706579641945" duration="10232000" />
+      <workItem from="1706579641945" duration="12934000" />
     </task>
     <servers />
   </component>
