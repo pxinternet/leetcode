@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC138copyRandomList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC224calculate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC19removeNthFromEnd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC92ReverseBetween.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,22 +62,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC76minWindow">
+  <component name="RunManager" selected="Application.LC92ReverseBetween">
     <configuration name="LC124maxPathSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC124maxPathSum" />
-      <module name="leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LC207minSubArrayLen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC207minSubArrayLen" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -129,13 +115,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LC92ReverseBetween" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC92ReverseBetween" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC92ReverseBetween" />
         <item itemvalue="Application.LC76minWindow" />
         <item itemvalue="Application.LC30FindSubString" />
         <item itemvalue="Application.LC124maxPathSum" />
         <item itemvalue="Application.LC54spiralOrder" />
-        <item itemvalue="Application.LC207minSubArrayLen" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +180,7 @@
       <workItem from="1705980816807" duration="5056000" />
       <workItem from="1706099076608" duration="4490000" />
       <workItem from="1706148939835" duration="21630000" />
-      <workItem from="1706579641945" duration="3422000" />
+      <workItem from="1706579641945" duration="6403000" />
     </task>
     <servers />
   </component>
