@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC129sumNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC102levelOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC106buildTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC114Flatten.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC117Connect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC199rightSideView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC230kthSmallest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC236lowestCommonAncestor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC988smallestFromLeaf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC98isValidBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +198,7 @@
       <workItem from="1706099076608" duration="4490000" />
       <workItem from="1706148939835" duration="21630000" />
       <workItem from="1706579641945" duration="14779000" />
-      <workItem from="1707139308478" duration="421000" />
+      <workItem from="1707139308478" duration="11319000" />
     </task>
     <servers />
   </component>
