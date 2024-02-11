@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC127ladderLength.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC137SingleNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC201rangeBitwiseAnd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC433minMutation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC74searchMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC103zigzagLevelOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC17letterCombinations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +194,7 @@
       <workItem from="1706579641945" duration="14779000" />
       <workItem from="1707139308478" duration="18575000" />
       <workItem from="1707479300544" duration="3735000" />
-      <workItem from="1707562971767" duration="7162000" />
+      <workItem from="1707562971767" duration="10659000" />
     </task>
     <servers />
   </component>
