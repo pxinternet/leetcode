@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC438findAnagrams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC994OrangesRotting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC141HasCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC560subarraySum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LC189rotate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC09isPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC09isPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +55,7 @@
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lvhonghe/pxinternet/code/leetcode&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pxinternet-f/nextjs-socialCrm&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -64,9 +68,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC82DeleteDuplicate">
-    <configuration name="LC124maxPathSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC124maxPathSum" />
+  <component name="RunManager" selected="Application.LC560subarraySum">
+    <configuration name="LC30FindSubString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC30FindSubString" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -78,8 +82,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC30FindSubString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC30FindSubString" />
+    <configuration name="LC560subarraySum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC560subarraySum" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -132,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC560subarraySum" />
         <item itemvalue="Application.LC82DeleteDuplicate" />
         <item itemvalue="Application.LC92ReverseBetween" />
         <item itemvalue="Application.LC76minWindow" />
         <item itemvalue="Application.LC30FindSubString" />
-        <item itemvalue="Application.LC124maxPathSum" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +188,14 @@
       <workItem from="1706148939835" duration="21630000" />
       <workItem from="1706579641945" duration="14779000" />
       <workItem from="1708608235080" duration="2950000" />
-      <workItem from="1708653344721" duration="4177000" />
+      <workItem from="1708653344721" duration="7669000" />
+      <workItem from="1708746444389" duration="308000" />
+      <workItem from="1708827895277" duration="1196000" />
+      <workItem from="1708916167784" duration="2355000" />
+      <workItem from="1709111056328" duration="955000" />
+      <workItem from="1711424308807" duration="341000" />
+      <workItem from="1711686453245" duration="1440000" />
+      <workItem from="1712664671966" duration="2778000" />
     </task>
     <servers />
   </component>
