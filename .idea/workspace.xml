@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC21mergeTwoList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC138copyRandomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC138copyRandomList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC92ReverseBetween.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC92ReverseBetween.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC19removeNthFromEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC19removeNthFromEnd.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +190,7 @@
       <workItem from="1709111056328" duration="955000" />
       <workItem from="1711424308807" duration="341000" />
       <workItem from="1711686453245" duration="1440000" />
-      <workItem from="1712664671966" duration="5288000" />
+      <workItem from="1712664671966" duration="5654000" />
     </task>
     <servers />
   </component>

@@ -29,7 +29,29 @@ public class LC19removeNthFromEnd {
 
 
         return dummy.next;
-
-
     }
+
+
+    public ListNode removeNthFromEndRound2(ListNode head, int n) {
+        int right = 0;
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+
+        ListNode node = head;
+        while (node != null && right < n) {
+            node = node.next;
+            right++;
+        }
+
+        while(node != null) {
+            node = node.next;
+            pre = pre.next;
+        }
+        pre.next = pre.next.next;
+        return dummy.next;
+    }
+
+
 }
