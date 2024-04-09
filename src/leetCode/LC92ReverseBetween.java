@@ -12,7 +12,7 @@ public class LC92ReverseBetween {
         ListNode start = dummy;
         ListNode end = dummy;
 
-        while(left > 1) {
+        while (left > 1) {
             left--;
             right--;
             pre = pre.next;
@@ -50,7 +50,7 @@ public class LC92ReverseBetween {
         ListNode pre = end;
         ListNode curr = start;
 
-        while(curr != end) {
+        while (curr != end) {
 
             curr = start.next;
             start.next = pre;
@@ -63,7 +63,7 @@ public class LC92ReverseBetween {
     public static void main(String[] args) {
         LC92ReverseBetween lc92ReverseBetween = new LC92ReverseBetween();
 
-        int[] arr = new int[]{1,2,3,4,5};
+        int[] arr = new int[]{1, 2, 3, 4, 5};
 
         ListNode head = ListNode.createFromArray(arr);
 
@@ -71,5 +71,40 @@ public class LC92ReverseBetween {
 
         ListNode.printList(res);
 
+    }
+
+    public ListNode reverseBetweenRound2(ListNode head, int left, int right) {
+        if (left == right) return head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode start = dummy;
+        ListNode end = dummy;
+        ListNode pre = dummy;
+
+        while (left > 1) {
+            pre = pre.next;
+            end = end.next;
+            left--;
+            right--;
+        }
+
+        start = pre.next;
+
+        while (right >= 0) {
+            end = end.next;
+            right--;
+        }
+
+        ListNode curr = start;
+        ListNode prev = end;
+        while (curr != end) {
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+
+        pre.next = prev;
+        return dummy.next;
     }
 }

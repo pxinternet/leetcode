@@ -71,4 +71,24 @@ public class LC138copyRandomList {
         return nodeMap.get(head);
 
     }
+
+
+
+    public Node copyRandomListRound2(Node head) {
+        if (head == null) return head;
+
+        Map<Node, Node> nodeMap = new HashMap<>();
+
+        Node node = head;
+        while(node != null) {
+            nodeMap.put(node, new Node(node.val));
+            node = node.next;
+        }
+
+        for (Map.Entry<Node, Node> entry : nodeMap.entrySet()) {
+            entry.getValue().next = nodeMap.get(entry.getKey().next);
+            entry.getValue().random = nodeMap.get(entry.getKey().random);
+        }
+        return nodeMap.get(head);
+    }
 }
