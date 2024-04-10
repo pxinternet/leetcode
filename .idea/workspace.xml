@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC143ReorderList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC148sortList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC160inerSecList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC1367isSubPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC2289totalSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LCR029insert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC23mergeKList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC23mergeKList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC25reverseKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC25reverseKGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/ListNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +197,7 @@
       <workItem from="1712664671966" duration="6805000" />
       <workItem from="1712678536786" duration="574000" />
       <workItem from="1712723705833" duration="1374000" />
+      <workItem from="1712736477906" duration="3830000" />
     </task>
     <servers />
   </component>
