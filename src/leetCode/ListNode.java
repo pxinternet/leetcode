@@ -1,5 +1,8 @@
 package leetCode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ListNode {
 
     public int val;
@@ -36,8 +39,32 @@ public class ListNode {
         }
     }
 
+    public void printBetter(String prefix) {
+        System.out.println(prefix + " : " + this.toString());
+    }
+
     public void print() {
         System.out.println(this.val);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        ListNode temp = this;
+        Set<ListNode> visited = new HashSet<>();
+        while (temp != null) {
+            if (visited.contains(temp)) {
+                sb.append(temp.val).append("LOOP");
+                break;
+            }
+            visited.add(temp);
+            sb.append(temp.val);
+            if (temp.next != null) {
+                sb.append("->");
+            }
+            temp = temp.next;
+        }
+        return sb.toString();
     }
 
 }
