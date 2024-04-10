@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC23mergeKList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC24SwapPairs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC19removeNthFromEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC19removeNthFromEnd.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +191,9 @@
       <workItem from="1709111056328" duration="955000" />
       <workItem from="1711424308807" duration="341000" />
       <workItem from="1711686453245" duration="1440000" />
-      <workItem from="1712664671966" duration="5654000" />
+      <workItem from="1712664671966" duration="6805000" />
+      <workItem from="1712678536786" duration="574000" />
+      <workItem from="1712723705833" duration="1374000" />
     </task>
     <servers />
   </component>
