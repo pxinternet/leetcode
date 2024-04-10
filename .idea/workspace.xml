@@ -8,6 +8,7 @@
       <change afterPath="$PROJECT_DIR$/src/leetCode/LC23mergeKList.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/leetCode/LC24SwapPairs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC105buildTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC105buildTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.LC50myPow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LC82DeleteDuplicate.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
@@ -137,6 +140,7 @@
         <item itemvalue="Application.LC92ReverseBetween" />
         <item itemvalue="Application.LC76minWindow" />
         <item itemvalue="Application.LC30FindSubString" />
+        <item itemvalue="Application.LC124maxPathSum" />
       </list>
     </recent_temporary>
   </component>
