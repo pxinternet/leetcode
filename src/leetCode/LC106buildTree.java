@@ -39,4 +39,35 @@ public class LC106buildTree {
         root.left = helper(inLeft, index - 1);
         return root;
     }
+
+
+    int postIndex;
+    Map<Integer, Integer> inorderIndexMap;
+    public TreeNode buildTree1(int[] inorder, int[] postorder) {
+
+        postIndex = postorder.length-1;
+
+        inorderIndexMap = new HashMap<>();
+
+        for (int i =0; i < inorder.length; i++) {
+            inorderIndexMap.put(inorder[i], i);
+        }
+
+        return buildTree(postorder, 0, postorder.length - 1);
+    }
+
+    private TreeNode buildTree(int[] postorder, int left, int right) {
+        if (left > right) {
+            return null;
+        }
+        int rootVal = postorder[postIndex--];
+        TreeNode rootNode = new TreeNode(rootVal);
+
+        //这种倒着排的先构建右子树，再构建左子树，要看看postIndex--里面是啥
+
+        rootNode.right = buildTree(postorder, inorderIndexMap.get(rootVal) + 1, right);
+        rootNode.left = buildTree(postorder, left, inorderIndexMap.get(rootVal) - 1);
+
+        return rootNode;
+    }
 }
