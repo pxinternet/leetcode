@@ -5,6 +5,7 @@ import java.util.Queue;
 
 public class LC117Connect {
 
+    //层序遍历
     public Node connect(Node root) {
         if (root == null) return null;
 
