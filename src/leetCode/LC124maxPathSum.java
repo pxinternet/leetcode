@@ -4,6 +4,8 @@ package leetCode;
 
 public class LC124maxPathSum {
 
+    //这里要明确两个概念，左子树的贡献和右子树的贡献，如果左子树 + 右子树 +当前节点，就是一个路径和。     左子树 + 当前节点，或右子树 + 当前节点，分别是，当前节点，对父节点路径和的贡献
+
     int maxSum = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
         maxGain(root);
@@ -35,4 +37,5 @@ public class LC124maxPathSum {
         System.out.println(res);
 
     }
+
 }
