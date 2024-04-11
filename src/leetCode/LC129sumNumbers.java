@@ -15,6 +15,7 @@ public class LC129sumNumbers {
 
         sum = sum * 10 + node.val;
 
+        //这个if的结束条件必须有
         if (node.left == null && node.right == null) {
             return sum;
         } else {
