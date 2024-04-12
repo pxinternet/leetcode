@@ -48,7 +48,7 @@ public class LC3 {
 
     public static void main(String... arg) {
         LC3 lc3 = new LC3();
-        String str = "au";
+        String str = "bbbbb";
 
         int res = lc3.lengthOfLongestSubstring(str);
         System.out.println(res);

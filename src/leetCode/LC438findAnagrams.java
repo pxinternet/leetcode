@@ -44,4 +44,24 @@ public class LC438findAnagrams {
 
     }
 
+    //滑动窗口的套路
+    public static void slidingWindows(String s) {
+        Map<Character, Integer> window = new HashMap<>();
+        int left = 0; int right = 0;
+
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            window.put(c, window.getOrDefault(c, 0) + 1);
+
+            right++;
+
+            while (left < right && window.get(c) > 1) {
+                char d = s.charAt(left);
+                window.put(d, window.get(d) - 1);
+                left++;
+            }
+        }
+    }
+
+
 }

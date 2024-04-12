@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC567checkInclusion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC65isNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC99recoverTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC99recoverTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC438findAnagrams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC438findAnagrams.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC25reverseKGroup">
+  <component name="RunManager" selected="Application.LC3">
     <configuration name="LC143ReorderList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC143ReorderList" />
       <module name="leetcode" />
@@ -81,6 +84,19 @@
     </configuration>
     <configuration name="LC25reverseKGroup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC25reverseKGroup" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LC3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC3" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -118,26 +134,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC92ReverseBetween" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC92ReverseBetween" />
-      <module name="leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC3" />
         <item itemvalue="Application.LC25reverseKGroup" />
         <item itemvalue="Application.LC143ReorderList" />
         <item itemvalue="Application.LC560subarraySum" />
         <item itemvalue="Application.LC82DeleteDuplicate" />
-        <item itemvalue="Application.LC92ReverseBetween" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +200,10 @@
       <workItem from="1712723705833" duration="1374000" />
       <workItem from="1712736477906" duration="5262000" />
       <workItem from="1712753700922" duration="590000" />
-      <workItem from="1712805073782" duration="15322000" />
+      <workItem from="1712805073782" duration="16474000" />
+      <workItem from="1712845091769" duration="599000" />
+      <workItem from="1712890336405" duration="2330000" />
+      <workItem from="1712907448121" duration="7454000" />
     </task>
     <servers />
   </component>
