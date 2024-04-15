@@ -1,5 +1,7 @@
 package leetCode;
 
+import java.util.Set;
+
 public class Tools {
 
     public static void printMatrix(int[][] matrix) {
@@ -10,4 +12,21 @@ public class Tools {
             System.out.println();
         }
     }
+
+
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.printf("%4d", num);
+        }
+        System.out.println();
+    }
+
+    public static void printSet(Set<Integer> set) {
+        for (int num : set) {
+            System.out.printf("%4d", num);
+        }
+        System.out.println();
+    }
+
+
 }

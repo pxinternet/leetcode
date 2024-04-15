@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC1932canMerge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC508findFrequentTreeSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LCP52getNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LCP60getMaxLayerSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LC1361validateBinaryTreeNodes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC98isValidBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC98isValidBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC1932canMerge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC1932canMerge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/Tools.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC304NumMatrix">
+  <component name="RunManager" selected="Application.LC1361validateBinaryTreeNodes">
+    <configuration name="LC1361validateBinaryTreeNodes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LC1361validateBinaryTreeNodes" />
+      <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LC143ReorderList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC143ReorderList" />
       <module name="leetcode" />
@@ -122,26 +127,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC560subarraySum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC560subarraySum" />
-      <module name="leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC1361validateBinaryTreeNodes" />
         <item itemvalue="Application.LC304NumMatrix" />
         <item itemvalue="Application.LC3" />
         <item itemvalue="Application.LC25reverseKGroup" />
         <item itemvalue="Application.LC143ReorderList" />
-        <item itemvalue="Application.LC560subarraySum" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +199,7 @@
       <workItem from="1712907448121" duration="9982000" />
       <workItem from="1712942045005" duration="594000" />
       <workItem from="1713066023998" duration="16926000" />
-      <workItem from="1713147968124" duration="8610000" />
+      <workItem from="1713147968124" duration="11970000" />
     </task>
     <servers />
   </component>
