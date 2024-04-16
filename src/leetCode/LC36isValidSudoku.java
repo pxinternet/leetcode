@@ -23,7 +23,7 @@ public class LC36isValidSudoku {
                 if (board[i][j] == '.') continue;
                 int num = board[i][j] - '1';
 
-                //计算区块索引
+                //计算区块索引，区块索引这个要消化一下
                 int boxIndex = (i/3) * 3 + j / 3;
                 if (rows[i][num] || cols[j][num] || boxes[boxIndex][num]) {
                     return false;
