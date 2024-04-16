@@ -12,6 +12,8 @@ public class LC30FindSubString {
         List<Integer> res = new ArrayList<>();
 
         Map<String, Integer> wordCounts = new HashMap<>();
+        Map<String, Integer> wordsMap = new HashMap<>();
+
 
         int wordLength = words[0].length();
 
@@ -24,16 +26,23 @@ public class LC30FindSubString {
 
         if (sum > s.length()) return res;
 
+        String[] subStrings = new String[n - sum + 1];
         for (int i = 0; i < n - sum + 1; i++) {
-            //因为字符长度是相等的，这点比较好
+            subStrings[i] = s.substring(i, i + sum);
+        }
+
+        for (int i = 0; i <subStrings.length; i++) {
+            wordsMap.clear();
             int j = 0;
-            Map<String, Integer> wordsMap = new HashMap<>();
             while(j < words.length) {
-                String word = s.substring(i + j *wordLength, i + (j + 1) * wordLength);
+                //因为字符长度是相等的，这点比较好
+                String word = subStrings[i].substring(j *wordLength, (j + 1) * wordLength);
                 if (wordCounts.containsKey(word)) {
+                    //如果 存在这个单词
                     int counts = wordCounts.getOrDefault(word, 0);
                     int currentCounts = wordsMap.getOrDefault(word, 0);
                     if (counts > 0 && counts > currentCounts) {
+                        //还满足条件，否则退出
                         wordsMap.put(word, currentCounts + 1);
                     } else {
                         break;
