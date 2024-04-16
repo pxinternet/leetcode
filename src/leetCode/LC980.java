@@ -5,7 +5,7 @@ public class LC980 {
     int c;
     int r;
 
-    int empty =1;
+    int empty =1; //包含1,1这个点
     int start_i, start_j, end_i, end_j;
 
     //方向，右左下上 四个方向
@@ -15,6 +15,7 @@ public class LC980 {
         c = grid.length;
         r = grid[0].length;
 
+        //先找到开始和结束位置，以及要走过多少空格
         for (int i = 0; i < c; i++) {
             for (int j = 0; j < r; j++) {
                 if (grid[i][j] == 1) {
@@ -34,6 +35,8 @@ public class LC980 {
 
     }
 
+    //totalPaths的最大值不一定是4
+
     private int dfs(int[][] grid, int i, int j) {
         if (i < 0 || i >= c || j < 0 || j >= r || grid[i][j]  < 0) {
             return 0;
@@ -47,6 +50,7 @@ public class LC980 {
 
         int totalPaths = 0;
         for (int[] dir : dirs) {
+            //totalPath 是因为要往4个方向找，假设4个方向都有，那就返回4;
             totalPaths += dfs(grid, i + dir[0], j + dir[1]);
         }
 
