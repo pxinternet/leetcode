@@ -95,4 +95,5 @@ public class LC4FindMedianSortedArrays {
         double mid = lc4FindMedianSortedArrays.findMedianSortedArraysCut(nums1, nums2);
         System.out.println(mid);
     }
+
 }

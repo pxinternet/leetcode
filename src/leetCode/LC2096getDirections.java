@@ -21,6 +21,7 @@ public class LC2096getDirections {
         dest = destValue;
         rootNode = root;
         dfs(root);
+        return "";
     }
 
     private void dfs(TreeNode node) {
