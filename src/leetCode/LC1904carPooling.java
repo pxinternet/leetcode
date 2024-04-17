@@ -22,4 +22,6 @@ public class LC1904carPooling {
         return true;
     }
 
+    //不差分，直接算也行
+
 }
