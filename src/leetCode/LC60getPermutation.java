@@ -62,6 +62,8 @@ public class LC60getPermutation {
         int[] valid = new int[n + 1];
         Arrays.fill(valid, 1);
         for (int i = 1; i <= n; i++) {
+
+            //在这段代码中，order变量用于确定当前位置的数字。order的初始值是k / factorial[n - i] + 1，表示在剩余的数字中，当前位置的数字应该是第order大的。  然后，代码遍历从1到n的所有数字，对于每个数字j，如果它还没有被使用（即valid[j]为1），就将order减1。当order减到0时，说明当前位置的数字就是j，然后将j添加到结果中，并将valid[j]设置为0，表示数字j已经被使用。  因此，if (order == 0)的意思是，如果order减到0，说明已经找到了当前位置的数字，就可以停止遍历。
             int order = k / factorial[n - i] + 1;
             for (int j = 1; j <= n; j++) {
                 order -= valid[j];
