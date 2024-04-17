@@ -1,5 +1,6 @@
 package leetCode;
 
+import java.util.List;
 import java.util.Set;
 
 public class Tools {
@@ -26,6 +27,12 @@ public class Tools {
             System.out.printf("%4d", num);
         }
         System.out.println();
+    }
+
+    public static void printList(List<?> list) {
+        for (Object item : list) {
+            System.out.println(item);
+        }
     }
 
 
