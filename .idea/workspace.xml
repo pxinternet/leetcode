@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC496nextGreaterElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC68fullJustify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC68fullJustify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,23 +66,10 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC68fullJustify">
+  <component name="RunManager" selected="Application.LC84largestRectangleArea">
     <configuration name="LC1361validateBinaryTreeNodes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LC1361validateBinaryTreeNodes" />
       <module name="leetcode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LC3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC3" />
-      <module name="leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,13 +113,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LC84largestRectangleArea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC84largestRectangleArea" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC84largestRectangleArea" />
         <item itemvalue="Application.LC68fullJustify" />
         <item itemvalue="Application.LC60getPermutation" />
         <item itemvalue="Application.LC1361validateBinaryTreeNodes" />
         <item itemvalue="Application.LC304NumMatrix" />
-        <item itemvalue="Application.LC3" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +200,7 @@
       <workItem from="1713066023998" duration="16926000" />
       <workItem from="1713147968124" duration="24069000" />
       <workItem from="1713236806865" duration="21794000" />
-      <workItem from="1713321671117" duration="14529000" />
+      <workItem from="1713321671117" duration="18142000" />
     </task>
     <servers />
   </component>
@@ -281,6 +281,16 @@
           <line>6</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/leetCode/LC122MAXProfit2.java</url>
           <line>45</line>
@@ -311,7 +321,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/leetCode/LC143ReorderList.java</url>
           <line>48</line>
-          <properties class="leetCode.LC143ReorderList">
+          <properties class="leetCode.LC143ReorderList" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
