@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC60getPermutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC60getPermutation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/leetCode/LC68fullJustify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC68fullJustify.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +200,7 @@
       <workItem from="1713066023998" duration="16926000" />
       <workItem from="1713147968124" duration="24069000" />
       <workItem from="1713236806865" duration="21794000" />
-      <workItem from="1713321671117" duration="12090000" />
+      <workItem from="1713321671117" duration="14529000" />
     </task>
     <servers />
   </component>

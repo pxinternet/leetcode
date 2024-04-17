@@ -29,11 +29,15 @@ public class LC68fullJustify {
                 }
 
             } else {
-                System.out.println("len : " + len + " i = " + i + " j = " + j);
+
+
+                //`extraSpaces`的计算逻辑是基于文本对齐的需求。在这段代码中，每一行的文本需要尽可能均匀地分布在整行中。`spaces`变量表示每两个单词之间的基本空格数，而`extraSpaces`表示需要额外添加的空格数。
+                //
+                //`extraSpaces`的计算公式是`(maxWidth - len) % (j - i - 1)`。这里，`maxWidth`是每行的最大宽度，`len`是当前行所有单词的总长度，`j - i - 1`是当前行的单词间隔数。
+                //
+                //`(maxWidth - len)`表示当前行剩余的空格数，`(maxWidth - len) % (j - i - 1)`表示在均匀分配空格后，剩余的空格数。这些剩余的空格需要从左到右依次添加到单词间隔中，直到用完为止。这就是`extraSpaces`的计算逻辑。
                 int spaces = (maxWidth - len) / (j - i - 1);
-                System.out.println("spaces : " + spaces);
                 int extraSpaces = (maxWidth - len) % (j - i - 1);
-                System.out.println("extraSpaces : " + extraSpaces);
                 for (int k = i + 1; k < j; k++) {
                     for(int s = spaces; s > 0; s--) {
                         line.append(" ");
