@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC115numDistinct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC126findLadders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC131partition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC132minCut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC233countDigitOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC53maxSubArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC87isScramble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC84largestRectangleArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC85maximalRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC85maximalRectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/Tools.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +206,9 @@
       <workItem from="1713147968124" duration="24069000" />
       <workItem from="1713236806865" duration="21794000" />
       <workItem from="1713321671117" duration="30155000" />
-      <workItem from="1713407614843" duration="11153000" />
+      <workItem from="1713407614843" duration="20582000" />
+      <workItem from="1713493606496" duration="3474000" />
+      <workItem from="1713584775086" duration="3766000" />
     </task>
     <servers />
   </component>
