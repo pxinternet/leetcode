@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC115numDistinct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC126findLadders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC131partition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC132minCut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC233countDigitOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC53maxSubArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC87isScramble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC140wordBreak.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC472findAllConcatenatedWordsInADict.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,10 +66,16 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC84largestRectangleArea">
-    <configuration name="LC1361validateBinaryTreeNodes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LC1361validateBinaryTreeNodes" />
+  <component name="RunManager" selected="Application.LC135Candy">
+    <configuration name="LC135Candy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC135Candy" />
       <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC135Candy" />
         <item itemvalue="Application.LC84largestRectangleArea" />
         <item itemvalue="Application.LC581findUnsortedSubarray" />
         <item itemvalue="Application.LC68fullJustify" />
         <item itemvalue="Application.LC60getPermutation" />
-        <item itemvalue="Application.LC1361validateBinaryTreeNodes" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +209,7 @@
       <workItem from="1713321671117" duration="30155000" />
       <workItem from="1713407614843" duration="20582000" />
       <workItem from="1713493606496" duration="3474000" />
-      <workItem from="1713584775086" duration="3766000" />
+      <workItem from="1713584775086" duration="8338000" />
     </task>
     <servers />
   </component>
