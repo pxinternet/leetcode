@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC140wordBreak.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC472findAllConcatenatedWordsInADict.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC188MaxProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC188MaxProfit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +208,7 @@
       <workItem from="1713321671117" duration="30155000" />
       <workItem from="1713407614843" duration="20582000" />
       <workItem from="1713493606496" duration="3474000" />
-      <workItem from="1713584775086" duration="8338000" />
+      <workItem from="1713584775086" duration="11047000" />
     </task>
     <servers />
   </component>
