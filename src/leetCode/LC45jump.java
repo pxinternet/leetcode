@@ -25,21 +25,20 @@ public class LC45jump {
 
         for (int i = 0; i <nums.length - 1; i++) {
             maxPosition = Math.max(maxPosition, i + nums[i]);
+            System.out.println("i = " + i + " end = " + end + " maxPosition = " + maxPosition);
             if (i == end) {
                 end = maxPosition;
                 steps++;
                 if (end >= nums.length - 1) {
                     break;
                 }
-            }
-//            System.out.println("i = " + i + " end = " + end + " maxPosition = " + maxPosition + " steps = " +steps);
-        }
+            }}
         return steps;
     }
 
     public static void main(String[] args) {
         LC45jump lc45jump = new LC45jump();
-        int[] nums = new int[]{2,3,0,1,4};
+        int[] nums = new int[]{0};
 
         int res = lc45jump.jumpBetter(nums);
         System.out.println(res);

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC1005largestSumAfterKNegations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC406reconstructQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC860lemonadeChange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC376wiggleMaxLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC376wiggleMaxLength.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC55canJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC55canJump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC45jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC45jump.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC376wiggleMaxLength">
+  <component name="RunManager" selected="Application.LC45jump">
     <configuration name="LC135Candy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetCode.LC135Candy" />
       <module name="leetcode" />
@@ -93,8 +95,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC581findUnsortedSubarray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC581findUnsortedSubarray" />
+    <configuration name="LC45jump" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC45jump" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -106,8 +108,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC68fullJustify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC68fullJustify" />
+    <configuration name="LC581findUnsortedSubarray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC581findUnsortedSubarray" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -134,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC45jump" />
         <item itemvalue="Application.LC376wiggleMaxLength" />
         <item itemvalue="Application.LC135Candy" />
         <item itemvalue="Application.LC84largestRectangleArea" />
         <item itemvalue="Application.LC581findUnsortedSubarray" />
-        <item itemvalue="Application.LC68fullJustify" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +214,7 @@
       <workItem from="1713584775086" duration="12221000" />
       <workItem from="1713675533349" duration="829000" />
       <workItem from="1713753190449" duration="3820000" />
-      <workItem from="1713837777500" duration="1004000" />
+      <workItem from="1713837777500" duration="8253000" />
     </task>
     <servers />
   </component>
@@ -309,7 +311,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/leetCode/LC45jump.java</url>
-          <line>39</line>
+          <line>38</line>
           <properties class="leetCode.LC45jump" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
