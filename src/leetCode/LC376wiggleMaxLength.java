@@ -39,11 +39,19 @@ public class LC376wiggleMaxLength {
         int ret = prediff == 0 ? 1 : 2;
         for (int i = 2; i < n; i++) {
             int curdiff = nums[i] - nums[i - 1];
+
             if ( (prediff <= 0 && curdiff > 0) || (curdiff < 0 && prediff >= 0)) {
                 ret++;
+                //因为是在这里更新，因此没啥问题
                 prediff = curdiff;
             }
         }
         return ret;
+    }
+
+    public static void main(String[] args) {
+        LC376wiggleMaxLength lc376wiggleMaxLength = new LC376wiggleMaxLength();
+        int[] nums = {1, 2, 1, 3, 3, 3, 1};
+        System.out.println(lc376wiggleMaxLength.wiggleMaxLengthGreedy(nums));
     }
 }
