@@ -5,21 +5,15 @@ import sun.security.x509.AttributeNameEnumeration;
 import java.util.*;
 
 public class LC51solveNQueens {
-
-
+    //是否在同一列
     Set<Integer> colSet = new HashSet<>();
     Set<Integer> diagonal1 = new HashSet<>();
     Set<Integer> diagonal2 = new HashSet<>();
     public List<List<String>> solveNQueens(int n) {
-
-
-
         char[][] board = new char[n][n];
-
         for (char[] chars : board) {
             Arrays.fill(chars, '.');
         }
-
         List<List<String>> res = new ArrayList<>();
         dfs(board, 0, res);
         return res;
@@ -45,14 +39,12 @@ public class LC51solveNQueens {
             }
         }
     }
-
     private boolean validate(char[][] board, int row, int col) {
         if (colSet.contains(col) || diagonal1.contains(row + col) || diagonal2.contains(row - col)) {
             return false;
         }
         return true;
     }
-
     private List<String> construct(char[][] board) {
         List<String> res = new ArrayList<String>();
         for (char[] chars : board) {

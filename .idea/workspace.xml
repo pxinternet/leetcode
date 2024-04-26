@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC1005largestSumAfterKNegations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC406reconstructQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC860lemonadeChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC213rob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC309maxProfit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC337rob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC435eraseOverlapIntervals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetCode/LC714maxProfit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC45jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC45jump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC121MAXProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC121MAXProfit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC188MaxProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC188MaxProfit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC51solveNQueens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC51solveNQueens.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +218,10 @@
       <workItem from="1713584775086" duration="12221000" />
       <workItem from="1713675533349" duration="829000" />
       <workItem from="1713753190449" duration="3820000" />
-      <workItem from="1713837777500" duration="8253000" />
+      <workItem from="1713837777500" duration="9645000" />
+      <workItem from="1713923829711" duration="5788000" />
+      <workItem from="1714018862808" duration="8682000" />
+      <workItem from="1714145154331" duration="938000" />
     </task>
     <servers />
   </component>

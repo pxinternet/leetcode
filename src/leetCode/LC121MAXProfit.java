@@ -11,7 +11,7 @@ public class LC121MAXProfit {
             if (prices[i] < prices[leftIndex])
                 leftIndex = i;
 
-            res = Math.max(res, prices[i] - prices[leftIndex]);
+             res = Math.max(res, prices[i] - prices[leftIndex]);
 
         }
 
