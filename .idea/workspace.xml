@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/interview/Thread123.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interview/Thread123ReentrantLock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interview/Thread123Sync.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interview/Thread123plus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interview/TTLLRU.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +223,7 @@
       <workItem from="1714235943688" duration="710000" />
       <workItem from="1714271362495" duration="1174000" />
       <workItem from="1714373346206" duration="599000" />
-      <workItem from="1714447077256" duration="5063000" />
+      <workItem from="1714447077256" duration="9568000" />
     </task>
     <servers />
   </component>
