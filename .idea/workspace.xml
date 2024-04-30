@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC213rob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC309maxProfit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC337rob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC435eraseOverlapIntervals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC714maxProfit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interview/Thread123.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interview/Thread123ReentrantLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interview/Thread123Sync.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interview/Thread123plus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC121MAXProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC121MAXProfit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC188MaxProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC188MaxProfit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC51solveNQueens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC51solveNQueens.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +68,18 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.LC45jump">
-    <configuration name="LC135Candy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC135Candy" />
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="interview" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Thread123ReentrantLock">
+    <configuration name="Thread123" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="interview.Thread123" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetCode.*" />
+          <option name="PATTERN" value="interview.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC376wiggleMaxLength" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC376wiggleMaxLength" />
+    <configuration name="Thread123ReentrantLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="interview.Thread123ReentrantLock" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetCode.*" />
+          <option name="PATTERN" value="interview.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC45jump" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC45jump" />
+    <configuration name="Thread123Sync" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="interview.Thread123Sync" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetCode.*" />
+          <option name="PATTERN" value="interview.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC581findUnsortedSubarray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC581findUnsortedSubarray" />
+    <configuration name="Thread123plus" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="interview.Thread123plus" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetCode.*" />
+          <option name="PATTERN" value="interview.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LC84largestRectangleArea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetCode.LC84largestRectangleArea" />
+    <configuration name="Thread123simple" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="interview.Thread123simple" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetCode.*" />
+          <option name="PATTERN" value="interview.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LC45jump" />
-        <item itemvalue="Application.LC376wiggleMaxLength" />
-        <item itemvalue="Application.LC135Candy" />
-        <item itemvalue="Application.LC84largestRectangleArea" />
-        <item itemvalue="Application.LC581findUnsortedSubarray" />
+        <item itemvalue="Application.Thread123ReentrantLock" />
+        <item itemvalue="Application.Thread123plus" />
+        <item itemvalue="Application.Thread123simple" />
+        <item itemvalue="Application.Thread123Sync" />
+        <item itemvalue="Application.Thread123" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +222,11 @@
       <workItem from="1713837777500" duration="9645000" />
       <workItem from="1713923829711" duration="5788000" />
       <workItem from="1714018862808" duration="8682000" />
-      <workItem from="1714145154331" duration="938000" />
+      <workItem from="1714145154331" duration="2401000" />
+      <workItem from="1714235943688" duration="710000" />
+      <workItem from="1714271362495" duration="1174000" />
+      <workItem from="1714373346206" duration="599000" />
+      <workItem from="1714447077256" duration="5063000" />
     </task>
     <servers />
   </component>
