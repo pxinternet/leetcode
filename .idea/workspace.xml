@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/interview/TTLLRU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interview/RMBtoHanzi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interview/TTLLRU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interview/TTLLRU.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +71,9 @@
       <recent name="interview" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Thread123ReentrantLock">
-    <configuration name="Thread123" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="interview.Thread123" />
+  <component name="RunManager" selected="Application.RMBtoHanzi">
+    <configuration name="RMBtoHanzi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="interview.RMBtoHanzi" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -138,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RMBtoHanzi" />
         <item itemvalue="Application.Thread123ReentrantLock" />
         <item itemvalue="Application.Thread123plus" />
         <item itemvalue="Application.Thread123simple" />
         <item itemvalue="Application.Thread123Sync" />
-        <item itemvalue="Application.Thread123" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +224,7 @@
       <workItem from="1714235943688" duration="710000" />
       <workItem from="1714271362495" duration="1174000" />
       <workItem from="1714373346206" duration="599000" />
-      <workItem from="1714447077256" duration="9568000" />
+      <workItem from="1714447077256" duration="11645000" />
     </task>
     <servers />
   </component>
