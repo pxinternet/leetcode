@@ -3,7 +3,7 @@ package leetCode;
 public class LC7reverse {
 
     public int reverse(int x) {
-        int max = 214748364;
+        int max = Integer.MAX_VALUE / 10;
         int res = 0;
         while (x != 0) {
             int mod = x % 10;
