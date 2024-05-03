@@ -1,7 +1,5 @@
 package interview;
 
-import javax.management.ObjectName;
-import java.awt.peer.SystemTrayPeer;
 
 public class Thread123plus {
 
