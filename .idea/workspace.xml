@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/leetCode/LC16threeSumClosest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC63.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC63.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leetCode/LC7reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC7reverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC166fractionToDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC166fractionToDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC69mySqrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC69mySqrt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,20 @@
       <recent name="interview" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RMBtoHanzi">
+  <component name="RunManager" selected="Application.LC69mySqrt">
+    <configuration name="LC69mySqrt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetCode.LC69mySqrt" />
+      <module name="leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RMBtoHanzi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="interview.RMBtoHanzi" />
       <module name="leetcode" />
@@ -88,19 +100,6 @@
     </configuration>
     <configuration name="Thread123ReentrantLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="interview.Thread123ReentrantLock" />
-      <module name="leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="interview.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Thread123Sync" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="interview.Thread123Sync" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -140,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LC69mySqrt" />
         <item itemvalue="Application.RMBtoHanzi" />
         <item itemvalue="Application.Thread123ReentrantLock" />
         <item itemvalue="Application.Thread123plus" />
         <item itemvalue="Application.Thread123simple" />
-        <item itemvalue="Application.Thread123Sync" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +225,9 @@
       <workItem from="1714271362495" duration="1174000" />
       <workItem from="1714373346206" duration="599000" />
       <workItem from="1714447077256" duration="11951000" />
-      <workItem from="1714534976870" duration="4744000" />
+      <workItem from="1714534976870" duration="5969000" />
+      <workItem from="1714701649932" duration="1762000" />
+      <workItem from="1714751882955" duration="134000" />
     </task>
     <servers />
   </component>

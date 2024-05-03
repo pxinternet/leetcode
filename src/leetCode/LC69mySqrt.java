@@ -11,6 +11,7 @@ public class LC69mySqrt {
         int left = 0, right = x;
         int ans = -1;
 
+        //要兼容 == 1的情况
         while (left <= right) {
             int mid = left + (right - left) / 2;
 

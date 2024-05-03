@@ -28,13 +28,15 @@ public class LC166fractionToDecimal {
         }
 
         res.append('.');
-        Map<Long, Integer> remainderSet = new HashMap<>();
+        Map<Long, Integer> remainderMap = new HashMap<>();
 
         while(remainder!= 0) {
-            if (remainderSet.contains(remainder)) {
-                res.insert(, b)
+            if (remainderMap.containsKey(remainder)) {
+                res.insert(remainderMap.get(remainder), "(");
+                res.append(")");
+                break;
             }
-            remainderSet.add(remainder);
+            remainderMap.put(remainder, res.length());
             remainder *= 10;
             res.append(String.valueOf(remainder / divisor));
             remainder %= divisor;
