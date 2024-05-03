@@ -106,4 +106,8 @@ public class LC2 {
           return dummy.next;
     }
 
+    public static void main(String[] args) {
+        System.out.println("hello world");
+    }
+
 }
