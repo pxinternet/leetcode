@@ -1,4 +1,4 @@
-package interview;
+package thread;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -31,7 +31,7 @@ public class ThreadPrint {
         for (int i = 0; i < 30; i++) {
             new Thread(new ThreadPrint().new RunnableTask()).start();
         }
-        
+
     }
 
 

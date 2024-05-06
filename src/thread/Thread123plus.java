@@ -1,4 +1,4 @@
-package interview;
+package thread;
 
 
 public class Thread123plus {

@@ -2,10 +2,6 @@
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class LC1114 {
     // Add your code here
     private AtomicInteger firstJobDone = new AtomicInteger(0);
