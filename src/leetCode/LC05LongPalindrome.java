@@ -78,11 +78,53 @@ public class LC05LongPalindrome {
         return right - left - 1;
     }
 
+    public String longestPalindrome2(String s) {
+
+        int n = s.length();
+
+        int start = 0;
+        int end = 0;
+
+        int maxLength = 0;
+
+        for (int i = 0; i < n; i++) {
+            int len1 = expandFromCenter(s, i, i);
+            int len2 = expandFromCenter(s, i, i+1);
+
+            int len = Math.max(len1, len2);
+            System.out.println("i = " + i + " len1 = " + len1 + " len2 = " + len2  + " len = " + len);
+
+
+            if (maxLength < len) {
+                maxLength = len;
+                start = i - (len - 1) /2;
+                end = i + (len) / 2;
+            }
+
+        }
+        return s.substring(start,maxLength);
+
+
+    }
+
+    private int expandFromCenter(String s, int left, int right) {
+        if (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        System.out.println("left = " + left + " right = " + right);
+        return right - left - 1;
+    }
+
+
+
+
+
     public static void main(String[] args) {
         LC05LongPalindrome lc05LongPalindrome = new LC05LongPalindrome();
         String s = "babad";
 
-        String res = lc05LongPalindrome.longestPalindromeExpandAroundCenter(s);
+        String res = lc05LongPalindrome.longestPalindrome2(s);
         System.out.println(res);
     }
 

@@ -24,6 +24,8 @@ private int hydrogenCount = 0;
 
 
     public void oxygen(Runnable releaseOxygen) throws InterruptedException {
+
+
         releaseOxygen.run();
     }
 }
