@@ -102,13 +102,13 @@ public class LC05LongPalindrome {
             }
 
         }
-        return s.substring(start,maxLength);
+        return s.substring(start, end + 1);
 
 
     }
 
     private int expandFromCenter(String s, int left, int right) {
-        if (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             left--;
             right++;
         }

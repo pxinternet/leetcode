@@ -7,36 +7,12 @@ public class LC215 {
     public int findKthLargest(int[] nums, int k) {
         int n = nums.length;
         return quickSelect(nums, 0, n-1, n-k);
-
-//        Map<Integer, Integer> indexMap = new TreeMap<>(Comparator.reverseOrder());
-//
-//        if(k > nums.length) return -1;
-//
-////        int[] indexArr = new int[nums.length];
-//        //默认初始化为0
-//
-//        for (int num : nums) {
-//            indexMap.merge(num, 1, Integer::sum);
-//        }
-//
-//        for(Map.Entry<Integer, Integer> entry : indexMap.entrySet()) {
-//            Integer key = entry.getKey();
-//            Integer value = entry.getValue();
-//
-//            System.out.println("key : " + key + ", value : " +value);
-//
-//            k = k - value;
-//            if (k <= 0) {
-//                return key;
-//            }
-//        }
-//
-//        return -1;
     }
 
     int quickSelect(int[] nums, int l, int r, int k) {
         if (l == r) return nums[k];
         int x = nums[l], i = l -1, j = r +1;
+        //这样不用处理边界条件，交换的时候也不用处理边界条件
         while ( i < j) {
             do i++; while (nums[i] < x);
             do j--; while (nums[j] > x);
@@ -53,7 +29,7 @@ public class LC215 {
     public static void main(String[] args) {
         LC215 lc215 = new LC215();
 
-        int[] nums = new int[]{3,2,3,1,2,4,5,5,6};
+        int[] nums = new int[]{5,4,3,2,1};
         int k = 4;
 
         int res = lc215.findKthLargest(nums, k);
