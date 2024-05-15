@@ -1,9 +1,6 @@
 package leetCode;
 
-import jdk.nashorn.internal.runtime.regexp.joni.ast.ConsAltNode;
-
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class LC40 {
 
@@ -54,5 +51,9 @@ public class LC40 {
             path.removeLast();
         }
 
+    }
+
+    public static void main(String[] args) {
+        System.err.println("111");
     }
 }

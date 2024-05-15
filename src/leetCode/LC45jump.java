@@ -25,7 +25,6 @@ public class LC45jump {
 
         for (int i = 0; i <nums.length - 1; i++) {
             maxPosition = Math.max(maxPosition, i + nums[i]);
-            System.out.println("i = " + i + " end = " + end + " maxPosition = " + maxPosition);
             if (i == end) {
                 end = maxPosition;
                 steps++;

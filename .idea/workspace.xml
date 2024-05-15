@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d3f9d4-7a04-4220-867d-3ccb13e468f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/thread/Thread123.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/Thread123.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/Thread123ReentrantLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/Thread123ReentrantLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/Thread123Sync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/Thread123Sync.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/Thread123plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/Thread123plus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/ThreadPrint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/ThreadPrint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC24SwapPairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC24SwapPairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC273nums2word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC273nums2word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC297serializeTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC297serializeTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC40.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC40.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetCode/LC45jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leetCode/LC45jump.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +235,7 @@
       <workItem from="1714958367088" duration="8000" />
       <workItem from="1714962395177" duration="8000" />
       <workItem from="1714981537190" duration="294000" />
+      <workItem from="1715432851306" duration="16000" />
     </task>
     <servers />
   </component>
