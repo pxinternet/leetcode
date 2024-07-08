@@ -1,5 +1,14 @@
 ﻿package
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+
+import java.util.Arrays;
+import java.util.Deque;
+
+import org.w3c.dom.NamedNodeMap;
+
+import java.util.spi.CurrencyNameProvider;
+
 import java.time.temporal.IsoFields;
 
 import java.util.PrimitiveIterator;
@@ -1825,6 +1834,291 @@ public class Pratice {
     }
 
 
+    public boolean canJump(int[] nums) {
+        int max = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i > max) {
+                return false;
+            }
+
+            max = Math.max(max, i + nums[i]);
+        }
+        return true;
+    }
+
+    public int jump(int[] nums) {
+        int n = nums.length;
+        int step = 0;
+        int maxPosition = 0;
+        int end = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+            if (i == end) {
+                step++;
+                end = maxPosition;
+                if (end >= n-1) break;
+            }
+        }
+        return step;
+
+    }
+
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) return false;
+
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (fast == slow ) return true;
+        }
+        return false;
+    }
+
+
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+
+        if (left == right) return head;
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode start = head;
+        ListNode end =head;
+        ListNode pre = head;
+
+        while (left > 1) {
+            pre = pre.next;
+            end = end.next;
+            left--;
+            right--;
+        }
+
+        start = pre.next;
+
+        while (right >= 0) {
+            end = end.next;
+            right--;
+        }
+
+        ListNode curr = start;
+        ListNode prev = end;
+        while (curr != end) {
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+
+        pre.next = prev;
+
+
+
+
+        return dummy.next;
+
+
+
+
+
+    }
+
+
+
+
+
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode pre = dummy;
+
+        ListNode current = head;
+
+        while (current != null) {
+
+            while (current.next != null && current.val == current.next.val) current = current.next;
+
+            if (pre.next == current) {
+                pre = pre.next;
+            } else {
+                pre.next = current.next;
+            }
+
+            current = current.next;
+        }
+
+
+        return dummy.next;
+
+    }
+
+
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        while (head != null && head.next != null) {
+
+            if (head.val == head.next.val) head.next = head.next.next;
+            else head = head.next;
+        }
+
+        return dummy.next;
+    }
+
+
+    public Node copyRandomList(Node head) {
+       if (head == null) return head;
+
+       Map<Node, Node> nodeMap = new HashMap<>();
+
+       Node node = head;
+
+       while (node != null) {
+         nodeMap.put(node, new Node(node.val));
+         node = node.next;
+       }
+
+       for (Map.Entry<Node, Node> entry : nodeMap.entrySet()) {
+        entry.getValue().next = nodeMap.get(entry.getKey().next);
+        entry.getValue().random = nodeMap.get(entry.getKey().random);
+       }
+       return nodeMap.get(head);
+
+    }
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+        ListNode end = pre;
+
+        while (head != null) {
+
+
+            end = pre;
+            for (int i = 0; i < k && end != null; i++) {
+                end = end.next;
+            }
+
+            if (end == null) return dummy.next;
+
+            ListNode start = pre.next;
+            head = end.next;
+
+            end.next = null;
+            ListNode curr = pre.next, tmp;
+            ListNode prev = null;
+
+            while (curr != null) {
+                tmp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = tmp;
+            }
+
+            pre.next = prev;
+            start.next = head;
+
+            pre = start;
+
+        }
+        return dummy.next;
+    }
+
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        int right = 0;
+
+        ListNode dummy = new ListNode(0);
+
+        dummy.next = head;
+        ListNode pre = dummy;
+
+        ListNode node = head;
+
+        while (node != null && right < n) {
+            node = node.next;
+            right++;
+        }
+
+        while (node !=null) {
+            node = node.next;
+            pre = pre.next;
+        }
+
+        pre.next =  pre.next.next;
+        return dummy.next;
+    }
+
+    public int maxArea(int[] height){
+        int n = height.length;
+
+        int left =0;
+        int right = n - 1;
+
+        int maxArea = 0;
+        while (left < right) {
+
+            maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));
+
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+
+        }
+        return maxArea;
+    }
+
+
+    public int hIndex(int[] citations) {
+        Arrays.sort(citations);
+        int n = citations.length;
+        int h = 0;
+        int i = n -1;
+
+        while (i >= 0 && citations[i] > h) {
+            h++;
+            i--;
+        }
+        return h;
+    }
+
+    public String simplifyPath(String path) {
+        Deque<String> deque = new ArrayDeque<>();
+
+        String[] nams = path.split("/");
+
+        StringBuilder res = new StringBuilder();
+
+        for (String name  : names) {
+            if (name.isEmpty() || name.equals(".")) {
+                continue;
+            } else if (name.equals("..")) {
+                if (!deque.isEmpty()) {
+                    deque.pollLast();
+                }
+            } else {
+                deque.offerLast(name);
+            }
+        }
+
+        if (deque.isEmpty()) {
+            res.append("/");
+        } else {
+            while (!deque.isEmpty()) {
+                res.append("/").append(deque.pollFirst());
+            }
+        }
+        return res.toString();
+    }
 
 
 
