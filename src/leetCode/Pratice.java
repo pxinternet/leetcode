@@ -19,9 +19,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 import leetCode.ListNode;
 
@@ -2118,6 +2120,52 @@ public class Pratice {
             }
         }
         return res.toString();
+    }
+
+
+    public Node connect(Node root) {
+        if (root == null) return null;
+
+        Queue<Node> queue = new LinkedList<>();
+
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            Node node = queue.peek();
+
+            int currentSize = queue.size();
+            for (int i = 0; i < currentSize; i++) {
+                node = queue.poll();
+                node.next = queue.peek();
+                if (node.left!=null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            node.next = null;
+        }
+        return root;
+
+    }
+
+    TreeNode prev = null;
+
+    public void flattern(TreeNode root) {
+        TreeNode curr = root;
+        while (curr != null) {
+            if (curr.left != null) {
+                TreeNode p = curr.left;
+                while (p.right != null) {
+                    p = p.right;
+                }
+                p.right = curr.right;
+                curr.right = curr.left;
+                curr.left = null;
+            }
+            curr = curr.right;
+        }
     }
 
 
