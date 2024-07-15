@@ -41,13 +41,11 @@ public class LC218 {
 
             int currentMax = map.lastKey();
             if (currentMax != prev) {
-                result.add(Arrays.asList(new int[]{h[0], currentMax}));
+                result.add(Arrays.asList(h[0], currentMax));
                 prev = currentMax;
             }
         }
         return result;
-
-
     }
 
 }

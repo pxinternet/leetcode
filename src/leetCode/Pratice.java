@@ -1,5 +1,11 @@
 ﻿package
 
+import java.util.Collections;
+
+import javax.print.attribute.standard.QueuedJobCount;
+
+import java.awt.image.IndexColorModel;
+
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 
 import java.util.Arrays;
@@ -34,7 +40,7 @@ import java.util.function.DoubleUnaryOperator;
 import javax.sound.midi.Track;
 
 import java.util.Set;
-
+import java.util.TreeMap;
 import java.io.InputStream;
 
 import java.util.Arrays;
@@ -2168,7 +2174,519 @@ public class Pratice {
         }
     }
 
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    }
 
+    private Map<Integer, Integer> inorderIndexMap;
+    private int preorderIndex;
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        preorderIndex = 0;
+        inorderIndexMap = new HashMap<>();
+
+        for (int i = 0; i < inorder.length; i++) {
+            inorderIndexMap.put(inorder[i], i);
+        }
+        return buildTree(preorder, 0, inorder.length - 1);
+    }
+
+    private TreeNode buildTree(int[] preorder, int left, int right) {
+        if (left > right) {
+            return null;
+        }
+
+        int rootVal = preorder[preorderIndex++];
+        TreeNode root = new TreeNode(rootVal);
+        root.left = buildTree(preorder, left, inorderIndexMap.get(rootVal) - 1);
+        root.right = buildTree(preorder, inorderIndexMap.get(rootVal) + 1, right);
+
+        return root;
+    }
+
+    int postIndex;
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        postIndex = postorder.length - 1;
+
+        inorderIndexMap = new HashMap<>();
+
+        for (int i = 0; i < inorder.length; i++) {
+            inorderIndexMap.put(inorder[i], i);
+        }
+
+        return buildTree(postorder, 0, postorder.length - 1);
+    }
+
+    privaate TreeNode buildTree(int[] postorder, int left, int right) {
+        if (left < right) return null;
+        int rootVal = postorder[postIndex--];
+        TreeNode rootNode = new TreeNode(rootVal);
+
+        rootNode.right = buildTree(postorder, inorderIndexMap.get(rootVal) + 1, right);
+        rootNode.left = buildTree(postorder, left, inorderIndexMap.get(rootVal) - 1);
+
+        return rootNode;
+
+    }
+
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null) return false;
+
+        if (root.left == null && root.right == null && targetSum - root.val == 0) return true;
+
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right,  targetSum - root.val);
+    }
+
+
+    public int sumNumbers(TreeNode root) {
+        return sumSubTree(root, 0);
+    }
+
+    private int sumSubTree(TreeNode node, int sum) {
+        if (node == null) return 0;
+
+        sum = sum * 10 + node.val;
+
+        if (node.left == null && node.right == null) return sum;
+
+        return sumSubTree(node.left, sum) + sumSubTree(node.right, sum);
+
+    }
+
+    int maxSum = Integer.MIN_VALUE;
+
+    public int maxPathSum(TreeNode node) {
+        maxGain(root);
+        return maxSum;
+    }
+
+    public int maxGain(TreeNode root) {
+        if (root == null) return 0;
+
+        int leftGain = Math.max(maxGain(root.left), 0);
+        int rightGain = Math.max(maxGain(root.right), 0);
+
+        int pathSum = leftGain + rightGain + root.val;
+
+        maxSum = Math.max(maxSum, pathSum);
+
+        return rootVal + Math.max(leftGain, rightGain);
+    }
+
+
+    int count = 0;
+
+    public int countNodes(TreeNode root) {
+        if (root == null) return 0;
+        count++;
+        countNodes(root.left);
+        countNodes(root.right);
+
+        return count;
+    }
+
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) return null;
+        if (root.val == p.val) return p;
+        if (root.val == q.val) return q;
+
+        TreeNode leftRes = lowestCommonAncestor(root.left, p , q);
+        TreeNode rightRes = lowestCommonAncestor(root.right, p, q);
+
+        if (leftRes != null && rightRes != null) return root;
+
+        if (leftRes != null) return leftRes;
+
+        return rightRes;
+    }
+
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+
+        dfs(root, res, 0);
+        return res;
+    }
+
+    private void dfs(TreeNode node, List<Integer> res, int depth) {
+        if (node == null) return;
+        if (depth == res.size()) {
+            res.add(node.val);
+        }
+        dfs(node.right, res, depth + 1);
+        dfs(node.left, res, depth + 1);
+    }
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+
+        if (root == null) return res;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.offer(root);
+        int level = 0;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+
+            LinkList<Integer> line = new LinkedList<>();
+
+            while (size-- > 0) {
+                TreeNode curr = queue.poll();
+                if (level % 2 == 0) {
+                    line.addLast(curr.val);
+                } else {
+                    line.addFirst(curr.val);
+                }
+
+
+                if (curr.left != null) {
+                    queue.offer(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.offer(curr.right);
+                }
+            }
+            res.add(line);
+            level++;
+        }
+        return res;
+    }
+
+
+    public List<List<Integer>> getSkyLine(int[][] buildings) {
+
+        List<List<Integer>> res = new ArrayList<>();
+
+
+        List<Integer> hights = new ArrayList<>();
+
+        for (int[] building : buildings) {
+            hights.add(new int[]{building[0], -building[2]});
+            hights.add(new int[]{building[1], building[1]});
+        }
+
+        Collections.sort(heights, (h1, h2) -> {
+            if (h1[0] == h2[0]) return h1[1] - h2[1];
+            return h1[0] - h2[0];
+        });
+
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+
+        map.put(0, 1);
+
+        int prev = 0;
+
+        for (int[] h: heights) {
+            if (h[1] < 0) {
+                map.put(-h[1], map.getOrDefault(-h[1], 0) + 1);
+            } else {
+                if (map.get(h[1]) > 1) {
+                    map.put(h[1], map.get(h[1]) - 1);
+                } else {
+                    map.remove(h[1]);
+                }
+            }
+
+            int currentMax = map.lastKey();
+            if (currentMax != prev) {
+                prev = currentMax;
+                res.add(Arrays.asList(h[0], currentMax));
+            }
+        }
+        return res;
+
+
+    }
+
+
+    public double findMedianSortedArray(int[] nums1, int[] nums2) {
+        int m = nums1.length;
+        int n = nums2.length;
+
+        int left = (m + n + 1) / 2;
+        int right = (m + n + 2) / 2;
+
+        return (getKth(nums1, 0, m - 1, nums2, 0, n - 1, left) + getKth(nums1, 0, m - 1, 0, n - 1, right)) / 2.0;
+    }
+
+    private int getKth(int[] nums1, int start1, int end1, int[] nums2, int start2, int end2, int k) {
+        int len1 = end1 - start1 + 1;
+        int len2 = end2 - start2 + 1;
+
+        if (len1 > len2) return getKth(nums2, start2, end2, nums1, start1, end1, k);
+
+        if (len1 == 0) return nums2[start2 + k - 1];
+
+        if (k == 1) return Math.min(nums1[start1], nums2[start2]);
+
+        int i = start1 + Math.min(len1, k / 2) - 1;
+        int j = start2 + Math.min(len2, k / 2) - 1;
+
+        if (nums1[i] > nums2[j])  {
+            return getKth(nums1, start1, end1, nums2, j + 1, end2, k - (j - start2 + 1));
+        } else {
+            return getKth(nums1, i + 1, end1, nums2, start2, end2,  - (i - start1 + 1));
+        }
+    }
+
+
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int n = triangle.size();
+
+        int[] dp = new int[n];
+
+        dp[0] = triangel.get(0).get(0);
+
+        for (int i = 1; i < n; i++) {
+            d[i] = dp[i - 1] + triangle.get(i).get(i);
+            for (int j = i - 1; j > 0; j--) {
+                dp[j] = Math.min(dp[j], d[j - 1] + triangle.get(i).get(j));
+            }
+            dp[0] = dp[0] + triangle.get(i).get(0);
+        }
+
+        int minRes = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
+            minRes = Math.min(minRes, dp[i]);
+        }
+        return minRes;
+    }
+
+
+    while (k > 0) {
+        int parent = (k - 1) >>> 1;
+        Object e = array[parent];
+        if (key.comparte((K) e, (K) key) <= 0) {
+            break;
+        }
+    }
+    array[k] = e;
+    k = oarnent
+
+
+
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int n = gas.length;
+
+        int startIndex = 0;
+        int totalGas = 0;
+        int currentGas = 0;
+
+        for (int i = 0; i < n; i++) {
+            currentGas += gas[i] - cost[i];
+            totalGas += gas[i] - cost[j];
+
+            if (currentGas < 0) {
+                currentGas = 0;
+                startIndex = i + 1;
+            }
+        }
+
+        return totalGas >= 0 ? startIndex : -1;
+    }
+
+
+    public int candy(int[] ratings) {
+        int n = ratings.length;
+
+        int[] left = new int[n];
+
+        left[0] = 1;
+
+        for (int i = 1; i < n; i++) {
+            if (ratings[i] > ratings[i - 1]) {
+                left[i] = left[i - 1] + 1;
+            } else {
+                left[i] = 1;
+            }
+        }
+
+
+        int[] right = new int[n];
+        right[n - 1] = left[n - 1];
+
+        for (int i = n -2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                right[i] = right[i + 1] + 1;
+            } else {
+                right[i] = 1;
+            }
+        }
+
+        int sum = 0;
+
+        for (int i = 0; i < n; i++) {
+            sum += Math.max(left[i], right[i]);
+        }
+
+        return sum;
+    }
+
+    public int trap(int[] height) {
+        int n = height.length;
+
+        int left = 0;
+        int right = n -1;
+
+        int leftMax = 0;
+        int rightMax = 0;
+
+        int ans = 0;
+
+        while (left <= right) {
+            rightMax = Math.max(rightMax, height[right]);
+            leftMax = Math.max(leftMax, height[left]);
+            if (leftMax > rightMax) {
+                ans += rightMax - height[right];
+                right--;
+            } else {
+                ans += leftMax - height[left];
+                left++;
+            }
+        }
+        return ans;
+
+    }
+
+
+    public int findKthLargest(int[] nums, int k) {
+        int n = nums.length;
+        return quickSort(nums, 0, n - 1, n - k);
+    }
+
+    private int quickSort(int[] nums, int left, int right, int k) {
+        if (left == right) return nums[left];
+
+        int pivot = nums[left];
+        int i = left - 1;
+        int j = right + 1;
+
+        while(i < j) {
+            do i++; while(nums[i] < pivot);
+            do j--; while(nums[j] > pivot);
+
+            if (i < j) {
+                int tmp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = tmp;
+            }
+        }
+        if (k <= j) return quickSort(nums, left, j, k);
+        else return quickSort(nums, j + 1, right, k);
+    }
+
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int row = 0;
+        int col = n - 1;
+
+        while (row < m && col >= 0) {
+            int element = matrix[row][col];
+            if (element == target) {
+                return ture;
+            } else if (element < target) {
+                row++;
+            } else {
+                col--;
+            }
+
+
+        }
+        return false;
+    }
+
+
+    public int minPathSum(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+
+        int[][] dp = new int[m][n];
+
+        dp[0][0] = grid[0][0];
+
+        for (int i = 1; i < m; i++) {
+            dp[i][0] = dp[i - 1][0] + grid[i][0];
+        }
+
+        for (int j = 1; j < n; j++) {
+            dp[0][j] = dp[0][j - 1] + grid[0][j];
+        }
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+
+
+
+
+    public int singleNumber(int[] nums) {
+        int[] bits = new int[32];
+
+        int ans = 0;
+
+        for (int i = 0; i < 32; i++) {
+            for (int num : nums) {
+                bits[i] += (num >> i) & 1;
+            }
+        ans |= (bits[i] % 3) << i;
+        }
+
+        return ans;
+
+    }
+
+
+    public int maxSubArray(int[] nums) {
+        int pre = nums[0];
+        int maxSum = nums[0];
+
+        for (int i = 1; i < nums.lenght; i++) {
+            pre = pre < 0? nums[i] : nums[i] + pre;
+            maxSum = Math.max(maxSum, pre);
+        }
+        return maxSum;
+    }
+
+
+
+    public int[] searchRange(int[] nums, int target) {
+        if (nums.length == 0) return new int[]{-1, -1};
+        int[] res = {-1, -1};
+
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] >= target) right = mid;
+            else left = mid + 1;
+        }
+
+        if (nums[left] != target) return res;
+
+        res[0] = left;
+        left = 0;
+        right = nums.length - 1;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2 + 1;
+            if (nums[mid] <= target) left = mid;
+            else right = mid - 1;
+        }
+        res[1] = right;
+        return res;
+    }
 
 
 }
