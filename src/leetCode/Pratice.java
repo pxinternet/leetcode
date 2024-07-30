@@ -2825,6 +2825,7 @@ public class Pratice {
             while (left < right && arr[right] >= pivotValue) {
                 right--;
             }
+            arr[left] = arr[right];
 
             while (left < right && arr[left] <= pivotValue) {
                 left++;
