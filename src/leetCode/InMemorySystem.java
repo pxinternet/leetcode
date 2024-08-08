@@ -106,6 +106,7 @@ class InMemoryFile {
 
     public void writeFile(String path, String content) {
         String[] pathComponents = splitPath(path);
-        InMemeoryDirectory directory = traverseToDirectory(pathComponents)
+        InMemeoryDirectory directory = traverseToDirectory(pathComponents);
+        InMemoryFile file = directory.getFile
     }
  }

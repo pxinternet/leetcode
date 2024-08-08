@@ -15,6 +15,8 @@ import leetCode.ListNode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import java.util.Arrays;
+
 public class Top100 {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
@@ -275,6 +277,30 @@ public class Top100 {
         char[] chars = str.toCharArray();
         Arrays.sort(chars);
         return new String(chars);
+    }
+
+    public int coinChange(int[] coins, int amount) {
+        if (amount == 0) return 0;
+
+        int max = amount + 1;
+        int n  = coins.length;
+
+        int[] dp = new int[amount + 1];
+
+        Arrays.fill(dp, max);
+
+        dp[0] = 0;
+
+        for (int i = 1; i <= amount; i++) {
+            for (int coin : coins) {
+                if (i - coin >= 0) {
+                    dp[i] = Math.max(dp[i], dp[i - coin] + 1);
+                }
+            }
+        }
+
+
+        return dp[amount] > amount ? -1 : dp[amount];
     }
 
 

@@ -51,7 +51,7 @@ public class RangeList {
                 newRanges.add(range);
             } else {
                 if (range[0] < start) {
-                    newRanged.add(new int[] {range[0], start - 1});
+                    newRanges.add(new int[] {range[0], start - 1});
                 }
                 if (range[1] > end) {
                     newRanges.add(new int[] {end + 1, range[1]});

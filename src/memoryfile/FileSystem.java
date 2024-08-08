@@ -10,13 +10,13 @@ public class FileSystem {
         this.root = new Directory("/");
     }
 
-    private Directory traverseToDirectory(Path path) {
+    private Directory traverseToDirectory(Path path) throws Exception {
         String[] pathComponents = path.split();
         Directory current = root;
         for (int i = 1; i < pathComponents.length - 1; i++) {
             current = current.getDirectory(pathComponents[i]);
             if (current == null) {
-                throw new Exception();
+                throw new Exception("GGGG");
             }
         }
         return current;

@@ -8,7 +8,7 @@ public class ConsumerService {
         this.messageQueue = messageQueue;
     }
 
-    public void consume() {
+    public void consume() throws InterruptedException {
         while (true) {
             Message message = messageQueue.getMessage();
             Thread.sleep(2000);

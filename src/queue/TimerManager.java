@@ -4,7 +4,7 @@ public class TimerManager {
 
     private MessageQueue messageQueue;
 
-    public TimeManager(MessageQueue messageQueue) {
+    public TimerManager(MessageQueue messageQueue) {
         this.messageQueue = messageQueue;
     }
 

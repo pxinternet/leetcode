@@ -7,21 +7,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.locks.ReentrantLock;
 
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
+import java.util.Timer;
 
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
-
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
-
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
-
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
-
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
-
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
-
-import EnhancedSlidingWindowCircuitBreaker.BreakState;
 
 public class EnhancedSlidingWindowCircuitBreaker {
 
@@ -79,6 +66,7 @@ public class EnhancedSlidingWindowCircuitBreaker {
             if (state == BreakState.HALF_OPEN) {
                 consecutiveSucessCount++;
                 if (consecutiveSucessCount >= successThreshold) {
+                    //要不要清0看情况
                     changeState(BreakState.CLOSED);
                 }
             }
@@ -104,7 +92,7 @@ public class EnhancedSlidingWindowCircuitBreaker {
     }
 
     private void cleanUpOldFailures(long now) {
-        while (!failureTimestamps.isEmpty() && now - failureTimestamps.peek() > 0) {
+        while (!failureTimestamps.isEmpty() && now - failureTimestamps.peek() > closeTimeOut) {
             failureTimestamps.poll();
 
         }
@@ -112,6 +100,7 @@ public class EnhancedSlidingWindowCircuitBreaker {
 
     private void openCircuit() {
         changeState(BreakState.OPEN);
+        consecutiveSucessCount = 0;
         timer.schedule(new TimerTask() {
 
             @Override
@@ -120,6 +109,26 @@ public class EnhancedSlidingWindowCircuitBreaker {
             }
 
         }, openTimeout);
+
+
+        timer.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                attemptReset();
+            }
+
+        }, openTimeout);
+
+
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                attemptReset();
+            }
+
+        }, openTimeout);
+
     }
 
     private void attemptReset() {
