@@ -2836,6 +2836,41 @@ public class Pratice {
         arr[left] = pivotValue;
         return left;
     }
+
+
+
+    public boolean isValidBST(TreeNode root) {
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+    public boolean isValidBST(TreeNode node, long minVal, long maxVal) {
+        if (node == null) return true;
+        if (node.val <= minVal || node.val >= maxVal) return false;
+
+        return isValidBST(node.left, minVal, node.val) && isValidBST(node.right, node.val, maxVal);
+
+    }
+
+
+    int maxSum = Integer.MIN_VALUE;
+
+    public int maxPathSum(TreeNode root){
+        maxGain(root);
+        return maxSum;
+    }
+
+    private int maxGain(TreeNode root) {
+        if (root == null) return 0;
+
+        int leftGain = Math.max(maxGain(root.left), 0);
+        int rightGain = Math.max(maxGain(root.right), 0);
+
+        int pathSum = root.val + leftGain + rightGain;
+
+        maxSum = Math.max(pathSum, maxSum);
+
+        return root.val + Math.max(leftGain, rightGain);
+    }
 }
 
 

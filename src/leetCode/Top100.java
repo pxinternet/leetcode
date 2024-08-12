@@ -17,6 +17,18 @@ import java.util.Arrays;
 
 import java.util.Arrays;
 
+import java.awt.font.NumericShaper;
+
+import java.lang.reflect.Array;
+
+import java.util.ArrayList;
+
+import java.security.spec.EdDSAParameterSpec;
+
+import com.sun.security.jgss.ExtendedGSSContext;
+
+import java.util.ArrayList;
+
 public class Top100 {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
@@ -302,6 +314,210 @@ public class Top100 {
 
         return dp[amount] > amount ? -1 : dp[amount];
     }
+
+
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) return true;
+        return isMirror(root.left, root.right);
+    }
+
+    private boolean isMirror(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 == null) return true;
+        if (t1 == null || t2 == null) return false;
+        return (t1.val == t2.val) && isMirror(t1.left, t2.right) && isMirror(t1.right, t2.left);
+    }
+
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null || q == null) return p == q;
+        if (p.val != q.val) return false;
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+
+    public void flatten(TreeNode root) {
+        TreeNode prev = null;
+        TreeNode cur = root;
+
+        while (cur != null) {
+            if (cur.left != null) {
+                TreeNode p = cur.left;
+                while (p.right != null) {
+                    p = p.right;
+                }
+                p.right = cur.right;
+                cur.right = cur.left;
+                cur.left = null;
+            }
+            cur = cur.right;
+        }
+
+    }
+
+    public int sumNumbers(TreeNode root) {
+        return sumSubTree(root, 0);
+    }
+
+    private int sumSubTree(TreeNode node, int sum) {
+        if (node == null) return 0;
+
+        sum = sum * 10 + node.val;
+
+        if (node.left == null && node.right == null) {
+            return sum;
+        }
+
+        return sumSubTree(node.left, sum) + sumSubTree(node.right, sum);
+    }
+
+
+    class LC130 {
+        private int m, n;
+
+        private int[][] direction = new int[][] {{1, 0}, {-1, 0}, {0,1}, {0, -1}};
+
+        public void solve(char[][] board) {
+            if (board == null || board.length == 0) {
+                return;
+            }
+            this.m = board.length;
+            this.n = board[0].length;
+
+            for (int i = 0; i < m; i++) {
+                dfs(i, 0, board);
+                dfs(i, n - 1, board);
+            }
+
+            for (int i = 0; i < n; i++) {
+                dfs(0, i, board);
+                dfs(m - 1, i, board);
+            }
+
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (board[i][j] == 'O') {
+                        board[i][j] = 'X';
+                    } else if (board[i][j] == 'A') {
+                        board[i][j] = 'O';
+                    }
+                }
+            }
+        }
+
+        private void dfs(int x, int y, char[][] board) {
+            if (x < 0 || x >= m || y < 0 || y >= n || board[x][y] != 'O') {
+                return;
+            }
+
+            board[x][y] = 'A';
+            for (int[] dir :direction) {
+                dfs( x + dir[0], y + dir[1] , board);
+            }
+        }
+    }
+
+
+    class Coures1 {
+
+        public boolean canFinish(int numCourses, int[][] prerequisites) {
+
+            List<List<Integer>> edges = new ArrayList<>();
+
+            int[] indeg = new int[numCourses];
+
+            for (int i = 0; i < numCourses; i++) {
+                edges.add(new ArrayList<>());
+            }
+
+            for (int[] info : prerequisties) {
+                edges.get(info[1]).add(info[0]);
+                ++indeg[info[0]];
+            }
+
+            Queue<Integer> queue = new LinkedList<>();
+
+            for (int i = 0; i < numCourses; i++) {
+                if (indeg[i] == 0) {
+                    queue.offer(i);
+                }
+            }
+
+            int visited = 0;
+
+            while (!queue.isEmpty()) {
+                ++visited;
+                int u = queue.poll();
+
+                for (int v : edges.get(u)) {
+                    --indeg[v];
+                    if (indeg[v] == 0) {
+                        queue.offer(v);
+                    }
+                }
+            }
+            return visited == numCourses;
+        }
+    }
+
+
+    class CourseOrder {
+
+        public int[] findOrder(int numCourses, int[][] prerequisites) {
+
+            List<List<Integer>> edges = new ArrayList<>();
+            int[] indeg = new int[numCourses];
+
+            for (int i = 0; i < numCourses; i++) {
+                edges.add(new ArrayList<>());
+            }
+
+            for (int[] info : prerequisites) {
+                edges.get(info[1]).add(info[0]);
+                ++indeg[info[0]];
+            }
+
+            Queue<Integer> queue = new LinkedList<>();
+
+            for (int i = 0; i < numCourses; i++) {
+                if (indeg[i] == 0) {
+                    queue.offer(i);
+                }
+            }
+
+            List<Integer> resList = new ArrayList<>();
+
+            while (!queue.isEmpty()) {
+                int u = queue.poll();
+                resList.add(u);
+
+                for (int v : edges.get(u)) {
+                    --indeg[v];
+                    if (indeg[v] == 0) {
+                        queue.offer(v);
+                    }
+                }
+            }
+
+            if (resList.size() != numCourses) {
+                return new int[]{};
+            }
+
+            int[] res = new int[numCourses];
+            for (int i = 0; i < numCourses; i++) {
+                res[i] = resList.get(i);
+            }
+            return res;
+
+        }
+
+    }
+
+
+
+
 
 
 }
