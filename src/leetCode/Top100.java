@@ -662,6 +662,34 @@ public class Top100 {
         return longestStreak;
     }
 
+    public int trap(int[] height) {
+        int n = height.length;
+
+        int left = 0;
+        int right = n -1;
+
+        int leftMax = 0;
+        int rightMax = 0;
+
+
+        int ans = 0;
+
+        while( left <= right) {
+            rightMax = Math.max(rightMax, height[right]);
+            leftMax = Math.max(leftMax, height[left]);
+
+            if (leftMax > rightMax) {
+                ans += rightMax - height[right];
+                right--;
+            } else {
+                ans += leftMax - height[left];
+                left++;
+            }
+        }
+
+        return ans;
+    }
+
 
 }
 
