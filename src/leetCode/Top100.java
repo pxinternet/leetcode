@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 import leetCode.ListNode;
 
@@ -614,8 +615,52 @@ public class Top100 {
     }
 
 
+    public int maxArea(int[] height) {
+        int n = height.length;
+        int left = 0;
+        int right = n - 1;
 
+        int maxArea = 0;
 
+        while (left < right) {
+            maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));
+
+            if (height[left] < height[right]) {
+                left++;
+            } else{
+                right--;
+            }
+        }
+        return maxArea;
+    }
+
+    public int longestConsecutive(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        Set<Integer> numSet = new HashSet<>();
+        for (int num : nums) {
+            numsSet.add(num);
+        }
+
+        int longestStreak = 0;
+
+        for (int num : nums) {
+            if (!numSet.contains(num - 1)) {
+                int curentNum = num;
+                int currStreak = 1;
+
+                while (numSet.contains(curentNum + 1)) {
+                    currentNum += 1;
+                    currentStreak += 1;
+                }
+
+                longestStreak = Math.max(currStreak, longestStreak);
+            }
+        }
+        return longestStreak;
+    }
 
 
 }
