@@ -3,6 +3,7 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +30,8 @@ import java.security.spec.EdDSAParameterSpec;
 import com.sun.security.jgss.ExtendedGSSContext;
 
 import java.util.ArrayList;
+
+import java.util.Arrays;
 
 public class Top100 {
 
@@ -690,6 +693,86 @@ public class Top100 {
         return ans;
     }
 
+    public int lengthOfLongestSubStrig(String s) {
+
+        Set<Character> visited = new HashSet<>();
+
+        int end = 0;
+        int maxLength = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (i != 0) {
+                visited.remove(s.charAt(i - 1));
+            }
+            while (end < s.length() && !visited.contains(s.charAt(end))) {
+                visited.add(s.charAt(end));
+                end++;
+            }
+
+            maxLength = Math.max(maxLength, end - i);
+        }
+
+        return maxLength;
+    }
+
+    public List<Integer> findAnagrams(String s, String p) {
+        int sLen = s.length();
+        int pLen = p.length();
+
+        List<Integer> res = new ArrayList<>();
+
+        if (pLen > sLen) return res;
+
+        int[] sCount = new int[26];
+        int[] pCount = new int[26];
+
+        for(int i = 0; i < pLen; i++) {
+            sCount[s.charAt(i) - 'a']++;
+            pCount[p.charAt(i) - 'a']++;
+        }
+
+        if(Arrays.equals(sCount, pCount)) {
+            res.add(0);
+        }
+
+        for (int i = 0; i < sLen - pLen; i++) {
+            sCount[s.charAt(i) - 'a']--;
+            sCount[s.charAt(i + pLen) - 'a']++;
+
+            if (Arrays.equals(sCount, pCount)) {
+                res.add(i + 1);
+            }
+        }
+        return res;
+    }
+
+
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k < 0)  {
+            return new int[0];
+        }
+
+        int n = nums.length;
+        int[] result = new int[n - k + 1];
+
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        for (int i = 0; i < n; i++) {
+            while (!deque.isEmpty() && deque.peek() < i - k  + 1) {
+                deque.poll();
+            }
+
+            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+                deque.pollLast();
+            }
+            deque.offer(i);
+
+            if (i >= k - 1) {
+                result[i - k + 1] = nums[deque.peek()];
+            }
+        }
+        return result;
+    }
 
 }
 
