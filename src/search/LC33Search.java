@@ -13,7 +13,7 @@ public class LC33Search {
             }
 
             if (nums[left] <= nums[mid]) {
-                if (nums[left] >= target && target < nums[mid]) {
+                if (nums[left] <= target && target < nums[mid]) {
                     right = mid - 1;
                 } else {
                     left = mid + 1;
