@@ -802,6 +802,152 @@ public class Top100 {
         return n + 1;
     }
 
+
+    public int trap(int[] height) {
+        int n = height.length;
+
+        int left = 0;
+        int right = n - 1;
+
+        int leftMax = 0;
+        int rightMax = 0;
+
+        int ans = 0;
+
+        while (left <= right) {
+            leftMax = Math.max(leftMax, height[left]);
+            rightMax = Math.max(rightMax, height[right]);
+
+            if (leftMax > rightMax) {
+                ans += rightMax - height[right];
+                right--;
+            } else {
+                ans += leftMax - height[left];
+                left++;
+            }
+        }
+        return ans;
+    }
+
+    public int maxArea(int[] height) {
+        int n = height.length;
+        int left = 0;
+        int right = n - 1;
+
+        int maxArea = 0;
+
+        while (left < right) {
+            maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return maxArea;
+    }
+
+    public List<Integer> findAnagrams(String s, String p) {
+        int sLen = s.length();
+        int pLen = p.length();
+
+        List<Integer> res = new ArrayList<>();
+
+        if (pLen > sLen) return res;
+
+        int[] sCount = new int[26];
+        int[] pCount = new int[26];
+
+        for (int i = 0; i < pLen; i++) {
+            sCount[s.charAt(i) - 'a']++;
+            pCount[p.charAt(i) - 'a']++;
+        }
+
+        if (Arrays.equals(sCount, pCount)) {
+            res.add(0);
+        }
+
+        for (int i = 0; i < sLen - pLen; i++) {
+            sCount[s.charAt(i) - 'a']--;
+            sCount[s.charAt(i + pLen) - 'a']++;
+
+            if (Arrays.equals(sCount, pCount)) {
+                res.add(i + 1);
+            }
+        }
+
+        return res;
+    }
+
+
+
+    public int longestConsecutive2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        Set<Integer> numSet = new HashSet<>();
+
+        for (int num : nums) {
+            numSet.add(num);
+        }
+
+        int longestStreak = 0;
+
+        for (int num : nums) {
+            if (!numSet.contains(num - 1)) {
+                int currentNum = num;
+                int currentStreak = 1;
+
+                while (numSet.contains(currentNum + 1)) {
+
+                    currentNum += 1;
+                    currentStreak += 1;
+                }
+                longestStreak = Math.max(longestStreak, currentStreak);
+            }
+        }
+
+
+        return longestStreak;
+    }
+
+
+    public List<List<String>> groupAnagrams1(String[] strs) {
+        List<List<String>> res = new ArrayList<>();
+
+        Map<String, List<String>> groupmap = new HashMap<>();
+
+        for (String str : strs) {
+            String key = sortStrForKey(str);
+            List<String> lines = groupmap.get(key);
+            if (lines != null) {
+                lines.add(str);
+            } else {
+                line = new ArrayList<>();
+                line.add(str);
+                groupmap.put(key, lines);
+            }
+        }
+
+        for (List<String> value : groupmap.values()) {
+            res.add(value);
+        }
+
+        return res;
+    }
+
+    String sortStrFroKey(String str) {
+
+        char[] chars= str.toCharArray();
+
+        Arrays.sort(chars);
+
+        return new String(chars);
+
+    }
+
+
 }
 
 
