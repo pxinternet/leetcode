@@ -11,6 +11,8 @@ import java.awt.font.NumericShaper;
 
 import leetCode.ListNode;
 
+import java.util.Map;
+
 public class Top150 {
 
     int[][] directions = new int[][] {
@@ -787,6 +789,31 @@ public class Top150 {
             curr.next = new ListNode(carry);
         }
         return dummy.next;
+
+    }
+
+
+    public Node copyRandomList(Node head) {
+
+        if (head == null) return head;
+
+
+        Map<Node, Node> map = new HashMap<>();
+
+        Node node = head;
+
+        while (node != null) {
+            map.put(node, new Node(node.val));
+            node = node.next;
+        }
+
+        for (Map.Entry<Node, Node> entry : map.entrySet()) {
+            entry.getValue().next = map.get(entry.getKey().next);
+            entry.getValue().random = map.get(entry.getKey().random);
+        }
+
+        return map.get(head);
+
 
     }
 
