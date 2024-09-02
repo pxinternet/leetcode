@@ -4,14 +4,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 import java.awt.font.NumericShaper;
 
 import leetCode.ListNode;
 
 import java.util.Map;
+
+import java.awt.HeadlessException;
+
+import javax.swing.RootPaneContainer;
 
 public class Top150 {
 
@@ -815,6 +821,488 @@ public class Top150 {
         return map.get(head);
 
 
+    }
+
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+
+        return  1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    }
+
+
+    public List<Integer> spiralOrder(int[][] matrix) {
+
+        int top = 0;
+        int left = 0;
+        int right = matrix[0].length - 1;
+        int bottom = matrix.length - 1;
+
+
+        List<Integer> res = new ArrayList<>();
+
+        while(top <= bottom && left <= right) {
+            for (int i = left; i <= right; i++) {
+                res.add(matrix[top][i]);
+            }
+            top++;
+            if (top > bottom) break;
+
+            for (int i = top; i < bottom; i++) {
+                res.add(matrix[i][right]);
+            }
+            right--;
+            if (left > right) break;
+
+            for (int i = right; i >= left; i--) {
+                res.add(matrix[bottom][i]);
+            }
+            bottom--;
+
+            if (top > bottom) break;
+
+            for (int i = bottom; i >= top; i--) {
+                res.add(matrix[i][left]);
+            }
+            left++;
+        }
+        return res;
+
+    }
+
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) return false;
+
+        ListNode slow = head;
+        ListNode fast = head.next;
+
+        while (fast.next != null && fast.next.next != null) {
+            if (slow == fast) return true;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return false;
+
+    }
+
+
+    public ListNode detectCycle(ListNode head) {
+
+        if (head == null) return null;
+
+        ListNode slow = head, fast = head;
+
+        while (fast != null) {
+            slow = slow.next;
+            if (fast.next != null) {
+                fast = fast.next.next;
+            } else {
+                return null;
+            }
+
+            if (fast == slow) {
+                ListNode ptr = head;
+                while (ptr != slow) {
+                    ptr = ptr.next;
+                    slow = slow.next;
+                }
+                return ptr;
+            }
+        }
+
+        return null;
+    }
+
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (left == right) return head;
+
+        ListNode dummy = new ListNode(0);
+
+        dummy.next = head;
+
+        ListNode start = dummy;
+        ListNode end = dummy;
+        ListNode pre = dummy;
+
+        while (left > 1) {
+            pre = pre.next;
+            end = end.next;
+            left--;
+            right--;
+        }
+
+        start = pre.next;
+
+        while(right >= 0) {
+            end = end.next;
+            right--;
+        }
+
+        ListNode curr = start;
+        ListNode prev = end;
+
+        while (curr != end) {
+            ListNode tmp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = tmp;
+        }
+        pre.next = prev;
+        return dummy.next;
+    }
+
+
+    public ListNode reverseList(ListNode head) {
+        if (head == null) return head;
+
+        ListNode pre = null;
+        ListNode curr = head;
+
+        while (curr != null) {
+            curr = head.next;
+            head.next = pre;
+            pre = head;
+            head = curr;
+        }
+        return pre;
+    }
+
+    publc ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode(0);
+
+        dummy.next = head;
+
+        ListNode pre = dummy;
+        ListNode end = pre;
+
+        while (head != null) {
+            end = pre;
+
+            for (int i = 0; i < k && end != null; i++) {
+                end = end.next;
+            }
+
+            if (end == null) return dummy.next;
+
+            ListNode start = pre.next;
+            head = end.next;
+
+            end.next = null;
+            ListNode curr = pre.next, tmp;
+            ListNode prev = null;
+
+            while (curr != null) {
+                tmp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = tmp;
+            }
+
+            pre.next = prev;
+            start.next = head;
+
+            pre = start;
+        }
+
+        return dummy.next;
+    }
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        int right = 0;
+
+        ListNode dummy = new ListNode(0);
+
+        dummy.next = head;
+        ListNode pre = dummy;
+
+        ListNode node = head;
+
+        while (node != null && right < n) {
+            node = node.next;
+            right++;
+        }
+
+        while (node != null) {
+            node = node.next;
+            pre = pre.next;
+        }
+
+        pre.next = pre.next.next;
+
+        return dummy.next;
+    }
+
+
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        ListNode pre  = dummy;
+        pre.next = head;
+        ListNode current = head;
+
+        while (current != null) {
+            while (current.next != null && current.val == current.next.val) current = current.next;
+
+            if (pre.next == current) {
+                pre = pre.next;
+            } else {
+                pre.next = current.next;
+            }
+
+            current = current.next;
+
+        }
+
+        return dummy.next;
+    }
+
+    public ListNode rotateRight(ListNode head, int k) {
+        if (head == null) return null;
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+
+        int n;
+        for (n = 0; fast.next != null; n++) {
+            fast = fast.next;
+        }
+
+        for (int i = n - k % n; i >0; i--) {
+            slow = slow.next;
+        }
+
+        fast.next = dummy.next;
+        dummy.next = slow.next;
+        slow.next = null;
+        return dummy.next;
+
+    }
+
+    public ListNode partition(ListNode head, int x) {
+
+        if (head == null) return null;
+
+        ListNode smallHead = new ListNode(0);
+        ListNode largeHead = new ListNode(0);
+
+        ListNode small = smallHead;
+        ListNode large = largeHead;
+
+        while (head != null) {
+
+            if (head.val < x) {
+                small.next = head;
+                small = head;
+            } else {
+                large.next = head;
+                large = head;
+            }
+
+            head = head.next;
+        }
+
+        smallHead.next = largeHead.next;
+        large.next = null;
+        return smallHead.next;
+
+    }
+
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null || q == null) return p == q;
+
+        if (p.val != q.val) return false;
+
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) return null;
+
+        TreeNode tmp = root.left;
+        root.left = invertTree(root.right);
+        root.right = invertTree(tmp);
+        return root;
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) return;
+        return isMirror(root.left, root.right);
+    }
+
+    private boolean isMirror(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 == null) return true;
+        if (t1 == null || t2 == null) return false;
+
+        return (t1.val == t2.val) && isMirror(t1.left, t2.right) && isMirror(t1.right, t2.left);
+    }
+
+
+    private Map<Integer, Integer> inorderIndexMap;
+    private int preorderIndex;
+    private int postIndex;
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        preorderIndex = 0;
+        inorderIndexMap = new HashMap<>();
+
+        for (int i = 0; i < inorder.length;i++) {
+            inorderIndexMap.put(inorder[i], i);
+        }
+
+        return buildTree(preorder, 0, inorder.length - 1);
+
+    }
+
+    private TreeNode buildTree(int[] preorder, int left, int right) {
+        if (left > right) {
+            return null;
+        }
+
+        int rootVal = preorder[preorderIndex++];
+        TreeNode root = new TreeNode(rootVal);
+
+        root.left = buildTree(preorder, left, inorderIndexMap.get(rootVal) - 1);
+        root.right = buildTree(preorder, inorderIndexMap.get(rootVal) + 1, right);
+        return root;
+    }
+
+
+    public TreeNode buildTreePost(int[] inorder, int[] postorder) {
+        postIndex = postorder.length - 1;
+        inorderIndexMap = new HashMap<>();
+
+        for (int i = 0; i < inorder.length; i++) {
+            inorderIndexMap.put(inorder[i], i);
+        }
+
+
+
+    }
+
+    public TreeNode buildTreePost(int[] postorder, int left, int right) {
+        if (left > right) return null;
+
+        int rootVal = postorder[postIndex--];
+        TreeNode root = new TreeNode(rootVal);
+
+        root.right = buildTreePost(postorder, inorderIndexMap.get(rootVal) + 1, right);
+        root.left = buildTreePost(postorder, left, inorderIndexMap.get(rootVal) - 1);
+
+        return root;
+    }
+
+    public Node connect(Node root) {
+        if (root == null) return null;
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        Node node = queue.peek();
+        while (!queue.isEmpty()) {
+            int currentSize = queue.size();
+            for (int i = 0; i < currentSize; i++) {
+                node = queue.poll();
+                node.next = queue.peek();
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            node.next = null;
+        }
+        return root;
+    }
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) return null;
+        if (root.val = p.val) return p;
+        if (root.val = q.val) return q;
+
+        TreeNode leftRes = lowestCommonAncestor(root.left, p, q);
+        TreeNode rightRes = lowestCommonAncestor(root.right, p, q);
+
+        if (leftRes != null && rightRes != null) return root;
+
+        if (leftRes != null) return leftRes;
+
+        return rightRes;
+    }
+
+    int count = 0;
+    public int countNodes(TreeNode root) {
+        if (root == null) return 0;
+        count++;
+        countNodes(root.left);
+        countNodes(root.right);
+        return count;
+    }
+
+
+    int maxSum = Integer.MIN_VALUE;
+
+    public int maxPathSum(TreeNode root) {
+        maxGain(root);
+        return maxSum;
+    }
+
+    private int maxGain(TreeNode root) {
+        if (root == null) return 0;
+
+        int leftGain = Math.max(maxGain(root.left), 0);
+        int rightGain = Math.max(maxGain(root.right), 0);
+        int pathSum = leftGain + root.val + rightGain;
+
+        maxSum = Math.max(maxSum, pathSum);
+
+        return root.val + Math.max(leftGain, rightGain);
+
+    }
+
+    public int sumNumbers(TreeNode root) {
+        return sumSubTree(root, 0);
+    }
+
+    private int sumSubTree(TreeNode node, int sum) {
+        if (node == null) return 0;
+
+        sum = sum * 10 + node.val;
+
+        if (node.left == null && node.right == null) {
+            return sum;
+        }
+
+        return sumSubTree(node.left, sum) + sumSubTree(node.right, sum);
+    }
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null) return false;
+
+        if (root.left == null && root.right == null && targetSum - root.val == 0) return true;
+
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+    }
+
+
+    TreeNode prev = null;
+
+    public void flatten(TreeNode root) {
+        TreeNode cur = root;
+
+        while (cur != null) {
+            if (cur.left != null) {
+                TreeNode p = cur.left;
+                while (p.right != null) {
+                    p = p.right;
+                }
+                p.right = cur.right;
+                cur.right = cur.left;
+                cur.left = null;
+            }
+            cur = cur.right;
+        }
     }
 
 }
