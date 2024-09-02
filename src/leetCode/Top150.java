@@ -19,6 +19,14 @@ import java.awt.HeadlessException;
 
 import javax.swing.RootPaneContainer;
 
+import java.awt.font.NumericShaper;
+
+import java.awt.font.NumericShaper;
+
+import javax.imageio.plugins.tiff.ExifGPSTagSet;
+
+import java.util.Queue;
+
 public class Top150 {
 
     int[][] directions = new int[][] {
@@ -1303,6 +1311,189 @@ public class Top150 {
             }
             cur = cur.right;
         }
+    }
+
+    public int numIslands(char[][] grid) {
+        int ans = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '1') {
+                    ans++;
+                    dfs(grid, i, j);
+                }
+            }
+        }
+        return ans;
+    }
+
+    private void dfs(char[][] grid, int i, int j) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == '0') {
+            return;
+        }
+
+        grid[i][j] = '0';
+        dfs(grid, i, j + 1);
+        dfs(grid, i, j - 1);
+        dfs(grid, i - 1, j);
+        dfs(grid, i + 1, j);
+    }
+
+    private int m, n;
+    private int[][] directions = new int[][] {{1,0}, {-1, 0}, {0, 1}, {0, -1}};
+
+    public void solve(char[][] board) {
+        if (board == null || board.length == 0) return;
+        this.m = board.length;
+        this.n = board[0].length;
+
+        for (int i = 0; i < m; i++){
+            dfs(i, 0, board);
+            dfs(i, n - 1, board);
+        }
+
+        for (int j = 0; j < n; j++) {
+            dfs(0, j, board);
+            dfs(m - 1, j, board);
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 'O') {
+                    board[i][j] = 'X';
+                } else if (board[i][j] == 'A') {
+                    board[i][j] = 'O';
+                }
+            }
+        }
+    }
+
+    private void dfs(int x, int y, char[][] board) {
+        if (x < 0 || x >= m || y < 0 || y >= n || board[x][y] != 'O') {
+            return;
+        }
+
+        board[x][y] = 'A';
+        for(int[] dir : directions) {
+            dfs(x + dir[0], y + dir[1], board);
+        }
+    }
+
+    public Node cloneGraph(Node node) {
+        if (node == null) return node;
+
+        Map<Node, Node> copyMap = new HashMap<>();
+
+        Queue<Node> queue = new LinkedList<>();
+
+        queue.add(node);
+
+        copyMap.put(node, new Node(node.val, new ArrayList<>()));
+
+        while (!queue.isEmpty()) {
+
+            Node n = queue.poll();
+
+            for (Node neighbor : n.neighbors) {
+                if (!copyMap.containsKey(neighbor)) {
+                    queue.offer(neighbor);
+                    copyMap.put(neighbor, new Node(neighbor.val, new ArrayList<>()));
+                }
+
+                copyMap.get(n).neighbors.add(copyMap.get(neighbor));
+            }
+
+
+        }
+        return copyMap.get(node);
+    }
+
+
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> edges = new ArrayList<>();
+
+        int[] indeg = new int[numCourses];
+
+        for (int i = 0; i < numCourses; i++) {
+            edges.add(new ArrayList<>());
+        }
+
+        for (int[] info : prerequisites) {
+            edges.get(info[1]).add(info[0]);
+            ++indeg[info[0]];
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        for (int i = 0; i < numCourses; i++) {
+            if (indeg[i] == 0) {
+                queue.offer(i);
+            }
+        }
+
+        int visited = 0;
+
+        while (!queue.isEmpty()) {
+            ++visited;
+            int u = queue.poll();
+
+            for (int v : edges.get(u)) {
+                --indeg[v];
+                if (indeg[v] == 0) {
+                    queue.offer(v);
+                }
+            }
+        }
+        return visited == numCourses;
+    }
+
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> edges = new ArrayList<>();
+
+        int[] indeg = new int[numCourses];
+
+        for (int i = 0; i < numCourses; i++) {
+            edges.add(new ArrayList<>());
+        }
+
+        for (int[] info : prerequisites) {
+            edges.get(info[1]).add(info[0]);
+            ++indeg[info[0]];
+        }
+
+        Queue<Integer> queue  = new LinkedList<>();
+
+        for (int i = 0; i < numCourses; i++) {
+            if (indeg[i] == 0) {
+                queue.offer(i);
+            }
+        }
+
+        List<Integer> res = new ArrayList<>();
+
+        while (!queue.isEmpty()) {
+            int u = queue.poll();
+            res.add(u);
+
+            for (int v : edges.get(u)) {
+                --indeg[v];
+                if (indeg[v] == 0) {
+                    queue.offer(v);
+                }
+            }
+        }
+
+        if (res.size() != numCourses) {
+            return new int[]{};
+        }
+
+        int resArray = new int[numCourses];
+
+        for (int i = 0; i < numCourses; i++) {
+            resArray[i] = res.get(i);
+        }
+        return resArray;
+
+
     }
 
 }
