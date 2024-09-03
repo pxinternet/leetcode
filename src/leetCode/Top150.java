@@ -27,6 +27,8 @@ import javax.imageio.plugins.tiff.ExifGPSTagSet;
 
 import java.util.Queue;
 
+import javax.print.attribute.standard.QueuedJobCount;
+
 public class Top150 {
 
     int[][] directions = new int[][] {
@@ -1496,4 +1498,98 @@ public class Top150 {
 
     }
 
+    public int minMutation(String startGene, String endGene, String[] bank) {
+
+        Set<String> bankSet = new HashSet<>(Arrays.asList(bank));
+        Set<String> visited = new HashSet<>();
+
+        char[] chars = new char[]{'A', 'C', 'G', 'T'};
+
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(startGene);
+        visited.add(startGene);
+        int level = 0;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while(size-- == 0) {
+                String curr = queue.poll();
+                if (curr.equals(endGene)) return level;
+
+                char[] currArray = curr.toCharArray();
+                for (int i = 0; i < currArray.length; i++) {
+                    char old = currArray[i];
+
+                    for (char c : chars) {
+                        currArray[i] = c;
+                        String next = new String(currArray);
+                        if (!visited.contains(next) && bankSet.contains(next)) {
+                            visited.add(next);
+                            queue.offer(next);
+                        }
+                    }
+
+                    currArray[i] = old;
+                }
+            }
+            level++;
+        }
+        return -1;
+    }
+
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        if (!wordList.contains(endWord)) {
+            return 0;
+        }
+
+        Set<String> wordSet = new HashSet<>(wordList);
+        Set<String> beginSet = new HashSet<>();
+        Set<String> endSet = new HashSet<>();
+
+        beginSet.add(beginWord);
+        endSet.add(endWord);
+
+        int le = 1;
+
+        while (!beginSet.isEmpty() && !endSet.isEmpty()) {
+            if (beginSet.size() > endSet.size()) {
+                Set<String> temp = beginSet;
+                beginSet = endSet;
+                endSet = temp;
+            }
+
+            Set<String> temp = new HashSet<>();
+
+            for (String word : beginSet) {
+                char[] chars = word.toCharArray();
+
+                for (int i = 0; i < chars.length; i++) {
+                    for (char c = 'a' ; c <= 'z'; c++) {
+                        char old = chars[i];
+                        chars[i] = c;
+
+                        String target = String.valueOf(chars);
+
+                        if (endSet.contains(target)) {
+                            return len + 1;
+                        }
+
+                        if (!beginSet.contains(target) && wordSet.contains(target)) {
+                            temp.add(target);
+                            wordSet.remove(target);
+                        }
+                        chars[i] = old;
+                    }
+                }
+
+
+            }
+            len++;
+            beginSet = temp;
+
+        }
+
+        return 0;
+
+    }
 }
