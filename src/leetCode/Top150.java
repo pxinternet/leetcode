@@ -29,6 +29,12 @@ import java.util.Queue;
 
 import javax.print.attribute.standard.QueuedJobCount;
 
+import java.util.ArrayDeque;
+
+import java.util.Deque;
+
+import java.util.ArrayDeque;
+
 public class Top150 {
 
     int[][] directions = new int[][] {
@@ -1592,4 +1598,218 @@ public class Top150 {
         return 0;
 
     }
+
+    private String[] lettermap = {
+
+    };
+
+    private ArrayList<String> res;
+    private StringBuilder s;
+
+    public List<String> letterCombinations(String digits) {
+        res = new ArrayList<>();
+        s = new StringBuilder();
+
+        if (digits == null || digits.isEmpty()) {
+            return res;
+        }
+
+        findCombinations(digits, 0);
+
+        return res;
+    }
+
+    private void findCombinations(String digits, int index) {
+
+        if (index == digits.length()) {
+            res.add(s.toString());
+            return;
+        }
+
+        char c = digits.charAt(index);
+        String letter = lettermap[c - '0'];
+
+        for (int i = 0; i < letter.length(); i++) {
+            s.append(letter.charAt(i));
+            findCombinations(digits, index + 1);
+            s.deleteCharAt(s.length() - 1);
+        }
+
+    }
+
+    public List<List<Integer>> combine(int n, int k) {
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        dfsCombine(k, n, 1, new ArrayDeque<>(), res);
+
+        return res;
+
+    }
+
+    void dfsCombine(int k, int n, int depth, Deque<Integer> path, List<List<Intger>> res) {
+        if (path.size() == k) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int i = depth; i <= n; i++) {
+            path.addLast(i);
+
+            dfsCombine(k, n, i + 1, path, res);
+
+            path.removeLast();
+        }
+    }
+
+    public List<List<Integer>> permute(int[] nums) {
+        int len = nums.length;
+        List<List<Integer>> res = new ArrayList<>();
+
+        if (len == 0) {
+            return res;
+        }
+
+        Deque<Integer> path = new LinkedList<>();
+        boolean[] used = new boolean[len];
+
+        dfsPermute(nums, len, 0, path, used, res);
+        return res;
+    }
+
+    private void dfsPermute(int[] nums, int len, int depth, Deque<Integer> path, boolean[] used, List<List<Integer>> res) {
+        if (depth == len) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int i = 0; i < len; i++) {
+i
+            if (!used[i]) {
+
+                path.addLast(nums[i]);
+                used[i] = ture;
+                dfsPermute(nums, len, depth + 1, path, used, res);
+                used[i] = false;
+                path.removeLast();
+
+            }
+        }
+    }
+
+    public List<List<Integer>> combinatioinSum(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+
+        int len = candidates.length;
+
+        Arrays.sort(candidates);
+
+        dfsCsum(candidates, target, 0, len, new ArrayDeque<>(), res);
+
+        return res;
+    }
+
+    private void dfsCsum(int[] candidates, int target, int begin, int length, Deque<Integer> path, List<List<Integer>> res) {
+        if (target == 0) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+
+        for(int i = begin; i < length; i++) {
+            if (target - candidates[i] < 0) {
+                break;
+            }
+
+            path.addLast(candidates[i]);
+
+            dfsCsum(candidates,  target - candidates[i], i, length, path, res);
+
+            path.removeLast();
+        }
+    }
+
+    Set<Integer> colSet = new HashSet();
+    Set<Integer> dia1 = new HashSet<>();
+    Set<Integer> dia2 = new HashSet<>();
+
+
+    public int totalQueens(int n) {
+        return dfsQueens(n, 0);
+    }
+
+    private int dfsQueens(int n, int row) {
+        if (row == n) {
+            return 1;
+        }
+
+        int count = 0;
+
+        for (int col = 0; col < n; col++) {
+            if (colSet.contains(col) || dia1.contains(row + col) || dia2.contains(row - col)) {
+                continue;
+            }
+
+            colSet.add(col);
+            dia1.add(row + col);
+            dia2.add(row - col);
+            count += dfsQueens(n, row + 1);
+            dia2.remove(row - col);
+            dia1.remove(row + col);
+            colSet.remove(col);
+        }
+        return count;
+    }
+
+    public List<String> generateParenthesis(int n) {
+        List<String> result = new ArrayList<>();
+
+        generate();
+
+        return result;
+    }
+
+    private void generate(List<String> result, StringBuilder current, int left, int right) {
+        if (left == 0 && right == 0) {
+            result.add(current.toString());
+            return;
+        }
+
+        if (left > 0) {
+            current.append("(");
+            generate(result, current, left - 1, right);
+            current.deleteCharAt(current.length() - 1);
+        }
+
+        if (right > left) {
+            current.append(")");
+            generate(result, current, left, right - 1);
+            current.deleteCharAt(current.length() - 1);
+        }
+
+
+
+    }
+
+    public ListNode removeNthFromEnd1(ListNode head, int n) {
+        int right = 0;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+
+        ListNode node = head;
+
+        while (node != null && right < n) {
+            node = node.next;
+            right++;
+        }
+
+        while (node != null) {
+            node = node.next;
+            pre = pre.next;
+        }
+
+        pre.next = pre.next.next;
+        return dummy.next;
+    }
+
 }
