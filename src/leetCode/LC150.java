@@ -21,7 +21,7 @@ public class LC150 {
                     case "+":
                         stack.push(num1 + num2);
                         break;
-                        case "-":
+                    case "-":
                         stack.push(num1 - num2);
                         break;
                     case "*":
@@ -38,6 +38,22 @@ public class LC150 {
         }
 
         return stack.pop();
+    }
+
+    public ListNode reverseList(ListNode head) {
+
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+
     }
 
 }
