@@ -1,6 +1,8 @@
 ﻿package memoryfile;
 
 import javax.naming.directory.DirContext;
+import memoryfile.File;
+import memoryfile.Path; // Add this import statement
 
 public class FileSystem {
 
