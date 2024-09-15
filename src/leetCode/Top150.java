@@ -48,6 +48,10 @@ import leetCode.ListNode;
 
 import java.lang.reflect.Array;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
 public class Top150 {
 
     int[][] directions = new int[][] {
@@ -591,6 +595,37 @@ public class Top150 {
         }
         return ans > n ? 0 : ans;
 
+    }
+
+
+    public int minSubArrayLen2(int target, int[] nums) {
+        int left = 0;
+        int right = 0;
+
+        int n = nums.length;
+
+        int ans = n + 1;
+
+        int tmp = 0;
+        tmp += nums[left];
+        while (right < n) {
+
+            if (tmp >= taget) {
+                ans = Math.min(ans, right - left + 1);
+                if (ans == 1) {
+                    return 1;
+                }
+                tmp -= nums[left];
+                left++;
+            } else {
+                right++;
+                if (right < n) {
+                    tmp += nums[right];
+                }
+            }
+        }
+
+        return ans > n ? 0 : ans;
     }
 
     public int lengthOfLongestSubString(String s) {

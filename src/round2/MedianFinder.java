@@ -61,4 +61,22 @@ public class MedianFinder {
 
     }
 
+    private static int partition2(int[] nums, int left, int right, int pivotIndex) {
+        int pivotValue = nums[pivotIndex];
+
+        swap(nums, pivotIndex, right);
+
+        int storeIndex = left;
+
+        for (int i = left; i < right; i++) {
+            if (nums[i] < pivotValue) {
+                swap(nums, storeIndex, i);
+                storeIndex++;
+            }
+        }
+
+        swap(nums, right, storeIndex);
+        return storeIndex;
+    }
+
 }
