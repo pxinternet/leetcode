@@ -1,6 +1,10 @@
 ﻿package dfs;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.ArrayList;
+
+import java.util.ArrayList;
 
 public class LC17letterCombinations {
 
@@ -41,7 +45,7 @@ public class LC17letterCombinations {
 
         char c = digits.charAt(index);
 
-        String letter = letterMap[c - 'a'];
+        String letter = letterMap[c - '0'];
 
         for (int i = 0; i < letter.length(); i++) {
             s.append(letter.charAt(i));

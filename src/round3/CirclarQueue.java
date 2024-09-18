@@ -32,10 +32,11 @@ public class CirclarQueue {
     }
 
     public void resize() {
-        //先把size拿出来
+        int currentSize = size();
+        // 先把size拿出来
         int newCapacity = (size() - 1) * 2 + 1;
 
-        newCapacity = Math.max(newCapacity, MAX_SIZE);
+        newCapacity = Math.min(newCapacity, MAX_SIZE);
 
         if (newCapacity <= size() + 1) {
             return;
@@ -83,6 +84,4 @@ public class CirclarQueue {
         return isEmpty() ? -1 : queue[(tail - 1 + capacity) % capacity];
     }
 
-
 }
-

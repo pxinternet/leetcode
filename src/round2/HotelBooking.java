@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HotelBooking {
 
-    public static boolean canAccommodate(int rooms, int[][] bookings) {
+    public static boolean canAccommodate(int rooms, int[][]  bookings) {
 
         List<int[]> events = new ArrayList<>();
 
