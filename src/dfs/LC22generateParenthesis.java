@@ -18,7 +18,6 @@ public class LC22generateParenthesis {
         }
     }
 
-
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
@@ -43,8 +42,6 @@ public class LC22generateParenthesis {
         return result;
     }
 
-
-
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
 
@@ -54,7 +51,7 @@ public class LC22generateParenthesis {
     }
 
     private void generate(List<String> result, String current, int left, int right) {
-        if (left ==0 && right ==0) {
+        if (left == 0 && right == 0) {
             result.add(current);
             return;
         }
@@ -63,7 +60,7 @@ public class LC22generateParenthesis {
             generate(result, current + "(", left - 1, right);
         }
         if (right > left) {
-            generate(right, current + ")", left, right - 1);
+            generate(result, current + ")", left, right - 1);
         }
     }
 
