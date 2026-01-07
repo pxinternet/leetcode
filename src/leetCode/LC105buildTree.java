@@ -3,6 +3,11 @@ package leetCode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LC105 从前序和中序遍历构建二叉树
+ *
+ * 思路：前序的第一个元素为根，通过在中序中找到根的位置可确定左子树和右子树的长度，递归构建。
+ */
 public class LC105buildTree {
 
     private Map<Integer, Integer> inorderIndexMap;
@@ -31,5 +36,14 @@ public class LC105buildTree {
 
         return root;
 
+    }
+
+    public static void main(String[] args) {
+        LC105buildTree solver = new LC105buildTree();
+        int[] preorder = new int[]{3,9,20,15,7};
+        int[] inorder = new int[]{9,3,15,20,7};
+        TreeNode root = solver.buildTree(preorder, inorder);
+        System.out.println(root);
+        System.out.println("期望: [3,9,20,null,null,15,7] 或等价结构");
     }
 }

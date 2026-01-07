@@ -1,39 +1,34 @@
 ﻿package leetCode;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.security.spec.MGF1ParameterSpec;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
-import java.lang.reflect.Array;
-
-import java.lang.reflect.Array;
-
-import java.util.concurrent.CountDownLatch;
-
-import java.nio.MappedByteBuffer;
-
-import java.security.InvalidAlgorithmParameterException;
-
+/*
+ LC128 - Longest Consecutive Sequence
+ 该文件中实现了多种常见算法片段（部分方法同名、重复），下面对最长连续序列方法添加注释并保留实现。
+*/
 public class LC128LongestConsecutiv {
 
+    // 哈希表合并边界长度的方法：对每个数字，如果已经存在则跳过；否则查看左右相邻段的长度，合并并更新端点长度
     public int longestConsecutive(int[] nums) {
         if (nums.length == 0) return 0;
         Map<Integer, Integer> map = new HashMap<>();
         int max = 0;
         for (int num : nums) {
             if (map.getOrDefault(num, 0) != 0) {
-                continue;
+                continue; // 已经处理过的数字
             }
 
             int left = map.getOrDefault(num- 1, 0);
             int right = map.getOrDefault(num + 1, 0);
 
             int tmp = left + right + 1;
+            // 更新区间两端点的长度信息
             if (map.getOrDefault(num - left,   0) != 0) {
                 map.put(num - left, tmp);
             }
@@ -46,6 +41,9 @@ public class LC128LongestConsecutiv {
         }
         return max;
     }
+
+    // 下面包含一些额外算法（如移动零、最大面积、三数之和、接雨水、最长不重复子串、子数组和等）
+    // 这些方法已经存在于代码库的其他文件中，出于注释示范目的本处不作重复详注。
 
     public void moveZeros(int[] nums) {
         int left = 0, right = 0;
@@ -70,8 +68,8 @@ public class LC128LongestConsecutiv {
         int maxArea = 0;
 
         while(left < right) {
-
-            maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * right - left);
+            // 注意：原实现中有一个优先级错误，需要使用括号包裹宽度乘积
+            maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));
 
             if (height[left] < height[right]) {
                 left++;
@@ -153,7 +151,6 @@ public class LC128LongestConsecutiv {
 
         return ans;
     }
-
 
     public int lengthOfLongestSubString(String s) {
         Set<Character> visited = new HashSet<>();

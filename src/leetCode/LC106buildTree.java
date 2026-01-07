@@ -3,6 +3,11 @@ package leetCode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LC106 从中序和后序遍历构建二叉树
+ *
+ * 注意：后序的最后一个元素为根，构建时先构建右子树再构建左子树（因为我们从后往前处理）。
+ */
 public class LC106buildTree {
 
     int postIdx;
@@ -69,5 +74,14 @@ public class LC106buildTree {
         rootNode.left = buildTree(postorder, left, inorderIndexMap.get(rootVal) - 1);
 
         return rootNode;
+    }
+
+    public static void main(String[] args) {
+        LC106buildTree solver = new LC106buildTree();
+        int[] inorder = new int[]{9,3,15,20,7};
+        int[] postorder = new int[]{9,15,7,20,3};
+        TreeNode root = solver.buildTree(inorder, postorder);
+        System.out.println(root);
+        System.out.println("期望: [3,9,20,null,null,15,7]");
     }
 }

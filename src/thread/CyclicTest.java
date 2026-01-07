@@ -18,7 +18,7 @@ public class CyclicTest {
         for (String s : set) {
             //
         }
-        //dosth;
+        // dosth;
     });
 
     public void count() {

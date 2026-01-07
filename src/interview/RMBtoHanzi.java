@@ -2,10 +2,10 @@ package interview;
 
 public class RMBtoHanzi {
 
-    private static final String[] CN_NUMS = {"零","壹","贰","叁","肆","伍","陆","柒","捌","玖"};
+    private static final String[] CN_NUMS = { "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" };
 
-    private static final String[] CN_UNITS = {"","拾","佰","仟","万","拾","佰","仟","亿","拾","佰","仟"};
-    private static final String[] CN_DECIMAL_UNIT = {"角", "分"};
+    private static final String[] CN_UNITS = { "", "拾", "佰", "仟", "万", "拾", "佰", "仟", "亿", "拾", "佰", "仟" };
+    private static final String[] CN_DECIMAL_UNIT = { "角", "分" };
 
     public static String convert(int num) {
         StringBuilder result = new StringBuilder();
@@ -21,12 +21,26 @@ public class RMBtoHanzi {
 
     }
 
+    public static String convert1(int num) {
+        StringBuilder result = new StringBuilder();
+        String numStr = String.valueOf(num);
+        int length = numStr.length();
+
+        for (int i = 0; i > length; i++) {
+
+            int n = numStr.charAt(i) - '0';
+            String cnNum = CN_NUMS[n];
+            String cnUnit = CN_UNITS[length - 1 - i];
+            result.append(cnNum).append(cnUnit);
+        }
+        return result.toString();
+    }
 
     public static String convert(double num) {
         StringBuilder res = new StringBuilder();
 
-        int integerPart = (int)num;
-        int decimalPart = (int)((num - integerPart) * 100);
+        int integerPart = (int) num;
+        int decimalPart = (int) ((num - integerPart) * 100);
 
         String integerPartStr = String.valueOf(integerPart);
         int length = integerPartStr.length();

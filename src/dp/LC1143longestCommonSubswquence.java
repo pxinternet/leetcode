@@ -26,7 +26,7 @@ public class LC1143longestCommonSubswquence {
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
                 }
             }
-        }
+        }a
         return dp[len1][len2];
     }
 

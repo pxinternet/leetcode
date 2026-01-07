@@ -2,10 +2,47 @@ package leetCode;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.smartcardio.ResponseAPDU;
+import java.util.Arrays;
 
 
 public class LC6convert {
+    /**
+     * Convert a string to its ZigZag (LeetCode 6) form and read line by line.
+     *
+     * Contract:
+     * - Input: s (non-null String), numRows (number of rows, >= 1 assumed by problem)
+     * - Output: String representing characters placed in a zigzag pattern with numRows and
+     *   then read row-by-row.
+     *
+     * Algorithm (idea):
+     * - When writing characters into numRows in a zigzag, the pattern repeats every
+     *   period = 2 * numRows - 2 (for numRows > 1). Within a period the row index
+     *   goes 0,1,2,...,numRows-1,numRows-2,...,1. We can map a character at index i
+     *   to its row by taking p = i % period; if p < numRows then row = p, else row = period - p.
+     * - Append characters into a StringBuilder for each row while scanning s once.
+     * - Finally concatenate the rows to produce the result.
+     *
+     * Correctness (brief):
+     * - The period and mapping guarantee that every character is assigned to the same
+     *   row it would occupy if we actually drew the zigzag and read row-by-row.
+     * - Because we iterate i from 0..s.length()-1 and append to row buffers in that order,
+     *   the left-to-right order within each row is preserved.
+     * - Special-case numRows == 1: the zigzag degenerates to a single row, returning s.
+     *
+     * Time complexity: O(n) where n = s.length() (each character processed once;
+     * appends are amortized O(1)).
+     * Space complexity: O(n) for the output (and O(numRows) auxiliary StringBuilders).
+     *
+     * Edge cases:
+     * - numRows == 1 -> return s (no period defined when numRows=1).
+     * - numRows >= s.length() -> result is s (each char falls into its own row or single row)
+     * - s empty -> returns "".
+     *
+     * Examples:
+     * - s = "PAYPALISHIRING", numRows = 3 -> "PAHNAPLSIIGYIR"
+     * - s = "PAYPALISHIRING", numRows = 4 -> "PINALSIGYAHRPI"
+     * - s = "ABC", numRows = 1 -> "ABC"
+     */
     public String convert(String s, int numRows) {
         if (numRows == 1) return s;
         List<StringBuilder> rowList = new ArrayList<>(numRows);

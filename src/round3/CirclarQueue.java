@@ -34,11 +34,11 @@ public class CirclarQueue {
     public void resize() {
         int currentSize = size();
         // 先把size拿出来
-        int newCapacity = (size() - 1) * 2 + 1;
+        int newCapacity = (capacity - 1) * 2 + 1;
 
         newCapacity = Math.min(newCapacity, MAX_SIZE);
 
-        if (newCapacity <= size() + 1) {
+        if (newCapacity <= currentSize + 1) {
             return;
         }
 

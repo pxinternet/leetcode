@@ -1,5 +1,8 @@
 package round2;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class QuadTree {
 
     class Node {
@@ -11,6 +14,8 @@ public class QuadTree {
 
         public Node bottomLeft;
         public Node bottomRight;
+
+        Set<Integer> testSet = new HashSet<>()；
 
         public Node() {
 

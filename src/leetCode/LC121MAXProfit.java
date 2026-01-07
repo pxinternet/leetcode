@@ -1,6 +1,8 @@
 package leetCode;
 
 public class LC121MAXProfit {
+    // LC121 - Best Time to Buy and Sell Stock I
+    // 思路：维护一个最小买入价格下标 leftIndex，遍历每一天计算当前卖出能获得的收益并维护最大值
     public int maxProfit(int[] prices) {
 
         int res = 0;

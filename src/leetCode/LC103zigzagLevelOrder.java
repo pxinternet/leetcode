@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * LC103 二叉树的锯齿形层序遍历
+ */
 public class LC103zigzagLevelOrder {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
@@ -43,5 +46,12 @@ public class LC103zigzagLevelOrder {
 
         return res;
 
+    }
+
+    public static void main(String[] args) {
+        LC103zigzagLevelOrder solver = new LC103zigzagLevelOrder();
+        TreeNode root = TreeNode.fromArray(new Integer[]{3,9,20,null,null,15,7});
+        System.out.println(solver.zigzagLevelOrder(root));
+        System.out.println("期望: [[3],[20,9],[15,7]]");
     }
 }

@@ -597,7 +597,6 @@ public class Top150 {
 
     }
 
-
     public int minSubArrayLen2(int target, int[] nums) {
         int left = 0;
         int right = 0;
@@ -1059,7 +1058,8 @@ public class Top150 {
                 end = end.next;
             }
 
-            if (end == null) return dummy.next;
+            if (end == null)
+                return dummy.next;
 
             ListNode start = pre.next;
             head = end.next;
@@ -2180,7 +2180,7 @@ i
     }
 
     private void dfsIsland(char[][] grid, int i, int j) {
-        if (i < 0 || j < 0 || i >= grid.length || j >= gird[0].length || grid[i][j] == '0') {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == '0') {
             return;
         }
 
@@ -2665,7 +2665,6 @@ i
         res.add(new int{start, end});
     }
 
-
     public int longestCommonSubsequence(String text1, String text2) {
 
         int[][] dp = new int[text1.length() + 1][text2.length() + 1];
@@ -2754,6 +2753,5 @@ i
         maxDiameterOfTree = Math.max(maxDiameterOfTree, left + right);
         return Math.max(left, right) + 1;
     }
-
 
 }

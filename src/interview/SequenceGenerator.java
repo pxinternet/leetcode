@@ -1,5 +1,6 @@
 ﻿package interview;
 
+import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ public class SequenceGenerator {
 
         int current = 1;
 
-        for (int i = 1; i<= n; i++) {
+        for (int i = 1; i <= n; i++) {
             current = minHeap.poll();
 
             int next1 = current * 2 + 1;
@@ -32,6 +33,10 @@ public class SequenceGenerator {
             }
         }
         return current;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(findNth(10));
     }
 
 }

@@ -1,6 +1,5 @@
 package round3;
 
-import java.lang.foreign.SymbolLookup;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class RateLimiter {
