@@ -29,4 +29,11 @@ public class LC115numDistince {
         return dp[0][0];
     }
 
+    public static void main(String[] args) {
+        LC115numDistince solution = new LC115numDistince();
+        String s = "rabbbit";
+        String t = "rabbit";
+        int result = solution.numDistinct(s, t);
+        System.out.println("Result: " + result);
+    }
 }
