@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Random;
 
-public class TopKFrequentElements {
+public class  TopKFrequentElements {
 
     public static List<Integer> topKFrequentHeap(int[] nums, int k) {
         Map<Integer, Integer> frequencyMap = new HashMap<>();
