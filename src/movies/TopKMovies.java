@@ -117,14 +117,26 @@ public class TopKMovies {
     // ------------------------- Top-K 统计相关 -------------------------
 
     /**
-     * 从 CSV 文件读取并合并每个电影的播放量，返回播放量最高的 k 个电影（按播放量降序，名称升序）。
+     * 从 CSV 文件流式读取并实时维护 Top-K，返回播放量最高的 k 个电影（按播放量降序，名称升序）。
      *
-     * 实现要点：
-     * - 使用 HashMap 合并相同电影名的播放数（counts），然后用容量为 k 的最小堆筛选 Top-K。
+     * 优化实现要点：
+     * - 流式处理：每处理一条记录就更新 Top-K，而不是先统计全部数据
+     * - 使用 HashMap 记录每个电影的累计播放量
+     * - 使用最小堆维护 Top-K，采用延迟删除策略处理堆中可能过期的元素
      * - 若播放数解析失败（非数字），会跳过该行并在 stderr 打印警告。
+     *
+     * 时间复杂度：O(N log K)，其中 N 是记录数，K 是 Top-K 的大小
+     * 空间复杂度：O(M + K)，其中 M 是不同电影的数量，K 是 Top-K 的大小
      */
     public static List<Map.Entry<String, Long>> topKFromCsv(String csvPath, int k) throws IOException {
+        if (k <= 0) return Collections.emptyList();
+
+        // 记录每个电影的累计播放量
         Map<String, Long> counts = new HashMap<>();
+        // 最小堆维护 Top-K（堆顶是最小值）
+        PriorityQueue<Map.Entry<String, Long>> heap = new PriorityQueue<>(MIN_HEAP_COMPARATOR);
+        // 记录哪些电影名在堆中（用于快速判断）
+        Set<String> inHeap = new HashSet<>();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(csvPath), StandardCharsets.UTF_8))) {
             List<String> rec;
@@ -137,19 +149,102 @@ public class TopKMovies {
                 String cnt = rec.get(1).trim();
                 try {
                     long plays = Long.parseLong(cnt);
-                    counts.merge(name, plays, Long::sum);
+                    // 更新累计播放量
+                    long newCount = counts.merge(name, plays, Long::sum);
+                    
+                    // 创建新的 Entry（使用最新的播放量）
+                    Map.Entry<String, Long> entry = new AbstractMap.SimpleEntry<>(name, newCount);
+                    
+                    if (inHeap.contains(name)) {
+                        // 该电影已在堆中，但由于 PriorityQueue 不支持更新操作，
+                        // 我们采用延迟删除策略：先加入新值，后续清理时再删除旧值
+                        heap.offer(entry);
+                    } else {
+                        // 该电影不在堆中
+                        if (heap.size() < k) {
+                            // 堆未满，直接加入
+                            heap.offer(entry);
+                            inHeap.add(name);
+                        } else {
+                            // 堆已满，检查新值是否大于堆顶
+                            Map.Entry<String, Long> top = heap.peek();
+                            if (MIN_HEAP_COMPARATOR.compare(entry, top) > 0) {
+                                // 新值大于堆顶，替换堆顶
+                                Map.Entry<String, Long> removed = heap.poll();
+                                inHeap.remove(removed.getKey());
+                                heap.offer(entry);
+                                inHeap.add(name);
+                            }
+                        }
+                    }
+                    
+                    // 定期清理堆中的过期元素（延迟删除策略）
+                    // 当堆大小超过 k 的 2 倍时进行清理，避免堆中积累过多过期元素
+                    if (heap.size() > k * 2) {
+                        cleanExpiredEntries(heap, counts, inHeap, k);
+                    }
                 } catch (NumberFormatException ex) {
                     System.err.println("Invalid play count for movie '" + name + "': '" + cnt + "' - skip");
                 }
             }
         }
 
-        return topKFromCounts(counts, k);
+        // 最终清理所有过期元素
+        cleanExpiredEntries(heap, counts, inHeap, k);
+
+        // 将堆中元素转换为列表并排序
+        List<Map.Entry<String, Long>> res = new ArrayList<>(heap);
+        res.sort(RESULT_COMPARATOR);
+        return res;
+    }
+
+    /**
+     * 清理堆中的过期元素（延迟删除策略）。
+     * 堆中可能包含同一个电影的多个 Entry（旧值），需要删除过期的，只保留最新的。
+     *
+     * @param heap 最小堆
+     * @param counts 最新的播放量映射
+     * @param inHeap 记录哪些电影在堆中
+     * @param k Top-K 的大小
+     */
+    private static void cleanExpiredEntries(PriorityQueue<Map.Entry<String, Long>> heap,
+                                            Map<String, Long> counts,
+                                            Set<String> inHeap,
+                                            int k) {
+        // 临时存储有效的 Entry
+        PriorityQueue<Map.Entry<String, Long>> validHeap = new PriorityQueue<>(MIN_HEAP_COMPARATOR);
+        inHeap.clear();
+
+        while (!heap.isEmpty()) {
+            Map.Entry<String, Long> entry = heap.poll();
+            String name = entry.getKey();
+            Long currentCount = counts.get(name);
+            
+            // 检查 Entry 的值是否是最新的
+            if (currentCount != null && currentCount.equals(entry.getValue())) {
+                // 值是最新的，保留
+                validHeap.offer(entry);
+                inHeap.add(name);
+            }
+            // 否则，该 Entry 已过期，丢弃
+        }
+
+        // 只保留 Top-K
+        while (validHeap.size() > k) {
+            Map.Entry<String, Long> removed = validHeap.poll();
+            inHeap.remove(removed.getKey());
+        }
+
+        // 将有效的 Entry 放回原堆
+        heap.clear();
+        heap.addAll(validHeap);
     }
 
     /**
      * 给定 movie->count 映射，返回 Top-K 项（按播放数降序，播放数相同时按名称升序）。
      * 使用最小堆保持容量为 k 的候选集合，最终将堆中元素排序为最终输出顺序。
+     * 
+     * 注意：此方法保留用于向后兼容，新代码建议使用 topKFromCsv 的流式处理版本。
      */
     public static List<Map.Entry<String, Long>> topKFromCounts(Map<String, Long> counts, int k) {
         if (k <= 0) return Collections.emptyList();
