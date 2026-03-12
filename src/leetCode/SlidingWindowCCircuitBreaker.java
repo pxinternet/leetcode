@@ -1,5 +1,11 @@
-﻿package leetCode;
+package leetCode;
 
+/**
+ * SlidingWindowCCircuitBreaker - 基于滑动窗口的熔断器
+ *
+ * 说明：CLOSED/OPEN/HALF_OPEN 三态，失败数超阈值转 OPEN，超时后转 HALF_OPEN，连续成功超阈值转 CLOSED。
+ * 使用滑动窗口统计失败次数。
+ */
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Timer;

@@ -1,24 +1,25 @@
 package leetCode;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * LC143 - 重排链表
+ *
+ * 题目概要：将链表按 L0→Ln→L1→Ln-1→... 重排。
+ *
+ * 解法说明：找中点、反转后半、交替合并。快慢指针找中点，反转后半段，再从 head 与后半头交替接。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ */
 public class LC143ReorderList {
 
-     public void reorderList(ListNode head) {
-        if (head == null || head.next == null) {
-            return;
-        }
+    public void reorderList(ListNode head) {
+        if (head == null || head.next == null) return;
 
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        System.out.println("slow : " + slow);
-        System.out.println("fast : " + fast);
-
 
         ListNode pre = null, curr = slow.next, tmp;
         while (curr != null) {
@@ -27,24 +28,18 @@ public class LC143ReorderList {
             pre = curr;
             curr = tmp;
         }
-         slow.next = null;
-         System.out.println("head : " + head);
-         System.out.println("pre  : " + pre);
+        slow.next = null;
 
-
-         ListNode first = head, second = pre;
-
-         //一定是second 短
-         while(second != null) {
+        ListNode first = head, second = pre;
+        while (second != null) {
             tmp = first.next;
             first.next = second;
-
             first = tmp;
             tmp = second.next;
             second.next = first;
             second = tmp;
-         }
-     }
+        }
+    }
 
     public static void main(String[] args) {
         LC143ReorderList lc143ReorderList = new LC143ReorderList();

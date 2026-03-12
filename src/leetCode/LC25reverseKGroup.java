@@ -1,5 +1,19 @@
 package leetCode;
 
+/**
+ * LC25reverseKGroup - K 个一组翻转链表
+ *
+ * 题目（概要）：将链表每 k 个节点一组进行翻转，不足 k 的剩余部分保持原样。
+ *
+ * 解法说明：
+ * - 分组定位 + 区间反转。每轮从 pre 走 k 步确定 end，反转 [start,end] 后接回
+ * - newReverse：反转闭区间 [head,end]，返回 {newHead, newTail}
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ *
+ * 示例：head=[1,2,3,4,5], k=2 → [2,1,4,3,5]
+ */
 public class LC25reverseKGroup {
 
     /*

@@ -2,10 +2,20 @@ package leetCode;
 
 import java.util.Arrays;
 
+/**
+ * LC16 - 最接近的三数之和
+ *
+ * 题目概要：从数组 nums 中找三个数使其和最接近 target，返回该和。
+ *
+ * 解法说明：排序后固定 nums[i]，对剩余部分双指针求两数之和，维护最小差值。
+ *
+ * 时间复杂度：O(n^2)
+ * 空间复杂度：O(1)
+ */
 public class LC16threeSumClosest {
 
     /**
-     * threeSumClosest：找到数组中三个数之和最接近 target 的和
+     * 找到数组中三个数之和最接近 target 的和
      * 算法概要：先对数组排序，然后固定一个元素 nums[i]，对剩下部分使用双指针（left/right）求
      * 两数之和使得与 (target - nums[i]) 的差最小。对每个 i 枚举并维护最小差值即可。
      * 时间复杂度：O(n^2)（排序 O(n log n) + 双指针枚举 O(n^2)）

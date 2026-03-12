@@ -3,23 +3,34 @@ package leetCode;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * LC83 - 删除排序链表中的重复元素
+ *
+ * 题目（概要）：给定升序链表，删除重复节点，使每个值只出现一次。
+ *
+ * 解法说明：
+ * - 核心思想：遍历，若 head.val==head.next.val 则跳过 next；否则 head 前进。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ *
+ * 示例：1->1->2->3->3 → 1->2->3
+ */
 public class LC83DeleteDuplicates {
 
+    /** 方案一：队列去重（可简化） */
     public ListNode deleteDuplicates(ListNode head) {
-
         if (head == null) return head;
-        //方案1 dequeue
+
         Deque<ListNode> queue = new LinkedList<>();
         queue.offerLast(head);
 
 
-        while(head.next != null) {
+        while (head.next != null) {
             head = head.next;
-            System.out.println("head = " + head.val);
             ListNode top = queue.peekLast();
-            System.out.println("top = " + top.val);
             if (top.val == head.val) continue;
-            queue.offer(head);
+            queue.offerLast(head);
         }
 
         ListNode dummy = new ListNode();
@@ -34,11 +45,12 @@ public class LC83DeleteDuplicates {
         return dummy.next;
     }
 
+    /** 推荐：原地删除，O(1) 空间 */
     public ListNode deleteDuplicatesList(ListNode head) {
         ListNode dummy = new ListNode();
         dummy.next = head;
 
-        while(head != null && head.next != null) {
+        while (head != null && head.next != null) {
             if (head.val == head.next.val) head.next = head.next.next;
             else head = head.next;
         }

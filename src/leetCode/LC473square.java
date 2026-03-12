@@ -1,9 +1,20 @@
-﻿package leetCode;
+package leetCode;
 
 import java.util.Arrays;
 
+/**
+ * LC473 - 火柴拼正方形
+ *
+ * 题目（概要）：用火柴数组拼成正方形，每根用一次，能否拼成。
+ *
+ * 解法说明：总和须被 4 整除，边长 target=sum/4。回溯：四边 sums[4]，按长度降序尝试放入每条边，剪枝 sums[i]+stick>target。
+ *
+ * 时间复杂度：O(4^n)
+ * 空间复杂度：O(n)
+ */
 public class LC473square {
 
+    /** 判断能否拼成正方形 */
     public boolean makesquare(int[] matchsticks) {
         if (matchsticks.length < 4) return false;
         int sum = 0;

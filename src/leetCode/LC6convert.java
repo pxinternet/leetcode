@@ -2,9 +2,19 @@ package leetCode;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 
-
+/**
+ * LC6 - Z 字形变换
+ *
+ * 题目（概要）：将字符串按 Z 字形排列（numRows 行）后按行读取，返回新字符串。
+ *
+ * 解法说明：周期 period=2*numRows-2，索引 i 映射到行 index = i%period，若 index>=numRows 则 row=period-index。按行收集后拼接。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)
+ *
+ * 示例：s="PAYPALISHIRING", numRows=3 → "PAHNAPLSIIGYIR"
+ */
 public class LC6convert {
     /**
      * Convert a string to its ZigZag (LeetCode 6) form and read line by line.

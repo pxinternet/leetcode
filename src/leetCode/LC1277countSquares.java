@@ -1,16 +1,24 @@
 package leetCode;
 
-/*
- LC1277 - Count Square Submatrices with All Ones
- 动态规划：dp[i][j] 表示以 i,j 为右下角的最大正方形边长（由该点向左、上、左上三个点最小值 + 1 得到）
- 累加 dp 值即可得到所有以每个点为右下角的正方形总数。
- 时间复杂度 O(m*n)，空间 O(m*n)（可优化为 O(n)）
-*/
+/**
+ * LC1277 - 统计全为 1 的正方形子矩阵
+ *
+ * 题目（概要）：给定 0/1 矩阵，求所有元素全为 1 的正方形子矩阵个数。
+ *
+ * 解法说明：
+ * - 核心思想：DP。dp[i][j] 表示以 (i,j) 为右下角的最大正方形边长；递推 dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1（若 matrix[i][j]==1）。
+ * - 以 (i,j) 为右下角的正方形个数 = dp[i][j]（边长 1 到 dp[i][j] 各一个），累加所有 dp 即可。
+ *
+ * 时间复杂度：O(m * n)
+ * 空间复杂度：O(m * n)
+ *
+ * 示例：matrix=[[0,1,1,1],[1,1,1,1],[0,1,1,1]] → 15
+ */
 public class LC1277countSquares {
 
-
-    //动态规划：dp[i][j]代表点i,j能构成的最大边长的正方形
-
+    /**
+     * DP：dp[i][j] 为以 (i,j) 为右下角的最大正方形边长，累加得总数
+     */
     public int countSquares(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;

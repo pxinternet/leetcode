@@ -2,8 +2,35 @@ package leetCode;
 
 import java.util.*;
 
+/**
+ * LC438 - 找到字符串中所有字母异位词
+ *
+ * 题目（概要）：给定 s 和 p，找出 s 中所有 p 的字母异位词的起始索引。
+ * 字母异位词：长度相同、各字符出现次数相同但顺序不同。
+ *
+ * 解法说明：
+ * - 核心思想：滑动窗口，窗口长度固定为 p.length()。用 map 记录 p 中各字符需求，counter 为未满足种类数。
+ * - 当 counter==0 且窗口长度等于 p 长度时，说明找到一组异位词。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)（字符集固定）
+ *
+ * 边界与注意事项：
+ * - p 长度大于 s 时返回空列表
+ *
+ * 示例：s="cbaebabacd", p="abc" → [0,6]
+ */
 public class LC438findAnagrams {
 
+    /**
+     * 滑动窗口找所有异位词起始索引
+     *
+     * 关键点：counter==0 时窗口覆盖 p 的字符，再检查长度是否等于 p.length() 以排除超覆盖情况
+     *
+     * @param s 主串
+     * @param p 模式串
+     * @return 异位词起始索引列表
+     */
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
         if (p.length() > s.length()) return res;

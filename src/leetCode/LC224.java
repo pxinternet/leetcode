@@ -1,9 +1,20 @@
-﻿package leetCode;
+package leetCode;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Stack;
 
+/**
+ * LC224 - 基本计算器
+ *
+ * 题目（概要）：字符串含数字、+、-、空格、括号，计算其值。
+ *
+ * 解法说明：栈记录每层括号前的符号；遇 ( 压栈当前 sign，遇 ) 弹栈；数字按当前 sign 累加。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)
+ *
+ * 示例："(1+(4+5+2)-3)+(6+8)" → 23
+ */
 public class LC224 {
     public int calculate(String s) {
 

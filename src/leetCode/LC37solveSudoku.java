@@ -1,9 +1,18 @@
 package leetCode;
 
+/**
+ * LC37 - 解数独
+ *
+ * 题目概要：填充 9x9 数独，使每行、每列、每个 3x3 宫格含 1-9 各一次。
+ *
+ * 解法说明：回溯。按行优先枚举空位，尝试填入 1-9，用 isValid 或 rows/cols/boxes 剪枝。
+ * 优化版用 O(1) 判重替代每步遍历整行整列。
+ *
+ * 时间复杂度：O(9^m)，m 为空格数
+ * 空间复杂度：O(81)
+ */
 public class LC37solveSudoku {
 
-
-    //直接回溯超时了
     public void solveSudoku(char[][] board) {
         backtrack(board, 0, 0);
     }

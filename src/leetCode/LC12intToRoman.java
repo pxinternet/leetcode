@@ -1,5 +1,17 @@
 package leetCode;
 
+/**
+ * LC12intToRoman - 整数转罗马数字
+ *
+ * 题目（概要）：将 1-3999 的整数转换为罗马数字表示。
+ *
+ * 解法说明：贪心，从大到小枚举符号（M,CM,D,CD,C,XC,L,XL,X,IX,V,IV,I），尽可能多地使用当前符号。
+ *
+ * 时间复杂度：O(1)（输入范围受限）
+ * 空间复杂度：O(1)
+ *
+ * 示例：58 → "LVIII"；1994 → "MCMXCIV"
+ */
 public class LC12intToRoman {
 
     /*

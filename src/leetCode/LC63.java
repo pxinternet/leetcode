@@ -1,5 +1,15 @@
 package leetCode;
 
+/**
+ * LC63 - 不同路径 II
+ *
+ * 题目概要：网格中部分格子为障碍物，求从左上到右下的路径数。
+ *
+ * 解法说明：DP，与 LC62 类似，遇到障碍物 dp=0；第一行/列遇到障碍后全为 0。
+ *
+ * 时间复杂度：O(m * n)
+ * 空间复杂度：O(m * n)，可优化为 O(n)
+ */
 public class LC63 {
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

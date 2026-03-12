@@ -1,15 +1,21 @@
 package leetCode;
 
+/**
+ * LC309 - 最佳买卖股票时机含冷冻期
+ *
+ * 题目概要：每天可买/卖股票，卖出后有一天冷冻期不能买，求最大利润。
+ *
+ * 解法说明：DP。状态：持有、卖出后冷却、冷冻期、刚卖出等。maxProfit2 用三状态简化。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)
+ */
 public class LC309maxProfit {
 
     public int maxProfit(int[] prices) {
-
         int n = prices.length;
-
         int[][] dp = new int[n][5];
-
         dp[0][0] = 0;
-        //持有股票
         dp[0][1] = -prices[0];
         //卖出后持有
         dp[0][2] = 0;

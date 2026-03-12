@@ -1,9 +1,18 @@
 package leetCode;
 
-import javax.swing.text.Style;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Tools - 调试/输出工具类
+ *
+ * 用途：供 LeetCode 题解在 main 或测试中打印矩阵、数组、集合、列表，便于本地调试。
+ *
+ * 使用示例：
+ * - Tools.printArray(nums);
+ * - Tools.printList(res);
+ * - Tools.printMatrix(matrix);
+ */
 public class Tools {
 
     public static void printMatrix(int[][] matrix) {

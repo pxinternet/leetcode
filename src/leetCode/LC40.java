@@ -2,11 +2,20 @@ package leetCode;
 
 import java.util.*;
 
+/**
+ * LC40 - 组合总和 II
+ *
+ * 题目概要：从含重复的 candidates 中选数使和为 target，每个数最多用一次，返回所有不重复组合。
+ *
+ * 解法说明：排序 + 回溯。去重：同一层中若 candidates[i]==candidates[i-1] 且 i>begin 则跳过，
+ * 原因与 LC47 相同：避免产生重复组合。
+ *
+ * 时间复杂度：O(2^n)
+ * 空间复杂度：O(n)
+ */
 public class LC40 {
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-
-        //数组上来先排序
         Arrays.sort(candidates);
 
         int length = candidates.length;
@@ -36,11 +45,7 @@ public class LC40 {
                 break;
             }
 
-            if (i > begin && candidates[i] == candidates[i-1]) {
-                //如果这两个元素一样，那么说明，这个组合已经在里面了，不需要再遍历了
-                //如果没想明白这部分，那么就说明没想明白什么叫深度优先遍历******
-                continue;
-            }
+            if (i > begin && candidates[i] == candidates[i - 1]) continue;
 
             path.addLast(candidates[i]);
 

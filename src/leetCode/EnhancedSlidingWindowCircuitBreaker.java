@@ -1,15 +1,17 @@
-﻿package leetCode;
+package leetCode;
 
-import java.sql.Time;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.Timer;
 import java.util.concurrent.locks.ReentrantLock;
 
-import java.util.Timer;
-
-
+/**
+ * EnhancedSlidingWindowCircuitBreaker - 增强版滑动窗口熔断器
+ *
+ * 说明：在 SlidingWindowCCircuitBreaker 基础上增加 ReentrantLock、onStateChange 回调等。
+ */
 public class EnhancedSlidingWindowCircuitBreaker {
 
     private enum BreakState {

@@ -3,21 +3,29 @@ package leetCode;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * LC85 - 最大矩形
+ *
+ * 题目（概要）：01 矩阵，求全 1 子矩阵的最大面积。
+ *
+ * 解法说明：每行计算向左连续 1 的个数 left[i][j]，对每列转化为柱状图，用单调栈求最大矩形（同 LC84）。
+ *
+ * 时间复杂度：O(m*n)
+ * 空间复杂度：O(m*n)
+ */
 public class LC85maximalRectangle {
 
+    /** 暴力：以 (i,j) 为右下角向上扩展，取最小宽度求面积 */
     public int maximalRectangle(char[][] matrix) {
         int m = matrix.length;
-        if (m == 0) {
-            return 0;
-        }
+        if (m == 0) return 0;
         int n = matrix[0].length;
 
         int[][] left = new int[m][n];
-
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (matrix[i][j] == '1') {
-                    left[i][j] = (j == 0? 0 : left[i][j - 1] + 1) + 1;
+                    left[i][j] = (j == 0 ? 0 : left[i][j - 1]) + 1;
                 }
             }
         }

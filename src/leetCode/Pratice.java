@@ -1,4 +1,4 @@
-﻿package
+package leetCode;
 
 import java.util.Collections;
 
@@ -18,8 +18,6 @@ import java.util.spi.CurrencyNameProvider;
 import java.time.temporal.IsoFields;
 
 import java.util.PrimitiveIterator;
-
-leetCode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,6 +45,9 @@ import java.util.Arrays;
 
 import java.security.DrbgParameters;
 
+/**
+ * Pratice - 算法练习合集，包含多种 LC 题目的实现草稿。
+ */
 public class Pratice {
 
     public double findMedianSortedArray(int[] nums1, int[] nums2) {

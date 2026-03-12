@@ -4,18 +4,32 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/*
- LC127 - Word Ladder（单词接龙）
- 双向 BFS（bidirectional BFS）可以将搜索空间从 O(k^d) 降到接近 O(k^(d/2))，d 为深度。
- 思路：从 beginWord 和 endWord 同时向中间扩展，每次优先扩展节点更少的那一端，遇到交集时返回层数。
-*/
+/**
+ * LC127ladderLength - 单词接龙
+ *
+ * 题目（概要）：从 beginWord 到 endWord，每次变一个字母，中间单词须在 wordList 中，求最短转换序列长度。
+ *
+ * 解法说明：双向 BFS，从 begin 和 end 同时扩展，每次扩展较小一端，遇交集即返回。
+ *
+ * 时间复杂度：O(k^d) 降为约 O(k^(d/2))，k 为分支因子
+ * 空间复杂度：O(n)
+ *
+ * 示例：begin="hit", end="cog", list=["hot","dot","dog","lot","log","cog"] → 5
+ */
 public class LC127ladderLength {
 
-    // 计算最短转换序列长度（单词间每次变一个字母，所有中间单词必须在 wordList 中）
+    /**
+     * 双向 BFS 求最短转换序列长度（含 begin 和 end）
+     *
+     * 关键点：每次从较小的一端扩展；每词逐位替换 26 个字母，在 wordSet 中则加入下一层
+     *
+     * @param beginWord 起始词
+     * @param endWord   目标词
+     * @param wordList  可用词典
+     * @return 最短序列长度（词数），不可达返回 0
+     */
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        if(!wordList.contains(endWord)) {
-            return 0;
-        }
+        if (!wordList.contains(endWord)) return 0;
 
         Set<String> wordSet = new HashSet<>(wordList);
         Set<String> beginSet = new HashSet<>();
@@ -39,7 +53,7 @@ public class LC127ladderLength {
                 char[] chs = word.toCharArray();
 
                 for (int i = 0; i < chs.length; i++) {
-                    for (char c = 'a'; c < 'z'; c++) {
+                    for (char c = 'a'; c <= 'z'; c++) {
                         char old = chs[i];
                         chs[i] = c;
                         String target = String.valueOf(chs);

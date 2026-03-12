@@ -1,4 +1,4 @@
-﻿package leetCode;
+package leetCode;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,13 +8,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-/*
- LC128 - Longest Consecutive Sequence
- 该文件中实现了多种常见算法片段（部分方法同名、重复），下面对最长连续序列方法添加注释并保留实现。
-*/
+/**
+ * LC128LongestConsecutiv - 最长连续序列
+ *
+ * 题目（概要）：给定未排序整数数组 nums，找出数字连续的最长序列长度。要求 O(n) 时间复杂度。
+ *
+ * 解法说明（longestConsecutive）：
+ * - 核心思想：用 HashMap 记录每个连续区间的长度，key 为区间端点，value 为区间长度
+ * - 对每个 num，若未处理则合并 num-1 左侧长度与 num+1 右侧长度，更新区间两端点
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)
+ *
+ * 注意：本文件还包含其他算法片段（移动零、最大面积、三数之和、接雨水等），供参考。
+ */
 public class LC128LongestConsecutiv {
 
-    // 哈希表合并边界长度的方法：对每个数字，如果已经存在则跳过；否则查看左右相邻段的长度，合并并更新端点长度
+    /**
+     * 哈希表法：对每个数字合并其左右相邻段的长度，并更新端点
+     *
+     * @param nums 整数数组
+     * @return 最长连续序列长度
+     */
     public int longestConsecutive(int[] nums) {
         if (nums.length == 0) return 0;
         Map<Integer, Integer> map = new HashMap<>();

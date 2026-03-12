@@ -1,16 +1,24 @@
-﻿package leetCode;
+package leetCode;
 
 import java.util.Arrays;
 
 /**
- * LC34: 在排序数组中查找元素的起始和结束位置（Search for a Range）
+ * LC34 - 在排序数组中查找元素的第一个和最后一个位置
  *
- * 方法说明：
- * - 使用两次二分查找（lower_bound 与 upper_bound 的变体）来分别定位目标范围的左边界和右边界。
- * - lower_bound：找到第一个大于等于 target 的位置；若该位置值等于 target，则为左边界。
- * - upper_bound：找到第一个严格大于 target 的位置；右边界为 upper_bound - 1。
+ * 题目（概要）：给定升序数组 nums 和目标值 target，找出 target 在数组中的起始和结束位置索引。若不存在返回 [-1,-1]。
  *
- * 代码采用 [low, high) 半开区间二分模板（low 初始为 0，high 初始为 nums.length，循环条件 low < high）。
+ * 解法说明：
+ * - 使用两次二分查找：lower_bound（第一个 >= target）和 upper_bound（第一个 > target）
+ * - 左边界 = lower_bound 结果（若该位置值等于 target）；右边界 = upper_bound - 1
+ * - 采用 [low, high) 半开区间二分模板
+ *
+ * 时间复杂度：O(log n)
+ * 空间复杂度：O(1)
+ *
+ * 边界与注意事项：
+ * - nums 为 null 返回 [-1,-1]
+ *
+ * 示例：nums = [5,7,7,8,8,10], target = 8 → [3,4]
  */
 public class LC34 {
 
@@ -25,11 +33,9 @@ public class LC34 {
 
         int[] result = {-1, -1};
 
-        // 找到第一个 >= target 的位置
         int leftIndex = extremeInsertionIndex(nums, target, true);
-        // 如果 leftIndex 越界或该位置不是 target，则数组中不存在 target
         if (leftIndex == nums.length || nums[leftIndex] != target) {
-            return result;
+            return result;  // lower_bound 越界或指向更大值，说明 target 不存在
         }
         result[0] = leftIndex;
         // 找到第一个 > target 的位置，减一得到右边界
