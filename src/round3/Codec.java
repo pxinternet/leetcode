@@ -3,6 +3,26 @@ package round3;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Codec - 二叉树的序列化与反序列化（LeetCode 297）
+ *
+ * 题目（概要）：将二叉树序列化为字符串（如 "1,2,3,null,null,4,5"），并能反序列化还原。
+ *
+ * 算法原理：
+ * - 层序遍历：序列化时 BFS，每节点输出 val 或 "null"，逗号分隔。
+ * - 反序列化：按顺序解析，队列维护待挂子节点的父节点，依次挂左右子。
+ *
+ * 核心逻辑（分步）：
+ * - serialize：BFS，非 null 输出 val+"," 并入队左右（含 null）；null 输出 "null,"。
+ * - deserialize：split 后，nodes[0] 为根；队列按层，每次取 parent，为 next 两个值建左右子并入队。
+ *
+ * 关键洞察：null 也入队以保证输出与树结构一一对应；反序列化时顺序与序列化一致。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)
+ *
+ * 示例：root=[1,2,3,null,null,4,5] → "1,2,3,null,null,4,5"
+ */
 public class Codec {
 
     class TreeNode {

@@ -2,6 +2,27 @@ package round2;
 
 import java.util.Random;
 
+/**
+ * MedianFinder - 数组快速中位数（QuickSelect）
+ *
+ * 题目（概要）：给定整数数组，求中位数。偶数长度取中间两数平均，奇数取中间数。
+ *
+ * 算法原理：
+ * - QuickSelect：在未排序数组中 O(n) 平均找到第 k 小元素。中位数即第 n/2 或 (n/2-1+n/2)/2 小。
+ * - 随机化 pivot 降低最坏 O(n²) 概率。
+ *
+ * 核心逻辑（分步）：
+ * - 步骤 1：n 为奇数则 quickSelect(k=n/2)；偶数则 (quickSelect(n/2-1)+quickSelect(n/2))/2。
+ * - 步骤 2：partition 将 pivot 放到正确位置；根据 k 与 pivotIndex 递归左/右半。
+ * - 步骤 3：Lomuto 分区，小于 pivot 的放左侧，返回 pivot 最终索引。
+ *
+ * 关键洞察：与数据流中位数（双堆）不同，本实现针对静态数组；QuickSelect 会修改原数组。
+ *
+ * 时间复杂度：平均 O(n)，最坏 O(n²)
+ * 空间复杂度：O(log n) 递归栈
+ *
+ * 示例：[1,2,3] → 2；[1,2,3,4] → 2.5
+ */
 public class MedianFinder {
 
     // 返回数组 nums 的中位数（若长度为偶数，返回中间两个数的平均值）

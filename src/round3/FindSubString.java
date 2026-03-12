@@ -5,6 +5,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * FindSubString - 串联所有单词的子串（LeetCode 30）
+ *
+ * 题目（概要）：s 和等长单词数组 words，求 s 中所有包含 words 中全部单词（每个恰好一次）子串的起始索引。
+ * 单词顺序可任意。
+ *
+ * 算法原理：
+ * - 滑动窗口：按单词长度 wordLength 为步长，对 offset=0..wordLength-1 分别做滑动窗口。
+ * - 词频匹配：need 为目标词频，window 为当前窗口词频；窗口内匹配数等于 wordCount 时记录 left。
+ *
+ * 核心逻辑（分步）：
+ * - 步骤 1：need 统计 words 词频；right 以 wordLength 步长移动。
+ * - 步骤 2：若 word 在 need 中，更新 window、count；若 window[word]>need[word] 则收缩 left。
+ * - 步骤 3：count==wordCount 时记录 left，左移一格继续找。
+ * - 步骤 4：word 不在 need 中则清空窗口，left=right+wordLength。
+ *
+ * 关键洞察：offset 枚举避免漏掉不以 word 边界为起点的匹配；单词为单位滑动。
+ *
+ * 时间复杂度：O(n × wordLength)
+ * 空间复杂度：O(words.length)
+ *
+ * 示例：s="barfoothefoobarman", words=["foo","bar"] → [0,9]
+ */
 public class FindSubString {
 
     public List<Integer> findSunString(String s, String[] words) {

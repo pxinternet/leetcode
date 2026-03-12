@@ -9,7 +9,27 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Random;
 
-public class  TopKFrequentElements {
+/**
+ * TopKFrequentElements - 前 K 个高频元素（LeetCode 347）
+ *
+ * 题目（概要）：给定整数数组，返回出现频率最高的 k 个元素，顺序任意。
+ *
+ * 算法原理：
+ * - 堆：维护大小为 k 的最小堆，按频率比较；堆顶为第 k 大频率，超过 k 则弹出堆顶。
+ * - 桶排序：buckets[freq]=元素列表，从高 freq 往低取满 k 个。
+ *
+ * 核心逻辑（分步）：
+ * - topKFrequentHeap：统计词频；遍历 entry，入堆，size>k 则 poll；最后堆中 k 个即为答案。
+ * - topKFrequentBuck：buckets[freq] 收集；从 buckets.length-1 递减，依次取元素直到满 k。
+ *
+ * 关键洞察：最小堆堆顶为当前第 k 大，新元素大于堆顶则替换；桶按频次分桶。
+ *
+ * 时间复杂度：堆 O(n log k)；桶 O(n)
+ * 空间复杂度：O(n)
+ *
+ * 示例：nums=[1,1,1,2,2,3], k=2 → [1,2]
+ */
+public class TopKFrequentElements {
 
     public static List<Integer> topKFrequentHeap(int[] nums, int k) {
         Map<Integer, Integer> frequencyMap = new HashMap<>();
@@ -56,7 +76,7 @@ public class  TopKFrequentElements {
 
         List<Integer> topK = new ArrayList<>();
 
-        for (int i = buckets.length - 1; i >= 0 && topK.size() < k; i++) {
+        for (int i = buckets.length - 1; i >= 0 && topK.size() < k; i--) {
             if (buckets[i] != null) {
                 topK.addAll(buckets[i]);
             }

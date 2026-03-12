@@ -3,6 +3,27 @@ package round3;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * RestoreIPAddress - 复原 IP 地址（LeetCode 93）
+ *
+ * 题目（概要）：给定只含数字的字符串，返回所有可能的有效 IP 地址，用 '.' 分隔成 4 段，每段 0-255，无前导零。
+ *
+ * 算法原理：
+ * - 回溯：每段取 1～3 位，合法则递归下一段；4 段且刚好用完则加入结果。
+ * - 合法性：非 "0x" 形式的前导零；数值 0-255。
+ *
+ * 核心逻辑（分步）：
+ * - 步骤 1：s 长度需在 [4,12]；backtrack(start, segment)。
+ * - 步骤 2：segment==4 且 start==s.length() 则加入结果；segment>=4 或 start>=length 则返回。
+ * - 步骤 3：枚举段长 1～3，取 substring；isValidSegment 则追加、递归、回溯。
+ *
+ * 关键洞察：前导零如 "01" 非法；"0" 合法；每段最多 3 位。
+ *
+ * 时间复杂度：O(3^4) 常数级
+ * 空间复杂度：O(1) 不含结果
+ *
+ * 示例："25525511135" → ["255.255.11.135","255.255.111.35"]
+ */
 public class RestoreIPAddress {
 
     public static List<String> restoreIpAddress(String s) {
