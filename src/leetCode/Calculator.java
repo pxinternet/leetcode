@@ -37,14 +37,21 @@ public class Calculator {
             }
 
             if (!Character.isDigit(currentChar) && currentChar != ' ' || i == s.length() - 1) {
-                if (operation == '+') {
-                    stack.push(currentNumber);
-                } else if (operation == '-') {
-                    stack.push(-currentNumber);
-                } else if (operation == '*') {
-                    stack.push(stack.pop() * currentNumber);
-                } else if (operation == '/') {
-                    stack.push(stack.pop() /currentNumber);
+                switch (operation) {
+                    case '+':
+                        stack.push(currentNumber);
+                        break;
+                    case '-':
+                        stack.push(-currentNumber);
+                        break;
+                    case '*':
+                        stack.push(stack.pop() * currentNumber);
+                        break;
+                    case '/':
+                        stack.push(stack.pop() / currentNumber);
+                        break;
+                    default:
+                        break;
                 }
                 operation = currentChar;
                 currentNumber = 0;
