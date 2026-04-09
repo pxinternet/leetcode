@@ -7,6 +7,27 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * AutoCompleteSystem - 搜索自动补全系统（LeetCode 642 思路）
+ *
+ * 题目（概要）：输入字符流，每次 input(c) 返回以当前输入为前缀的补全建议，按权重降序、字典序；'#' 结束并清空。
+ *
+ * 算法原理：
+ * - Trie：字典树存储所有词，节点存 word、weight；输入前缀后 DFS 收集子树内所有完整词。
+ * - LRU 缓存：相同前缀的补全结果缓存，避免重复 Trie 遍历。
+ *
+ * 核心逻辑（分步）：
+ * - 步骤 1：insertWord 沿 Trie 插入，叶子设 isEnd、word、weight。
+ * - 步骤 2：input(c)：'#' 清空 currentInput；否则 append，查缓存，无则 getSuggestions(prefix) 并缓存。
+ * - 步骤 3：getSuggestions 沿 prefix 走到节点，collectSuggections 收集所有完整词，按 weight 降序、字典序排序。
+ *
+ * 关键洞察：Trie 前缀共享；缓存键为前缀字符串；weight 用于排序。
+ *
+ * 时间复杂度：input 均摊 O(prefix 长度 + 补全数×log(补全数))
+ * 空间复杂度：O(字典总字符数 + 缓存)
+ *
+ * 示例：输入 "i" → ["is","ideal"...]（按权重）
+ */
 public class AutoCompleteSystem {
 
     static class TrieNode {

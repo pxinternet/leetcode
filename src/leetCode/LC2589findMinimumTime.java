@@ -1,9 +1,20 @@
-﻿package leetCode;
+package leetCode;
 
 import java.util.Arrays;
 
+/**
+ * LC2589 - 完成所有任务的最少时间
+ *
+ * 题目（概要）：tasks[i]=[start,end,duration]，在 [start,end] 内至少运行 duration 秒，求最少总运行时间（可复用已有运行时段）。
+ *
+ * 解法说明：按 end 升序排序，贪心从 end 往前填充，最大化时段复用。
+ *
+ * 时间复杂度：O(n * range)
+ * 空间复杂度：O(maxEnd)
+ */
 public class LC2589findMinimumTime {
 
+    /** 返回完成所有任务的最少运行时间 */
     public int findMinimumTime(int[][] tasks) {
         int n = tasks.length;
         

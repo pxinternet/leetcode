@@ -4,14 +4,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * LC105 从前序和中序遍历构建二叉树
+ * LC105buildTree - 从前序与中序遍历序列构造二叉树
  *
- * 思路：前序的第一个元素为根，通过在中序中找到根的位置可确定左子树和右子树的长度，递归构建。
+ * 题目（概要）：给定前序和中序遍历序列，构造并返回二叉树。假设无重复元素。
+ *
+ * 解法说明：
+ * - 前序第一个元素为根，在中序中找到根的位置可划分左、右子树
+ * - 递归：左子树区间 [left, rootIdx-1]，右子树 [rootIdx+1, right]
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)，HashMap + 递归栈
+ *
+ * 示例：preorder=[3,9,20,15,7], inorder=[9,3,15,20,7] → 对应二叉树
  */
 public class LC105buildTree {
 
     private Map<Integer, Integer> inorderIndexMap;
-    private  int preorderIndex;
+    private int preorderIndex;
+
+    /**
+     * 根据前序和中序构造二叉树
+     *
+     * @param preorder 前序遍历序列
+     * @param inorder  中序遍历序列
+     * @return 二叉树根节点
+     */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         preorderIndex = 0;
         inorderIndexMap = new HashMap<>();

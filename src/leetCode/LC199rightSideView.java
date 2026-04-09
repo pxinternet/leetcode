@@ -5,19 +5,34 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * LC199 - 二叉树的右视图
+ *
+ * 题目（概要）：给定二叉树，返回从右侧能看到的节点值（每层最右节点）。
+ *
+ * 解法说明：
+ * - DFS：先右后左，depth==result.size() 时当前节点为该层首次访问即最右。
+ * - BFS：层序遍历，每层最后一个节点即为最右。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(h) / O(n)
+ *
+ * 示例：root=[1,2,3,null,5,null,4] → [1,3,4]
+ */
 public class LC199rightSideView {
 
+    /**
+     * DFS 先右后左，每层第一个访问的即为最右
+     */
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         dfs(root, result, 0);
         return result;
     }
 
-    //以下是该方法的工作原理：
-    //如果当前节点为 null，直接返回，因为空节点不包含任何节点。
-    //检查当前节点的深度是否等于结果列表的大小。如果等于，说明这是当前层的第一个节点，将其添加到结果列表中。因为我们先遍历右子树，所以每一层的第一个节点就是最右边的节点。
-    //递归地遍历当前节点的右子树和左子树。在递归调用时，需要将深度加 1。
-    //这个方法之所以正确，是因为它利用了 DFS 的特性，先遍历右子树，然后遍历左子树。这样，每一层的第一个节点就是最右边的节点。
+    /**
+     * 先右后左 DFS，depth==result.size() 表示该层首次访问，即最右节点
+     */
     private void dfs(TreeNode node, List<Integer> result, int depth) {
         if (node == null) {
             return;

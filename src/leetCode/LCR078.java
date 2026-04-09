@@ -1,9 +1,18 @@
 package leetCode;
 
-import java.util.List;
-
+/**
+ * LCR078 - 合并 K 个升序链表
+ *
+ * 题目（概要）：k 个升序链表，合并为一个升序链表。
+ *
+ * 解法说明：分治。两两合并，递归 merge(lists, start, mid) 与 merge(lists, mid+1, end)，再 mergeTwo。
+ *
+ * 时间复杂度：O(N*log k)，N 总节点数
+ * 空间复杂度：O(log k) 递归栈
+ */
 public class LCR078 {
 
+    /** 分治合并 K 个链表 */
     public ListNode mergeKLists(ListNode[] lists) {
         //两种方法一个是分治法
         if (lists.length == 0) return null;

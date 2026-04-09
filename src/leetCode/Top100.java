@@ -1,5 +1,10 @@
-﻿package leetCode;
+package leetCode;
 
+/**
+ * Top100 - LeetCode Top 100 热门题解合集
+ *
+ * 说明：本类集中存放 Top 100 题目的一种或多种实现，包括滑动窗口、DP、树、链表等。
+ */
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;

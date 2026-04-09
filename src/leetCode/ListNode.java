@@ -6,10 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 单链表节点工具类（含构造、数组转换、字符串化与 main 测试）
+ * ListNode - 单链表节点工具类
+ *
+ * 用途：LeetCode 链表题通用节点定义，提供 createFromArray、toArray、equals 等静态方法，便于建链、比较、调试。
  *
  * 约定：节点值为 int，next == null 表示链表尾部。
- * 提供的静态方法便于在各题解中快速创建/比较链表。
+ *
+ * 使用示例：
+ * - ListNode head = ListNode.createFromArray(new int[]{1,2,3});
+ * - int[] arr = ListNode.toArray(head);
  */
 public class ListNode {
 

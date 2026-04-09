@@ -3,6 +3,16 @@ package leetCode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LC17letterCombinations - 电话号码的字母组合
+ *
+ * 题目（概要）：给定数字字符串 digits（2-9），返回按电话按键映射的所有字母组合。如 "23"→["ad","ae","af","bd","be","bf","cd","ce","cf"]。
+ *
+ * 解法说明：回溯/DFS，对每位数字枚举对应字母，到达末位时记录路径。
+ *
+ * 时间复杂度：O(n * m^n)
+ * 空间复杂度：O(n)
+ */
 public class LC17letterCombinations {
 
     /*

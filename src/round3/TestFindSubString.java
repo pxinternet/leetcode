@@ -2,6 +2,14 @@ package round3;
 
 import java.util.List;
 
+/**
+ * TestFindSubString - FindSubString 的单元测试
+ *
+ * 测试用例：
+ * - Test1：s="barfoothefoobarman", words=["foo","bar"]，期望 [0,9]
+ * - Test2：s="wordgoodgoodgoodbestword", words 含重复，期望 []
+ * - Test3：s="aaa", words=["a","a"]，期望 [0,1]
+ */
 public class TestFindSubString {
     public static void main(String[] args) {
         FindSubString fs = new FindSubString();

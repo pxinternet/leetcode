@@ -1,9 +1,17 @@
-﻿package leetCode;
+package leetCode;
 
+/**
+ * 寻找峰值 / 最大索引 - 二分查找示例
+ *
+ * 题目（概要）：数组相邻不等（或可含相等），找峰值下标（大于邻居）。
+ *
+ * 解法说明：二分，mid 与 mid+1 比较决定向左或向右；相等时向右跳过相等段再判断。
+ */
 public class MaxValueIndex {
 
+    /** 二分找峰值下标 */
     public static int findPeakElement(int[] nums) {
-        int low = 0, high = nusms.length - 1;
+        int low = 0, high = nums.length - 1;
 
         while(low < high) {
             int mid = low + (high - low) / 2;

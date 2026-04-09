@@ -3,6 +3,16 @@ package leetCode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LC113 - 路径总和 II
+ *
+ * 题目概要：找出根到叶子路径上节点值之和等于 targetSum 的所有路径。
+ *
+ * 解法说明：递归。到叶子且 targetSum==root.val 则记录路径；否则对左右子树递归 targetSum-root.val。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(h)
+ */
 public class LC113PathSum {
 
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {

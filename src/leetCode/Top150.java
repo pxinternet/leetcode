@@ -1,5 +1,10 @@
-﻿package leetCode;
+package leetCode;
 
+/**
+ * Top150 - LeetCode Top 150 热门题解合集
+ *
+ * 说明：本类集中存放 Top 150 题目的一种或多种实现。
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

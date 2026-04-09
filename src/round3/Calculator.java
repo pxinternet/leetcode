@@ -2,6 +2,18 @@ package round3;
 
 import java.util.Stack;
 
+/**
+ * Calculator - Basic calculator (LC224 style, supports + - * / and parentheses)
+ *
+ * Input: expression string with digits, +, -, *, /, spaces, parentheses. Output: result.
+ *
+ * Algorithm: Stack for deferred +/- ; apply * and / immediately to stack top. Recursive handling for parentheses.
+ *
+ * Steps: (1) accumulate number; (2) on operator or end, apply prev op (+, -, *, /) then push; (3) '(' find matching ')', recurse;
+ * (4) finally sum stack.
+ *
+ * Time O(n), Space O(n). Example: "3+2*2" -> 7
+ */
 public class Calculator {
 
     public int calculate(String s) {

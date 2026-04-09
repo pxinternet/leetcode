@@ -11,6 +11,9 @@ import java.util.Stack;
  * - 当 push 一个值 val 时，如果 minStack 为空或 val <= minStack.peek()，将 val 也 push 到 minStack。
  * - 当 pop 时，如果被弹出的值等于 minStack.peek()，说明最小值也要随之改变，需要同时弹出 minStack 的栈顶。
  *
+ * 关键洞察：push 时使用 val <= minStack.peek() 而非 val < minStack.peek()，是为了处理重复最小值。
+ * 若用严格小于，连续 push 多个相同最小值时只在首次入 minStack，pop 第一个后 getMin 会错误（minStack 已无该值）。
+ *
  * 时间复杂度：push/pop/top/getMin 均为 O(1)。
  * 空间复杂度：在最坏情况下（元素单调递减），minStack 与 mainStack 大小相同，额外空间为 O(n)。
  */

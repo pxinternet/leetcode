@@ -4,13 +4,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * LC60 - 排列序列
+ *
+ * 题目概要：集合 [1,n] 按字典序排列，返回第 k 个排列。
+ *
+ * 解法一：回溯枚举，取第 k 个（会 TLE 当 n 较大）。
+ *
+ * 解法二：数学。第 i 位确定时，剩余 (n-i)! 种排列；order = k/factorial[n-i] + 1 为当前位在剩余数中的次序。
+ *
+ * 时间复杂度：O(n^2) 数学 / O(n!) 回溯
+ * 空间复杂度：O(n)
+ */
 public class LC60getPermutation {
 
     public String getPermutation(int n, int k) {
-
-
-
-        //感觉这个应有公式
         List<String> res = new ArrayList<>();
         boolean[] used = new boolean[n + 1];
         StringBuilder path = new StringBuilder();
@@ -35,14 +43,10 @@ public class LC60getPermutation {
             }
             path.append(i);
             used[i] = true;
-            System.out.println("before: " + path.toString());
             dfs(start + 1, n, k, path, res, used);
-            if (res.size() == k) {
-                return;
-            }
+            if (res.size() == k) return;
             used[i] = false;
             path.setLength(length);
-            System.out.println("after: " + path.toString());
 
         }
 

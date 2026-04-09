@@ -1,14 +1,18 @@
-﻿package leetCode;
+package leetCode;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
+/**
+ * LC288 - 题目合集（含 LC228 汇总区间、LC56 合并区间、LC57 插入区间、LC452 最少数箭）
+ *
+ * 说明：本类合并多道题目实现，各方法对应不同 LeetCode 题。
+ */
 public class LC288 {
 
-
+    /** LC228 汇总区间：将连续数字区间格式化为 "a->b" 或 "a" */
     public List<String> summaryRanges(int[] nums) {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
@@ -22,7 +26,7 @@ public class LC288 {
                 result.add(String.valueOf(start));
             }
         }
-        return rasult;
+        return result;
     }
 
 

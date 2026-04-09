@@ -3,9 +3,19 @@ package leetCode;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+/**
+ * LCR078 - 合并 K 个升序链表（堆实现）
+ *
+ * 题目（概要）：k 个升序链表，合并为一个升序链表。
+ *
+ * 解法说明：小顶堆存各链表当前头节点，每次 poll 最小、将其 next 入堆，串联成结果链表。
+ *
+ * 时间复杂度：O(N*log k)
+ * 空间复杂度：O(k)
+ */
 public class LCR078MergeKListSHeap {
 
-    //优先级队列 参考https://www.liaoxuefeng.com/wiki/1252599548343744/1265120632401152
+    /** 堆合并 K 个链表 */
     public ListNode mergeKLists(ListNode[] lists) {
 
         //实现优先队列接口

@@ -1,31 +1,54 @@
-package round3; // 包声明：该类位于 round3 包中
+package round3;
 
-public class RotateSearch { // 类声明：RotateSearch 包含若干针对旋转数组和二分查找的工具方法
+/**
+ * RotateSearch - 旋转排序数组二分查找工具集（LeetCode 33/153/154/162 等）
+ *
+ * 题目（概要）：提供 search（查找 target）、findPeakElement、findMin、findMin2（有重复）、
+ * findFL（严格大于 target 的最小元素）等方法。
+ *
+ * 算法原理：
+ * - 旋转数组二分：左右两段中至少一段有序，根据 nums[left]/nums[mid]/nums[right] 判断 target 所在半区。
+ * - search：左有序则 target 在 [left,mid] 内收缩 right；右有序同理。
+ *
+ * 核心逻辑（分步）：
+ * - search：nums[left]<nums[mid] 则左有序，target 在 [left,mid] 则 right=mid-1 否则 left=mid+1；右有序对称。
+ * - findPeak：nums[mid]<nums[mid+1] 则峰值在右，left=mid+1；否则 right=mid。
+ * - findMin：nums[mid]>nums[right] 则最小在右，left=mid+1；否则 right=mid。
+ *
+ * 关键洞察：判断哪侧有序；target 在有序区间内则收缩到该侧，否则到另一侧。
+ *
+ * 时间复杂度：search/findPeak/findMin O(log n)；findMin2 有重复时最坏 O(n)
+ * 空间复杂度：O(1)
+ *
+ * 示例：nums=[4,5,6,7,0,1,2], target=0 → search 返回 4
+ */
+public class RotateSearch {
 
-    public static int search(int[] nums, int target) { // 方法：在旋转排序数组中查找 target 的索引（无重复值假设）
-        int left = 0, right = nums.length - 1; // 初始化左右指针，覆盖整个数组
-        while (left <= right) { // 循环直到左右指针交错
-            int mid = left + (right - left) / 2; // 计算中点，避免溢出
+    /** 在旋转排序数组中查找 target 的索引（无重复），未找到返回 -1 */
+    public static int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
 
-            if (nums[mid] == target) { // 如果中点就是目标，直接返回索引
-                return mid; // 返回找到的索引
+            if (nums[mid] == target) {
+                return mid;
             }
 
-            if (nums[left] < nums[mid]) { // 判断左半段是否严格递增（左侧有序）
-                if (target >= nums[mid] && target < nums[mid]) { // （原逻辑有问题）检查 target 是否在左半有序区间内
-                    right = mid - 1; // 若在左区间则收缩右边界到 mid-1
+            if (nums[left] <= nums[mid]) {
+                if (target >= nums[left] && target < nums[mid]) {
+                    right = mid - 1;
                 } else {
-                    left = mid + 1; // 否则在右半区间，移动左边界到 mid+1
+                    left = mid + 1;
                 }
-            } else { // 否则认为右半段是有序的（或发生了其它情况）
-                if (target > nums[mid] && target <= nums[right]) { // 如果 target 在右有序区间内
-                    left = mid + 1; // 则移动左边界到 mid+1 搜索右侧
+            } else {
+                if (target > nums[mid] && target <= nums[right]) {
+                    left = mid + 1;
                 } else {
-                    right = mid - 1; // 否则在左侧，移动右边界到 mid-1
+                    right = mid - 1;
                 }
             }
         }
-        return -1; // 未找到返回 -1
+        return -1;
     }
 
     public int findPeakElement(int[] nums) { // 方法：在数组中找到一个峰值元素的索引（符合题意即可）

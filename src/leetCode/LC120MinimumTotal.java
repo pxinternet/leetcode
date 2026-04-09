@@ -2,14 +2,23 @@ package leetCode;
 
 import java.util.List;
 
+/**
+ * LC120MinimumTotal - 三角形最小路径和
+ *
+ * 题目（概要）：给定三角形，从顶到底找一条路径使路径上数字和最小。每步可走到下一行相邻位置。
+ *
+ * 解法说明：dp[i][j] = min(dp[i-1][j], dp[i-1][j-1]) + triangle[i][j]；首尾列单独处理。可滚动数组优化为 O(n)。
+ *
+ * 时间复杂度：O(n^2)
+ * 空间复杂度：O(n^2) 或 O(n) 滚动
+ *
+ * 示例：triangle=[[2],[3,4],[6,5,7],[4,1,8,3]] → 11（2+3+5+1）
+ */
 public class LC120MinimumTotal {
-    //动态规划
-    //dp[i][j] 代表走到节点i，j的最小路径。
-    //dp[0][0] = c[0][0]
-    //dp[i][j] = min(dp[i-1][j], dp[i-1][j-1]) + c[i][j];
-    //如果 j = 0; dp[i][j] = dp[i -1][j] + c[i][j]
-    //如果 j = i; dp[i][j] = dp[i-1][j - 1] + c[i][j]
 
+    /**
+     * 二维 DP 求最小路径和
+     */
     public int minimumTotal(List<List<Integer>> triangle) {
         int n = triangle.size();
 

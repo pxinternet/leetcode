@@ -3,6 +3,27 @@ package round3;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * TaskScheduler - 任务调度最短完成时间（二分 + 贪心）
+ *
+ * 题目（概要）：tasks 为每个任务的耗时，k 个工人；每个工人同时只能做一个任务，任务不可拆分。求完成所有任务的最短时间。
+ *
+ * 算法原理：
+ * - 二分答案：答案在 [max(tasks), sum(tasks)] 内；canFinished(limit) 判断 limit 时间内能否完成。
+ * - 贪心分配：按任务耗时顺序，尽量塞满当前工人再启用下一工人；若单任务>limit 则不可行。
+ *
+ * 核心逻辑（分步）：
+ * - 步骤 1：二分 mid，canFinished(tasks, k, mid) 为真则 right=mid，否则 left=mid+1。
+ * - 步骤 2：canFinished 中遍历任务，currentLoad+task<=limit 则累加，否则 requireProcess++、currentLoad=task。
+ * - 步骤 3：requireProcess>k 或 task>limit 返回 false。
+ *
+ * 关键洞察：最小完成时间单调，可二分；贪心分配为最优（将任务尽量塞满工人）。
+ *
+ * 时间复杂度：O(n log(sum))
+ * 空间复杂度：O(1)
+ *
+ * 示例：tasks=[1,4,5,6,2,34,2,3,1], k=3 → 最小完成时间
+ */
 public class TaskScheduler {
 
     // 主方法：计算完成所有任务的最短时间

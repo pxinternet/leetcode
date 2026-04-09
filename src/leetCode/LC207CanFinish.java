@@ -1,26 +1,26 @@
 package leetCode;
 
-import com.sun.javafx.scene.control.skin.IntegerFieldSkin;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * LC207CanFinish - 课程表
+ *
+ * 题目（概要）：共有 numCourses 门课，prerequisites[i]=[a,b] 表示选 b 前须先选 a。判断能否完成所有课程。
+ *
+ * 解法说明：
+ * - 问题等价于判断有向图是否有环。若有环则无法完成。
+ * - DFS：三色标记，发现回边（指向灰节点）则存在环
+ * - BFS：拓扑排序，计算入度，每次移除入度为 0 的节点；若处理的节点数等于总节点数则无环
+ *
+ * 时间复杂度：O(V+E)
+ * 空间复杂度：O(V+E)
+ *
+ * 示例：numCourses=2, prerequisites=[[1,0]] → true；[[1,0],[0,1]] → false
+ */
 public class LC207CanFinish {
-
-    /**
-     * //这是一个拓扑排序问题
-     * //对于给定一个包含n个节点的有向图G,
-     * 我们给出它的节点编号的一种排列，如果满足，对于G中的任意一条有向边[u,v],u的排列都出现在v的前面
-     * 那么这个排列就是G的一个拓扑排序
-     * 如果G存在环，那么G不存在拓扑排序
-     * 如果G是有向无环图，那么拓扑排序不止一种
-     *
-     * @param numCourses
-     * @param prerequisites
-     * @return
-     */
 
     List<List<Integer>> edges;
     int[] visited;

@@ -4,12 +4,29 @@ import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * LC84largestRectangleArea - 柱状图中最大的矩形
+ *
+ * 题目（概要）：给定非负整数数组 heights 表示柱状图每根柱的高度，求其中能勾勒出的最大矩形面积。
+ *
+ * 解法说明：
+ * - 单调栈：维护单调递增栈。对每个位置 i，left[i] 为左侧第一个比 heights[i] 小的下标，right[i] 为右侧第一个比其小的下标
+ * - 以 heights[i] 为高的矩形宽度 = right[i] - left[i] - 1
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)
+ *
+ * 示例：heights=[2,1,5,6,2,3] → 10（高度 5 和 6 的矩形 2*5=10）
+ */
 public class LC84largestRectangleArea {
 
+    /**
+     * 单调栈求每根柱向两侧扩展的边界
+     *
+     * @param heights 每根柱的高度
+     * @return 最大矩形面积
+     */
     public int largestRectangleArea(int[] heights) {
-
-
-        //单调增的栈，所有栈顶元素一定是第一个比小的
         int n = heights.length;
         int[] left = new int[n];
         int[] right = new int[n];

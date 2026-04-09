@@ -1,16 +1,35 @@
-﻿package leetCode;
+package leetCode;
 
+/**
+ * LC79exist - 单词搜索
+ *
+ * 题目（概要）：给定二维字符网格 board 和字符串 word，判断 word 是否存在于网格中。单词必须按相邻单元格（上下左右）连接形成。
+ *
+ * 解法说明：
+ * - 核心思想：回溯 + DFS，从每个格子出发尝试匹配 word，用 visited 避免重复使用
+ *
+ * 时间复杂度：O(m*n*4^len)
+ * 空间复杂度：O(m*n)，visited 与递归栈
+ *
+ * 示例：board=[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word="ABCCED" → true
+ */
 public class LC79exist {
 
+    /**
+     * 判断 word 是否存在于 board 中
+     *
+     * @param board 二维字符网格
+     * @param word  待查找单词
+     * @return 存在返回 true
+     */
     public boolean exist(char[][] board, String word) {
         int m = board.length;
         int n = board[0].length;
-
         boolean[][] visited = new boolean[m][n];
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if () {
+                if (dfs(board, word, i, j, 0, visited)) {
                     return true;
                 }
             }
@@ -18,6 +37,9 @@ public class LC79exist {
         return false;
     }
 
+    /**
+     * 从 (i,j) 开始 DFS 匹配 word[index..]
+     */
     private boolean dfs(char[][] board, String word, int i, int j, int index, boolean[][] visited) {
         if (index == word.length()) {
             return true;

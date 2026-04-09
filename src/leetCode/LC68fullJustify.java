@@ -3,8 +3,21 @@ package leetCode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LC68 - 文本左右对齐
+ *
+ * 题目（概要）：将单词数组按 maxWidth 排版，除最后一行外每行左右对齐，空格均匀分布；最后一行左对齐。
+ *
+ * 解法说明：贪心选每行单词数，基本空格 = (maxWidth-len)/(词数-1)，余数从左往右每间隔多放一个空格。
+ *
+ * 时间复杂度：O(n * maxWidth)
+ * 空间复杂度：O(n)
+ *
+ * 示例：words=["This","is","an","example"], maxWidth=16 → ["This    is    an","example  "]
+ */
 public class LC68fullJustify {
 
+    /** 返回按 maxWidth 排版后的行列表 */
     public List<String> fullJustify(String[] words, int maxWidth) {
 
         List<String> res = new ArrayList<>();

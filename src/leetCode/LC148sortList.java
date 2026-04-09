@@ -1,10 +1,24 @@
 package leetCode;
 
-import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * LC148sortList - 排序链表
+ *
+ * 题目（概要）：给单链表排序，要求 O(n log n) 时间、O(1) 空间（或尽量小）。
+ *
+ * 解法一：用 PriorityQueue 收集所有节点再依次弹出，时间 O(n log n) 空间 O(n)。
+ *
+ * 解法二（归并）：找中点拆分，递归排序两半，再合并。满足 O(n log n) 时间和 O(log n) 递归栈。
+ *
+ * 时间复杂度：O(n log n)
+ * 空间复杂度：O(n) 或 O(log n)
+ */
 public class LC148sortList {
 
+    /**
+     * 堆排序：将所有节点入堆再依次连接
+     */
     public ListNode sortList(ListNode head) {
 
         if(head == null || head.next == null) {
